@@ -10,13 +10,22 @@
 {% endblock %}
 
 {% block content %}
+<!-- Extra Navigation Menu -->
+<nav class="extra-menu">
+    <ul>
+        <li><a href="{% url 'sub_category' %}?category={{ c.name }}">Color</a></li>
+        <li><a href="#">Pattern</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Best Sellers</a></li>
+    </ul>
+</nav>
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
                 {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                    <a class="category-badge text-decoration-none" href="{% url 'mmain_category' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><strong>Happy</strong>Room</a>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="{% url 'home' %}"><strong class="happy">Happy</strong>Room</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,25 +8,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="{% url 'products' %}">All Products<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    Shop By
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">New in</a>
+                    <a class="dropdown-item" href="#">Categories</a>
+                    <a class="dropdown-item" href="#">Pattern</a>
+                    <a class="dropdown-item" href="#">Color</a>
+                    <a class="dropdown-item" href="#">Rooms</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">View All</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link" href="#">Inspiration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Experties</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -63,21 +69,6 @@
                         </p>
                     </div>
                 </a>
-            </li>
-            <!-- Search -->
-            <li class="nav-item">
-                <div class="dropdown-menu border-0 w-auto p-2 rounded-0 my-0 d-none d-lg-block" aria-labelledby="desktop-search">
-                    <form class="form" method="GET" action="">
-                        <div class="input-group">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                            <div class="input-group-append">
-                                <button class="btn btn-black border border-black rounded-0" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </li>
         </ul>
     </div>

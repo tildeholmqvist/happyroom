@@ -1,9 +1,34 @@
-nav {
-    margin-bottom: 60px;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-body {
+.body-index {
     background: url('/media/Skärmavbild\ 2024-03-31\ kl.\ 09.26.50.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
+}
+
+nav {
+    margin-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-link {
+    text-decoration: none;
+    color:darkorange;
+}
+
+.navbar-brand {
+    font-size: 350%;
+    text-decoration: none;
+    color:rgb(219, 52, 127);
+}
+
+.navbar-brand > .happy {
+    color:rgb(226, 50, 74);
+}
+
+.delivery-banner {
+    background-color: crimson;
 }
