@@ -60,4 +60,10 @@ def main_category(request):
     context = {
         'categories': categories
     }
-    return render(request, 'main_category.html', context)
+    return render(request, 'sub_category.html', context)
+
+
+def subcategory_view(request, category_id):
+    category = Category.objects.get(id=category_id)
+    subcategories = category.subcategories.all()
+    return render(request, 'subcategory.html', {'category': category, 'subcategories': subcategories})

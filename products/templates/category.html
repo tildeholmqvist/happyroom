@@ -1,34 +1,31 @@
 {% extends "base.html" %}
-{% load static %}
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-<!-- Extra Navigation Menu -->
-<nav class="extra-menu">
-    <ul>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Color</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Pattern</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">News</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Best Sellers</a></li>
-    </ul>
-</nav>
-    <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col text-center mt-3">
+            <div class="col">
+                <h1>Main Categories</h1>
+                <ul class="list-group">
+                    {% for category in categories %}
+                        <li class="list-group-item">
+                            <h2>{{ category.name }}</h2>
+                            <ul class="list-group list-group-flush">
+                                {% for subcategory in category.subcategories.all %}
+                                    <li class="list-group-item"><a href="{% url 'sub_category' category.id %}">{{ subcategory.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
                 <h2 class="logo-font">Products</h2>
-                {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="#">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %}
+                <div class="filter-options">
+                    <h3>Filter by Category:</h3>
+                    <ul>
+                        <li><a href="{% url 'products' %}">All</a></li>
+                        {% for category in all_categories %}
+                            <li><a href="{% url 'products' %}?category={{ category.slug }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -132,7 +129,4 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
-{% endblock %}
-
-{% block postloadjs %}
 {% endblock %}
