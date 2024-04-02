@@ -4,11 +4,13 @@ from .models import Product, Category
 from django.contrib import messages
 
 def all_products(request):
+    """ A view to show all products, including sorting and search queries """
+
     products = Product.objects.all()
-    categories = Category.objects.filter(is_active=True)
+    query = None
+    categories = None
     sort = None
     direction = None
-    query = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -26,9 +28,9 @@ def all_products(request):
             products = products.order_by(sortkey)
             
         if 'category' in request.GET:
-            categories = request.GET.getlist('category')  
-            products = products.filter(category__id__in=categories)
-            categories = Category.objects.filter(id__in=categories)
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -48,7 +50,7 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products.html', context, {'products': products, 'categories': categories})
+    return render(request, 'products.html', context)
 
 
 
