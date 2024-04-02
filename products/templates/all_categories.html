@@ -1,22 +1,145 @@
-<!--- all_categories.html --->
 {% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
-    <h1>{{ selected_category }}</h1>
-    <h2>Products</h2>
-    <ul>
-        {% if products_in_category %}
-            {% for product in products_in_category  %}
-                <li>{{ product.name }}</li>
-            {% endfor %}
-        {% else %}
-            <li>No products found.</li>
-        {% endif %}
-    </ul>
-    <h2>Subcategories</h2>
-    <ul>
-        {% for subcategory in category.subcategories.all %}
-            <li>{{ subcategory.name }}</li>
-        {% endfor %}
-    </ul>
+<!-- Extra Navigation Menu -->
+{% if selected_category != 'color' and selected_category != 'room' and selected_category != 'pattern' %}
+    <nav class="extra-menu">
+        <ul>
+            <a href="{% url 'all_categories' %}?category=color">Color</a>
+            <a href="{% url 'all_categories' %}?category=room">Room</a>
+            <a href="{% url 'all_categories' %}?category=pattern">Pattern</a>
+        </ul>
+    </nav>
+{% endif %}
+
+{% if selected_category == 'color' %}
+    <nav class="extra-menu">
+        <ul>
+            <a href="{% url 'sub_categories' %}?category=green">Green</a>
+            <a href="{% url 'sub_categories' %}?category=pink">Pink</a>
+            <a href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
+            <a href="{% url 'sub_categories' %}?category=blue">Blue</a>
+            <a href="{% url 'sub_categories' %}?category=red">Red</a>
+            <a href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
+        </ul>
+    </nav>
+{% elif selected_category == 'room' %}
+    <nav class="extra-menu">
+        <ul>
+            <a href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a>
+            <a href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a>
+            <a href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a>
+            <a href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
+            <a href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
+            <a href="{% url 'sub_categories' %}?category=bathroom">Bathroom</a>
+        </ul>
+    </nav>
+{% elif selected_category == 'pattern' %}
+    <nav class="extra-menu">
+        <ul>
+            <a href="{% url 'sub_categories' %}?category=flowers">Flowers</a>
+            <a href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
+            <a href="{% url 'sub_categories' %}?category=animals">Animals</a>
+            <a href="{% url 'sub_categories' %}?category=retro">Retro</a>
+        </ul>
+    </nav>
+{% endif %}
+
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Products</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            {% if product.image %}
+                                <a href="#">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="#">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                        {% if product.category.exists %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.first.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.first.friendly_name }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                        {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a href="#">Edit</a> | 
+                                                <a class="text-danger" href="#">Delete</a>
+                                            </small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>	
+</div>
+{% endblock %}
+
+{% block postloadjs %}
 {% endblock %}

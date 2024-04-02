@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.db.models import Q
 from .models import Product, Category, News
@@ -53,7 +53,6 @@ def all_products(request):
     return render(request, 'products.html', context)
 
 
-
 def all_categories(request):
     """ A view to show all categories """
     categories = Category.objects.all()
@@ -86,3 +85,10 @@ def all_categories(request):
         'products': products,
     }
     return render(request, 'all_categories.html', context)
+
+
+def sub_categories(request):
+    selected_category_name = request.GET.get('category')
+    selected_categories = Category.objects.filter(name=selected_category_name)
+
+    return render(request, 'sub_categories.html', {'selected_categories': selected_categories})
