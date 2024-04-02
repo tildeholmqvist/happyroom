@@ -1,17 +1,16 @@
-<!-- category.html -->
-
 {% extends "base.html" %}
+
 {% block content %}
     <h1>{{ category.name }}</h1>
     <h2>Products</h2>
     <ul>
-        {% for product in products %}
+        {% for product in category.products.all %}
             <li>{{ product.name }}</li>
         {% endfor %}
     </ul>
     <h2>Subcategories</h2>
     <ul>
-        {% for subcategory in subcategories %}
+        {% for subcategory in category.subcategories.all %}
             <li>{{ subcategory.name }}</li>
         {% endfor %}
     </ul>

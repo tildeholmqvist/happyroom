@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .models import Product, Category
+from .models import Product, Category, News
 from django.contrib import messages
 
 def all_products(request):
@@ -53,22 +53,41 @@ def all_products(request):
     return render(request, 'products.html', context)
 
 
-
 def all_categories(request):
-    categories = Category.objects.filter(is_active=True)
-    return render(request, 'all_categories.html', {'categories': categories})
+    """ A view to show all categories """
+    categories = Category.objects.all()
+    selected_category = request.GET.get('category')
+    selected_subcategory = request.GET.get('subcategory')
+    products_in_category = None
 
-
-def main_category(request, category_id):
-    category = Category.objects.get(id=category_id)
-    products = category.products.all()
-    subcategories = category.subcategories.all()
-
-    return render(request, 'category.html', {'category': category, 'products': products, 'subcategories': subcategories})
-
-
-def subcategory_view(request, subcategory_id):
-    subcategory = Subcategory.objects.get(id=subcategory_id)
-    products = subcategory.products.all()
+    if selected_category:
+        if selected_category == 'news':
+            news_items = News.objects.all()
+            context = {
+                'categories': categories,
+                'selected_category': selected_category,
+                'news_items': news_items,
+            }
+            return render(request, 'all_categories.html', context)
+        elif selected_category == 'bestsellers':
+            bestsellers = Product.objects.filter(is_bestseller=True)
+            context = {
+                'categories': categories,
+                'selected_category': selected_category,
+                'bestsellers': bestsellers,
+            }
+            return render(request, 'all_categories.html', context)
+        else:
+            if selected_subcategory:
+                products_in_category = Product.objects.filter(category__name=selected_category, subcategory__name=selected_subcategory)
+            else:
+                products_in_category = Product.objects.filter(category__name=selected_category)
     
-    return render(request, 'sub_category.html', {'subcategory': subcategory, 'products': products})
+    context = {
+        'categories': categories,
+        'selected_category': selected_category,
+        'selected_subcategory': selected_subcategory,
+        'products_in_category': products_in_category,
+    }
+    return render(request, 'all_categories.html', context)
+

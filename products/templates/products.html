@@ -13,9 +13,9 @@
 <!-- Extra Navigation Menu -->
 <nav class="extra-menu">
     <ul>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Best Sellers</a></li>
-        <li><a href="#">All Categories</a></li>
+        <a href="{% url 'all_categories' %}?category=news">News</a>
+        <a href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
+        <a href="{% url 'all_categories' %}?category=viewall">View All</a>
     </ul>
 </nav>
 <div class="overlay"></div>

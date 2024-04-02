@@ -37,6 +37,16 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    is_bestseller = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+
+
+class News(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
