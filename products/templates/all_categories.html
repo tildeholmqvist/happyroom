@@ -1,12 +1,17 @@
+<!--- all_categories.html --->
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ category.name }}</h1>
+    <h1>{{ selected_category }}</h1>
     <h2>Products</h2>
     <ul>
-        {% for product in category.products.all %}
-            <li>{{ product.name }}</li>
-        {% endfor %}
+        {% if products_in_category %}
+            {% for product in products_in_category  %}
+                <li>{{ product.name }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No products found.</li>
+        {% endif %}
     </ul>
     <h2>Subcategories</h2>
     <ul>

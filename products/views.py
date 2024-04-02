@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.db.models import Q
 from .models import Product, Category, News
 from django.contrib import messages
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-
     products = Product.objects.all()
     query = None
     categories = None
@@ -53,12 +53,12 @@ def all_products(request):
     return render(request, 'products.html', context)
 
 
+
 def all_categories(request):
     """ A view to show all categories """
     categories = Category.objects.all()
     selected_category = request.GET.get('category')
-    selected_subcategory = request.GET.get('subcategory')
-    products_in_category = None
+    products = None
 
     if selected_category:
         if selected_category == 'news':
@@ -78,16 +78,11 @@ def all_categories(request):
             }
             return render(request, 'all_categories.html', context)
         else:
-            if selected_subcategory:
-                products_in_category = Product.objects.filter(category__name=selected_category, subcategory__name=selected_subcategory)
-            else:
-                products_in_category = Product.objects.filter(category__name=selected_category)
+            products = Product.objects.filter(category__name=selected_category)
     
     context = {
         'categories': categories,
         'selected_category': selected_category,
-        'selected_subcategory': selected_subcategory,
-        'products_in_category': products_in_category,
+        'products': products,
     }
     return render(request, 'all_categories.html', context)
-
