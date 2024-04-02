@@ -1,9 +1,12 @@
+<!-- sub_category.html -->
+
 {% extends "base.html" %}
 {% block content %}
-    <h1>Subcategories for {{ category.name }}</h1>
+    <h1>{{ subcategory.name }}</h1>
+    <h2>Products</h2>
     <ul>
-        {% for subcategory in subcategories %}
-            <li><a href="{% url 'products' %}?subcategory={{ subcategory.slug }}">{{ subcategory.name }}</a></li>
+        {% for product in products %}
+            <li>{{ product.name }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

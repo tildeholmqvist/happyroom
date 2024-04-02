@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect
-from django.db.models import Q
+from django.urls import reverse
 from .models import Product, Category
 from django.contrib import messages
 
-# Create your views here.
-
-#From walkthroguh 
-
 def all_products(request):
     products = Product.objects.all()
-    categories = None
+    categories = Category.objects.filter(is_active=True)
     sort = None
     direction = None
     query = None
@@ -30,9 +26,9 @@ def all_products(request):
             products = products.order_by(sortkey)
             
         if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+            categories = request.GET.getlist('category')  
+            products = products.filter(category__id__in=categories)
+            categories = Category.objects.filter(id__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -52,18 +48,25 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products.html', context)
+    return render(request, 'products.html', context, {'products': products, 'categories': categories})
 
 
-def main_category(request):
-    categories = Category.objects.all()
-    context = {
-        'categories': categories
-    }
-    return render(request, 'sub_category.html', context)
+
+def all_categories(request):
+    categories = Category.objects.filter(is_active=True)
+    return render(request, 'all_categories.html', {'categories': categories})
 
 
-def subcategory_view(request, category_id):
+def main_category(request, category_id):
     category = Category.objects.get(id=category_id)
+    products = category.products.all()
     subcategories = category.subcategories.all()
-    return render(request, 'subcategory.html', {'category': category, 'subcategories': subcategories})
+
+    return render(request, 'category.html', {'category': category, 'products': products, 'subcategories': subcategories})
+
+
+def subcategory_view(request, subcategory_id):
+    subcategory = Subcategory.objects.get(id=subcategory_id)
+    products = subcategory.products.all()
+    
+    return render(request, 'sub_category.html', {'subcategory': subcategory, 'products': products})

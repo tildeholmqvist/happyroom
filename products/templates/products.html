@@ -10,22 +10,13 @@
 {% endblock %}
 
 {% block content %}
-<!-- Extra Navigation Menu -->
-<nav class="extra-menu">
-    <ul>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Color</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Pattern</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">News</a></li>
-        <li><a href="{% url 'category' %}?category={{ c.name }}">Best Sellers</a></li>
-    </ul>
-</nav>
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
                 {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="#">
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
@@ -64,11 +55,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <a href="#">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
-                                <a href="#">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
@@ -93,8 +84,8 @@
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a href="#">Edit</a> | 
-                                                    <a class="text-danger" href="#">Delete</a>
+                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
                                         </div>
@@ -135,4 +126,5 @@
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
 {% endblock %}
