@@ -4,8 +4,7 @@
 }
 
 .body-index {
-    background: url('/media/Skärmavbild\ 2024-03-31\ kl.\ 09.26.50.png') no-repeat center center fixed;
-    background-size: cover;
+    background-color: white;
     height: calc(100vh - 164px);
 }
 
