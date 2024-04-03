@@ -9,8 +9,13 @@
     height: calc(100vh - 164px);
 }
 
-nav {
-    margin-bottom: 60px;
+.base-nav {
+    background-color: white;
+    margin-bottom: 200px;
+}
+
+.base-nav-style {
+    background-color: white;
 }
 
 .navbar-brand {
