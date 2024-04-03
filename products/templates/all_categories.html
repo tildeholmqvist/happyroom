@@ -17,6 +17,7 @@
             <a href="{% url 'all_categories' %}?category=color">Color</a>
             <a href="{% url 'all_categories' %}?category=room">Room</a>
             <a href="{% url 'all_categories' %}?category=pattern">Pattern</a>
+            <a href="{% url 'products' %}">View All</a>
         </ul>
     </nav>
 {% endif %}
@@ -30,6 +31,7 @@
             <a href="{% url 'sub_categories' %}?category=blue">Blue</a>
             <a href="{% url 'sub_categories' %}?category=red">Red</a>
             <a href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
+            <a href="{% url 'products' %}">View All</a>
         </ul>
     </nav>
 {% elif selected_category == 'room' %}
@@ -41,6 +43,7 @@
             <a href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
             <a href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
             <a href="{% url 'sub_categories' %}?category=bathroom">Bathroom</a>
+            <a href="{% url 'products' %}">View All</a>
         </ul>
     </nav>
 {% elif selected_category == 'pattern' %}
@@ -50,6 +53,7 @@
             <a href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
             <a href="{% url 'sub_categories' %}?category=animals">Animals</a>
             <a href="{% url 'sub_categories' %}?category=retro">Retro</a>
+            <a href="{% url 'products' %}">View All</a>
         </ul>
     </nav>
 {% endif %}

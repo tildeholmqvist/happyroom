@@ -22,6 +22,7 @@
     {% block extra_css %}
     {% endblock %}
     
+
     <title>Hello, world!</title>
 </head>
 <body class="body-index">
@@ -39,19 +40,52 @@
                         <a class="nav-link" href="{% url 'products' %}">All Products<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Shop by Category
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">New in</a>
-                            <a class="dropdown-item" href="#">Best Sellers</a>
-                            <a class="dropdown-item" href="#">Pattern</a>
-                            <a class="dropdown-item" href="#">Color</a>
-                            <a class="dropdown-item" href="#">Rooms</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=news">New in</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">View All</a>
-
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="roomDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Room
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="colorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Color
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="colorDropdown">
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=green">Green</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=pink">Pink</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blue">Blue</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=red">Red</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="patternDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Pattern
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="patternDropdown">
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=floral">Floral</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=animals">Animals</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=retro">Retro</a>
+                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=geometric">Geometric</a>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href="{% url 'products' %}">View All</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -61,7 +95,7 @@
                         <a class="nav-link" href="#">Experties</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -128,10 +162,12 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/89e0726886.js" crossorigin="anonymous"></script>
-{% endblock %}
 
-{% block extra_js %}
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
 {% endblock %}
-
 </body>
 </html>
