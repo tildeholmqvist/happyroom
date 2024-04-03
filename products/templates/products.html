@@ -16,7 +16,9 @@
         <a href="{% url 'all_categories' %}?category=news">News</a>
         <a href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
         <a href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
+        {% if selected_category == 'news' and selected_category == 'bestseller' and selected_category == 'lastchance' %}
         <a href="{% url 'products' %}">View All</a>
+        {% endif %}
     </ul>
     <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'products' %}">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
