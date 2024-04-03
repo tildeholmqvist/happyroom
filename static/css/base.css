@@ -11,24 +11,26 @@
 
 nav {
     margin-bottom: 60px;
-    background-color: rgb(255, 255, 255);
+}
+
+.navbar-brand {
+    font-size: 350%;
+    text-decoration: none;
+    color: rgb(219, 52, 127);
+}
+
+.navbar-brand:hover {
+    color: rgb(219, 52, 127); 
+}
+
+.happy {
+    color: rgb(226, 50, 74);
 }
 
 .nav-link {
     text-decoration: none;
     color:darkorange;
 }
-
-.navbar-brand {
-    font-size: 350%;
-    text-decoration: none;
-    color:rgb(219, 52, 127);
-}
-
-.navbar-brand > .happy {
-    color:rgb(226, 50, 74);
-}
-
-.delivery-banner {
-    background-color: crimson;
+.nav-link:hover {
+    color: rgb(235, 180, 128);
 }

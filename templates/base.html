@@ -26,122 +26,115 @@
     <title>Hello, world!</title>
 </head>
 <body class="body-index">
-    <header class="container-fluid fixed-top">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{% url 'home' %}"><strong class="happy">Happy</strong>Room</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Shop by Category
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'products' %}">View All</a>
-                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=news">New in</a>
-                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
-                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
-                            <div class="dropdown-divider"></div>
-                            <div class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" id="roomDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Room
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
-                                </div>
+<header class="container-fluid fixed-top">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'home' %}"><strong class="happy">Happy</strong>Room</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop by Category
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'products' %}">View All</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=news">New in</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="roomDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Room
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
                             </div>
-                            <div class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" id="colorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Color
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="colorDropdown">
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=green">Green</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=pink">Pink</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blue">Blue</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=red">Red</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
-                                </div>
-                            </div>
-                            <div class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" id="patternDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pattern
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="patternDropdown">
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=floral">Floral</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=animals">Animals</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=retro">Retro</a>
-                                    <a class="dropdown-item" href="{% url 'sub_categories' %}?category=geometric">Geometric</a>
-                                </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inspiration</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Experties</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="text-black nav-link" href="#" id="desktop-user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center d-none d-lg-block">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="desktop-user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="#" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="#" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
-                            <div class="text-center d-none d-lg-block">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
+                        <div class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="colorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Color
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="colorDropdown">
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=green">Green</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=pink">Pink</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blue">Blue</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=red">Red</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
                             </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-<div class="d-lg-none">
-    {% include 'includes/mobile_top_header.html' %}
-</div>
-<div class="d-none d-lg-block">
-    {% include 'includes/main_nav.html' %}
-</div>
+                        </div>
+                        <div class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="patternDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pattern
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="patternDropdown">
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=floral">Floral</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=animals">Animals</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=retro">Retro</a>
+                                <a class="dropdown-item" href="{% url 'sub_categories' %}?category=geometric">Geometric</a>
+                            </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inspiration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Experties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="text-black nav-link" href="#" id="desktop-user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center d-none d-lg-block">
+                            <div><i class="fas fa-user fa-lg"></i></div>
+                            <p class="my-0">My Account</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="desktop-user-options">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a href="#" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+                        <div class="text-center d-none d-lg-block">
+                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <p class="my-0">
+                                {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    $0.00
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 {% block page_header %}
 {% endblock %}
