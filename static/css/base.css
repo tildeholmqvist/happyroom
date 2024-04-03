@@ -39,3 +39,9 @@
 .nav-link:hover {
     color: rgb(235, 180, 128);
 }
+
+.faq-page{
+    background-color: white;
+    padding: 100px;
+    text-align: center;
+}
