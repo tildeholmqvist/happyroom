@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('products/', include('products.urls')),
+    path('profile/', include('profiles.urls')),
     path('faq/', TemplateView.as_view(template_name='faq.html'), name='faq'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
