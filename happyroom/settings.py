@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'profiles',
 
     'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'happyroom.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
