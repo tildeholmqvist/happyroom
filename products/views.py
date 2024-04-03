@@ -4,6 +4,8 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category, News
 from django.contrib import messages
+from .forms import ProductForm
+
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -83,7 +85,7 @@ def add_product(request):
     else:
         form = ProductForm()
         
-    template = 'products/add_product.html'
+    template = 'add_product.html'
     context = {
         'form': form,
     }
