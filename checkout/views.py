@@ -12,7 +12,7 @@ from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
 
-import stripe
+
 import json
 
 @require_POST
