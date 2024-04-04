@@ -5,3 +5,8 @@ html {
 .header-container {
     margin-bottom: 150px;
 }
+
+.btn-black {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
