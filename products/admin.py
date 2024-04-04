@@ -5,14 +5,16 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
         'name',
-        'category',
-        'subcategory',
+        'display_categories',
         'price',
         'rating',
         'image',
     )
 
     ordering = ('sku',)
+
+    def display_categories(self, obj):
+        return ', '.join(category.name for category in obj.category.all())
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
@@ -27,6 +29,6 @@ class SubCategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-admin.site.register(Product)
-admin.site.register(Category)
-admin.site.register(SubCategory)
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(SubCategory, SubCategoryAdmin)

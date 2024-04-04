@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower 
 from .models import Product, Category, News
 from django.contrib import messages
 from .forms import ProductForm
@@ -35,6 +36,11 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        if 'subcategory' in request.GET:
+            sub_categories = request.GET['subcategory'].split(',')
+            products = products.filter(sub_categories__name__in=sub_categories)
+            sub_categories = Category.objects.filter(name__in=sub_categories)
+            
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -55,6 +61,7 @@ def all_products(request):
 
     return render(request, 'products.html', context)
 
+
 # from walkthrough
 def product_detail(request, product_id):
     """ A view to show individual product details """
@@ -66,6 +73,7 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'product_detail.html', context)
+
 
 @login_required
 def add_product(request):
