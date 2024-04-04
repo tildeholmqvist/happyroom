@@ -8,7 +8,7 @@ from products.models import Product
 def view_bag(request):
     """ A view that renders the bag contents page """
 
-    return render(request, 'bag/bag.html')
+    return render(request, 'bag/templates/bag.html')
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
