@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% csrf_token %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -20,19 +21,9 @@
         <a href="{% url 'products' %}">View All</a>
         {% endif %}
     </ul>
-    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'products' %}">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 </nav>
 <div class="overlay"></div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Products</h2>
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2">

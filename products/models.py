@@ -16,6 +16,7 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     name = models.CharField(max_length=100)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
@@ -23,6 +24,10 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100) 
