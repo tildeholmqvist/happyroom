@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower 
-from .models import Product, Category, News
+from .models import Product, Category, News, SubCategory
 from django.contrib import messages
 from .forms import ProductForm
 
@@ -40,7 +40,7 @@ def all_products(request):
             sub_categories = request.GET['subcategory'].split(',')
             products = products.filter(sub_categories__name__in=sub_categories)
             sub_categories = Category.objects.filter(name__in=sub_categories)
-            
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
