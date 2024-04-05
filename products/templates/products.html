@@ -86,7 +86,7 @@
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="#">Delete</a>
+                                                    <a class="text-danger delete-product" data-product_id="{{ product.id }}" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
                                         </div>
@@ -124,6 +124,26 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
+    {% block delete_modal %}
+    <!-- Delete confirmation modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete {{ product.id }}?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this product? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" id="deleteConfirm" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% endblock %}
 
 {% block postloadjs %}
@@ -156,4 +176,25 @@
             }
         })
     </script>
+<script>
+   const deleteButtons = document.querySelectorAll('.delete-product');
+
+for (let button of deleteButtons) {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        let productId = e.target.getAttribute("data-product_id");
+        let productName = e.target.getAttribute("data-product_name");
+        if (productId !== undefined && productName !== undefined) {
+                let deleteUrl = `/delete/${productId}/`;
+                $('#deleteModalLabel').text(`Delete ${productName}?`);
+                $('#deleteModal .modal-body').text(`Are you sure you want to delete ${productName}? This action cannot be undone.`); // Update the modal body
+                $('#deleteConfirm').attr('href', deleteUrl);
+                $('#deleteModal').modal('show');
+            } else {
+                console.error('Product ID or Product Name is undefined.');
+            }
+        });
+    }
+</script>
 {% endblock %}
+
