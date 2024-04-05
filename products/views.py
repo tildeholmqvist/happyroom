@@ -13,6 +13,7 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    sub_categories = None
     sort = None
     direction = None
 
@@ -149,9 +150,10 @@ def all_categories(request):
     selected_category = request.GET.get('category')
     selected_subcategory = request.GET.get('subcategory')
     products = None
+    sub_category_products = None
 
     if selected_subcategory:
-        products = Product.objects.filter(sub_category__name=selected_subcategory)
+        products = Product.objects.filter(sub_categories__name=selected_subcategory)
     elif selected_category:
         if selected_category == 'color':  
             subcategories = SubCategory.objects.filter(category__name='Color')
@@ -159,6 +161,7 @@ def all_categories(request):
                 'categories': categories,
                 'selected_category': selected_category,
                 'subcategories': subcategories,
+                'selected_subcategory': selected_subcategory,
             }
             return render(request, 'sub_categories.html', context)
         else:
@@ -168,8 +171,11 @@ def all_categories(request):
         'categories': categories,
         'selected_category': selected_category,
         'products': products,
+        'selected_subcategory': selected_subcategory,
+        'sub_category_products': sub_category_products,
     }
     return render(request, 'all_categories.html', context)
+
 
 
 
@@ -177,11 +183,13 @@ def sub_categories(request, category_id):
     """ A view to show subcategories of a specific category """
     category = get_object_or_404(Category, id=category_id)
     subcategories = category.subcategory_set.all()
-    products = Product.objects.filter(category=category)
+
+    products = Product.objects.filter(sub_categories__category=category)
 
     context = {
         'category': category,
         'subcategories': subcategories,
         'products': products,
+        'sub_category_products': sub_category_products,
     }
     return render(request, 'sub_categories.html', context)

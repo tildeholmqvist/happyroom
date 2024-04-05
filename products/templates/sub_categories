@@ -12,19 +12,9 @@
 {% block content %}
 <div class="overlay"></div>
 
-{% if selected_category == 'pattern' %}
 <nav class="extra-menu">
-    <a href="{% url 'all_categories' %}?sub_category=floral">Floral</a>
+    <a href="{% url 'sub_categories' %}?sub_category={{ selected_subcategory }}">{{ selected_subcategory }}</a>
 </nav>
-{% elif selected_category == 'room' %}
-<nav class="extra-menu">
-    <a href="{% url 'all_categories' %}?sub_category=kidsroom">Kidsroom</a>
-</nav>
-{% elif selected_category == 'colors' %}
-<nav class="extra-menu">
-    <a href="{% url 'all_categories' %}?sub_category=green">Green</a>
-</nav>
-{% endif %}
 
 <div class="container-fluid">
     <div class="row">
@@ -101,6 +91,9 @@
                 </div>
             </div>
         {% endfor %}
+    </div>
+</div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

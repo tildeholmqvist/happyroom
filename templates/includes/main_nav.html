@@ -7,17 +7,38 @@
             </a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Shop by Category
+                Shop now
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">View All</a>
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=news">New in</a>
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
-                <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">Pattern</a>
-                <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">Room</a>
-                <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">By Color</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop by Room
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">All</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=kidsroom">Kidsroom</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop by Color
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">All</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=green">Green</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop by Pattern
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">All</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=floral">Floral</a>
+                        </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'inspiration' %}">Inspiration</a>
         </li>
