@@ -4,6 +4,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
 {% endblock %}
 
 {% block page_header %}
@@ -15,34 +16,46 @@
 {% endblock %}
 
 {% block content %}
-<form id="booking-form" method="post">
+<div id="content"></div> 
+<form id="booking-form" method="post" class="mt-4">
     {% csrf_token %}
     <div class="step">
-        <label>Select the service you need help with:</label><br>
-        <input type="radio" name="service" value="Wallpaper Selection Assistance">
-        <label for="service">Wallpaper Selection Assistance</label><br>
-        <input type="radio" name="service" value="Room Design Consultation">
-        <label for="service">Room Design Consultation</label><br>
-        <input type="radio" name="service" value="Wallpaper Selection Assistance">
-        <label for="service">Installation Techniques Guidance</label><br>
-        <input type="radio" name="service" value="Room Design Consultation">
-        <label for="service">Custom Wallpaper Design</label><br>
-        <input type="radio" name="service" value="Wallpaper Selection Assistance">
-        <label for="service">Trend Analysis and Inspiration</label><br>
-        <button type="button" id="nextBtn">Next</button>
-        <div class="step" style="display:none;">
-            <label>Select an available time:</label>
-            <input type="text" id="datetimepicker" name="datetime">
-            <button type="button" id="prevBtn">Previous</button>
-            <button type="button" id="nextBtn">Next</button>
+        <div class="form-group">
+            <label>Select the service you need help with:</label><br>
+            <div class="form-check">
+                <input type="radio" name="service" value="Wallpaper Selection Assistance" id="service1" class="form-check-input">
+                <label for="service1" class="form-check-label">Wallpaper Selection Assistance</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="service" value="Room Design Consultation" id="service2" class="form-check-input">
+                <label for="service2" class="form-check-label">Room Design Consultation</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="service" value="Installation Techniques Guidance" id="service3" class="form-check-input">
+                <label for="service3" class="form-check-label">Installation Techniques Guidance</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="service" value="Custom Wallpaper Design" id="service4" class="form-check-input">
+                <label for="service4" class="form-check-label">Custom Wallpaper Design</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="service" value="Trend Analysis and Inspiration" id="service5" class="form-check-input">
+                <label for="service5" class="form-check-label">Trend Analysis and Inspiration</label>
+            </div>
         </div>
-        <div class="step" style="display:none;">
-            <label>Enter your contact information:</label>
-            <button type="button" id="prevBtn">Previous</button>
-            <button type="submit" id="nextBtn">Book Appointment</button>
+        <div class="form-group">
+            <label for="datetimepicker">Select an available time:</label>
+        <input type="text" id="datetimepicker" name="datetime">
         </div>
+        <div class="form-group">
+            <label for="contact-info">Enter your contact information:</label>
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Book Meeting</button>
+    </div>
 </form>
 {% endblock %}
+
 {% block postloadjs %}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="{% static 'js/expertise.js' %}"></script>
