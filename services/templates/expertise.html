@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
 {% block page_header %}
@@ -14,11 +15,42 @@
 {% endblock %}
 
 {% block content %}
-<form method="post">
+<form id="booking-form" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Book Appointment</button>
+    <div class="step">
+        <label>Select the service you need help with:</label><br>
+        <input type="radio" name="service" value="Wallpaper Selection Assistance">
+        <label for="service">Wallpaper Selection Assistance</label><br>
+        <input type="radio" name="service" value="Room Design Consultation">
+        <label for="service">Room Design Consultation</label><br>
+        <input type="radio" name="service" value="Wallpaper Selection Assistance">
+        <label for="service">Installation Techniques Guidance</label><br>
+        <input type="radio" name="service" value="Room Design Consultation">
+        <label for="service">Custom Wallpaper Design</label><br>
+        <input type="radio" name="service" value="Wallpaper Selection Assistance">
+        <label for="service">Trend Analysis and Inspiration</label><br>
+        <button type="button" id="nextBtn">Next</button>
+        <div class="step" style="display:none;">
+            <label>Select an available time:</label>
+            <input type="text" id="datetimepicker" name="datetime">
+            <button type="button" id="prevBtn">Previous</button>
+            <button type="button" id="nextBtn">Next</button>
+        </div>
+        <div class="step" style="display:none;">
+            <label>Enter your contact information:</label>
+            <button type="button" id="prevBtn">Previous</button>
+            <button type="submit" id="nextBtn">Book Appointment</button>
+        </div>
 </form>
 {% endblock %}
 {% block postloadjs %}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{% static 'js/expertise.js' %}"></script>
+<script>
+    flatpickr('#datetimepicker', {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        minDate: "today",
+    });
+</script>
 {% endblock %}
