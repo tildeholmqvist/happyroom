@@ -10,54 +10,21 @@
 {% endblock %}
 
 {% block content %}
-<!-- Extra Navigation Menu --> 
-{% if selected_category != 'color' and selected_category != 'room' and selected_category != 'pattern' %}
-    <nav class="extra-menu"> 
-        <ul>
-            <a href="{% url 'all_categories' %}?category=color">Color</a>
-            <a href="{% url 'all_categories' %}?category=room">Room</a>
-            <a href="{% url 'all_categories' %}?category=pattern">Pattern</a>
-            <a href="{% url 'products' %}">View All</a>
-        </ul>
-    </nav>
-{% endif %}
-
-{% if selected_category == 'color' %}
-    <nav class="extra-menu">
-        <ul>
-            <a href="{% url 'sub_categories' %}?category=green">Green</a>
-            <a href="{% url 'sub_categories' %}?category=pink">Pink</a>
-            <a href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
-            <a href="{% url 'sub_categories' %}?category=blue">Blue</a>
-            <a href="{% url 'sub_categories' %}?category=red">Red</a>
-            <a href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
-            <a href="{% url 'products' %}">View All</a>
-        </ul>
-    </nav>
-{% elif selected_category == 'room' %}
-    <nav class="extra-menu">
-        <ul>
-            <a href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a>
-            <a href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a>
-            <a href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a>
-            <a href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a>
-            <a href="{% url 'sub_categories' %}?category=hallway">Hallway</a>
-            <a href="{% url 'products' %}">View All</a>
-        </ul>
-    </nav>
-{% elif selected_category == 'pattern' %}
-    <nav class="extra-menu">
-        <ul>
-            <a href="{% url 'sub_categories' %}?category=floral">Floral</a>
-            <a href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
-            <a href="{% url 'sub_categories' %}?category=animals">Animals</a>
-            <a href="{% url 'sub_categories' %}?category=retro">Retro</a>
-            <a href="{% url 'products' %}">View All</a>
-        </ul>
-    </nav>
-{% endif %}
-
 <div class="overlay"></div>
+
+{% if selected_category == 'pattern' %}
+<nav class="extra-menu">
+    <a href="{% url 'all_categories' %}?sub_category=pattern">Floral</a>
+</nav>
+{% elif selected_category == 'room' %}
+<nav class="extra-menu">
+    <a href="{% url 'all_categories' %}?sub_category=kidsroom">Kidsroom</a>
+</nav>
+{% elif selected_category == 'colors' %}
+<nav class="extra-menu">
+    <a href="{% url 'all_categories' %}?sub_category=green">Green</a>
+</nav>
+{% endif %}
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">

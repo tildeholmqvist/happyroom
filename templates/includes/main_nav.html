@@ -14,46 +14,10 @@
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=news">New in</a>
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=bestsellers">Bestsellers</a>
                 <a class="dropdown-item" href="{% url 'all_categories' %}?category=lastchance">Last Chance</a>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="roomDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Room
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="{% url 'sub_categories' %}?category=kitchen">Kitchen</a></li>
-                        <li><a class="dropdown-item" href="{% url 'sub_categories' %}?category=kidsroom">Kidsroom</a></li>
-                        <li><a class="dropdown-item" href="{% url 'sub_categories' %}?category=livingroom">Livingroom</a></li>
-                        <li><a class="dropdown-item" href="{% url 'sub_categories' %}?category=bedroom">Bedroom</a></li>
-                        <li><a class="dropdown-item" href="{% url 'sub_categories' %}?category=hallway">Hallway</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="colorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Color
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="colorDropdown">
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=green">Green</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=pink">Pink</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blue">Blue</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=yellow">Yellow</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=red">Red</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=blackwhite">Black/White</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="patternDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pattern
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="patternDropdown">
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=floral">Floral</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=abstract">Abstract</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=animals">Animals</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=retro">Retro</a>
-                        <a class="dropdown-item" href="{% url 'sub_categories' %}?category=geometric">Geometric</a>
-                    </div>
-                </div>
-            </div>
-        </li>
+                <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">Pattern</a>
+                <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">Room</a>
+                <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">By Color</a>
+            </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'inspiration' %}">Inspiration</a>
         </li>

@@ -144,28 +144,23 @@ def delete_product(request, product_id):
 
 
 def all_categories(request):
-    """ A view to show all categories """
+    """ A view to show all categories or subcategories """
     categories = Category.objects.all()
     selected_category = request.GET.get('category')
+    selected_subcategory = request.GET.get('subcategory')
     products = None
 
-    if selected_category:
-        if selected_category == 'news':
-            news_items = News.objects.all()
+    if selected_subcategory:
+        products = Product.objects.filter(sub_category__name=selected_subcategory)
+    elif selected_category:
+        if selected_category == 'color':  
+            subcategories = SubCategory.objects.filter(category__name='Color')
             context = {
                 'categories': categories,
                 'selected_category': selected_category,
-                'news_items': news_items,
+                'subcategories': subcategories,
             }
-            return render(request, 'all_categories.html', context)
-        elif selected_category == 'bestsellers':
-            bestsellers = Product.objects.filter(is_bestseller=True)
-            context = {
-                'categories': categories,
-                'selected_category': selected_category,
-                'bestsellers': bestsellers,
-            }
-            return render(request, 'all_categories.html', context)
+            return render(request, 'sub_categories.html', context)
         else:
             products = Product.objects.filter(category__name=selected_category)
     
@@ -177,8 +172,16 @@ def all_categories(request):
     return render(request, 'all_categories.html', context)
 
 
-def sub_categories(request):
-    selected_category_name = request.GET.get('category')
-    selected_categories = Category.objects.filter(name=selected_category_name)
 
-    return render(request, 'sub_categories.html', {'selected_categories': selected_categories})
+def sub_categories(request, category_id):
+    """ A view to show subcategories of a specific category """
+    category = get_object_or_404(Category, id=category_id)
+    subcategories = category.subcategory_set.all()
+    products = Product.objects.filter(category=category)
+
+    context = {
+        'category': category,
+        'subcategories': subcategories,
+        'products': products,
+    }
+    return render(request, 'sub_categories.html', context)
