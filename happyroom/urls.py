@@ -27,6 +27,7 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
     path('bag/', include('bag.urls')),
+    path('services/', include('services.urls')),
     path('faq/', TemplateView.as_view(template_name='faq.html'), name='faq'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
