@@ -7,8 +7,8 @@ class ServiceForm(forms.ModelForm):
         model = Service
         fields = ['name', 'description', 'price']
 
-        
+
 class ExpertAppointmentForm(forms.ModelForm):
     class Meta:
         model = ExpertAppointment
-        fields = ['name', 'email', 'phone',]
+        fields = ['name', 'email', 'phone', 'date_time']

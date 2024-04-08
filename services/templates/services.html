@@ -19,7 +19,15 @@
             {% for service in services %}
                 <div class="col-md-4">
                     <div class="card mb-4">
+                        {% if product.image %}
+                        <a href="{% url 'book_services' service.id %}">
                         <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.type }}">
+                    </a>
+                        {% else %}
+                                <a href="{% url 'book_services' service.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.type }}">
+                                </a>
+                                {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ service.type }}</h5>
                             <p class="card-text">{{ service.description }}</p>

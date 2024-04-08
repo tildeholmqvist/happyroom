@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Service, ExpertAppointment
 from .forms import ExpertAppointmentForm
 
@@ -18,17 +18,24 @@ def add_service(request):
         form = ServiceForm()
     return render(request, 'add_service.html', {'form': form})
 
-    
+
 def book_services(request, service_id):
-    service = Service.objects.get(pk=service_id)
+    service = get_object_or_404(Service, pk=service_id)
 
     if request.method == 'POST':
         form = ExpertAppointmentForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('services_confirmation')
+            booking = form.save(commit=False)
+            booking.service_id = service_id 
+            booking.save()
+
+            return redirect('service_confirmation')
 
     else:
         form = ExpertAppointmentForm()
 
-    return render(request, 'book_services.html', {'form': form})
+    return render(request, 'book_services.html', {'form': form, 'service': service})
+
+
+def service_confirmation(request):
+    return redirect('service_confirmation')

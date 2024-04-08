@@ -22,15 +22,8 @@ class ExpertAppointment(models.Model):
     phone = models.CharField(max_length=20)
     name = models.CharField(max_length=100)
 
-
     def __str__(self):
         return f"{self.user.username} - {self.service.type} - {self.date_time}"
-
-    def clean(self):
-        from django.core.exceptions import ValidationError
-        from django.utils import timezone
-        if self.date_time <= timezone.now():
-            raise ValidationError('Appointment date must be in the future.')
 
     class Meta:
         ordering = ['date_time']
