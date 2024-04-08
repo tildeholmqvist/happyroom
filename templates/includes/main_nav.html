@@ -7,7 +7,7 @@
             </a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Shop now
+                Latest Deals
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">View All</a>
@@ -20,25 +20,39 @@
                     Shop by Room
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">View All</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">All Rooms</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=bedroom">Bedroom</a>
                     <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=kidsroom">Kidsroom</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=kitchen">Kitchen</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=livingroom">Livingroom</a>
+                    <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=office">Office & Study</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shop by Color
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">All</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">All Colors</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=blue">Blue</a>
                         <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=green">Green</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=red">Red</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=pink">Pink</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=purple">Purple</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=yellow">Yellow</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=neutrals">Neutrals</a>
+                        <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=multicolored">Multicolored</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Shop by Pattern
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">All</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">All Patterns</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=abstract">Abstract</a>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=geometric">Geometric</a>
                             <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=floral">Floral</a>
-                        </li>
+                            <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=vintage">Vintage</a>
+                    </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'inspiration' %}">Inspiration</a>
         </li>

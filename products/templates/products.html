@@ -22,7 +22,13 @@
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
-                <hr class="w-50 mb-1">
+                {% if selected_category == 'bestsellers' %}
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">Bestsellers</span>
+                {% elif selected_category == 'new_items' %}
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">New Items</span>
+                {% elif selected_category == 'last_chance' %}
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">Last Chance</span>
+                {% endif %}
             </div>
         </div>
         <div class="row">

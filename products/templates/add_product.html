@@ -14,53 +14,50 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-md-6">
             <hr>
             <h2 class="logo-font mb-4">Product Management</h2>
             <h5 class="text-muted">Add a Product</h5>
             <hr>
-        </div>
-        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in product_form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="text-right">
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                    <button class="btn btn-black rounded-0" type="submit">Add Product</button>
+                </div>
+            </form>
+        </div> 
+
+        <div class="col-md-6">
             <hr>
             <h2 class="logo-font mb-4">Service Management</h2>
             <h5 class="text-muted">Add a Service</h5>
-                <form method="POST" action="{% url 'add_service' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in service_form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'services' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit" name="service_submit">Add Service</button>
-                    </div>
-                </form>
-                <hr>
-            </div>
-    </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in product_form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Product</button>
-                    </div>
-                </form>
-            </div>            
+            <hr>
+            <form method="POST" action="{% url 'add_service' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in service_form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="text-right">
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'services' %}">Cancel</a>
+                    <button class="btn btn-black rounded-0" type="submit" name="service_submit">Add Service</button>
+                </div>
+            </form>
+            <hr>
         </div>
     </div>
-    
+</div>
 {% endblock %}
 
 {% block postloadjs %}

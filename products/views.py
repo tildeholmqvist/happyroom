@@ -18,6 +18,9 @@ def all_products(request):
     sub_categories = None
     sort = None
     direction = None
+    is_bestsellers = False
+    is_new_items = False
+    is_last_chance = False
 
     if request.GET:
         if 'sort' in request.GET:
@@ -60,7 +63,10 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'current_sub_categories': sub_categories,  
+        'current_sub_categories': sub_categories, 
+        'is_bestsellers': is_bestsellers,
+        'is_new_items': is_new_items,
+        'is_last_chance': is_last_chance, 
     }
 
     return render(request, 'products.html', context)
