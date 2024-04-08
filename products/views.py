@@ -6,6 +6,8 @@ from django.db.models.functions import Lower
 from .models import Product, Category, SubCategory
 from django.contrib import messages
 from .forms import ProductForm
+from services.forms import ServiceForm
+
 
 
 def all_products(request):
@@ -154,23 +156,33 @@ def add_product(request):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
+    product_form = ProductForm(request.POST, request.FILES)
+    service_form = ServiceForm(request.POST, request.FILES)
+
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            messages.success(request, 'Successfully added product!')
-            return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to add product, please ensure the form is valid.')
-    else:
-        form = ProductForm()
-        
+        if 'product_submit' in request.POST:
+            if product_form.is_valid():
+                product = product_form.save()
+                messages.success(request, 'Successfully added product!')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request, 'Failed to add product, please ensure the form is valid.')
+        elif 'service_submit' in request.POST:
+            if service_form.is_valid():
+                service = service_form.save()
+                messages.success(request, 'Successfully added service!')
+                return redirect(reverse('service_detail', args=[service.id]))
+            else:
+                messages.error(request, 'Failed to add service, please ensure the form is valid.')
+
     template = 'add_product.html'
     context = {
-        'form': form,
+        'product_form': product_form,
+        'service_form': service_form,
     }
 
     return render(request, template, context)
+
 
 
 @login_required

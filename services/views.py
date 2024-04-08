@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Service, BookService
-from .forms import BookServiceForm
+from .forms import BookServiceForm, ServiceForm
 
 # Create your views here.
 
@@ -9,14 +10,23 @@ def services(request):
     services = Service.objects.all()
     return render(request, 'services.html', {'services': services})
 
+@login_required
 def add_service(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ServiceForm(request.POST)
         if form.is_valid():
-            form.save()
+            service = form.save()
+            messages.success(request, 'Successfully added service!')
             return redirect('services')
+        else:
+            messages.error(request, 'Failed to add service, please ensure the form is valid.')
     else:
         form = ServiceForm()
+
     return render(request, 'add_service.html', {'form': form})
 
 
