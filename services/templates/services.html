@@ -20,12 +20,12 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         {% if service.image %}
-                        <a href="{% url 'book_service' service.id %}">
-                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.type }}">
-                    </a>
-                        {% else %}
                                 <a href="{% url 'book_service' service.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.type }}">
+                                    <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'book_service' service.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
                                 </a>
                                 {% endif %}
                         <div class="card-body">
@@ -33,9 +33,14 @@
                             <p class="card-text">{{ service.description }}</p>
                             <p class="card-text">Price: {{ service.price }}</p>
                         </div>
+                        {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                    <a class="text-danger delete-product" data-service_id="{{ service.id }}" href="{% url 'delete_service' service.id %}">Delete</a>
+                </small>
+            {% endif %}
                     </div>
                 </div>
-
             {% endfor %}
         </div>
     </div>
