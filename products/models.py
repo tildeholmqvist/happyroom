@@ -34,7 +34,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     category = models.ManyToManyField(Category, related_name='products', null=True, blank=True)
-    sub_category = models.ManyToManyField(SubCategory, related_name='products', null=True, blank=True)
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products', null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)

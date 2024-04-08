@@ -33,14 +33,14 @@ def all_products(request):
             products = products.order_by(sortkey)
             
         if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
+            categories = request.GET.getlist('category')  
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        if 'subcategory' in request.GET:
-            sub_categories = request.GET['subcategory'].split(',')
-            products = products.filter(sub_categories__name__in=sub_categories)
-            sub_categories = Category.objects.filter(name__in=sub_categories)
+        if 'sub_category' in request.GET:
+            sub_categories = request.GET.getlist('sub_category')  
+            products = products.filter(sub_category__name__in=sub_categories)
+            sub_categories = SubCategory.objects.filter(name__in=sub_categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -58,6 +58,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_sub_categories': sub_categories,  
     }
 
     return render(request, 'products.html', context)
@@ -148,12 +149,12 @@ def all_categories(request):
     """ A view to show all categories or subcategories """
     categories = Category.objects.all()
     selected_category = request.GET.get('category')
-    selected_subcategory = request.GET.get('subcategory')
+    selected_subcategory = request.GET.get('sub_category')
     products = None
     sub_category_products = None
 
     if selected_subcategory:
-        products = Product.objects.filter(sub_categories__name=selected_subcategory)
+        products = Product.objects.filter(sub_category__name=selected_subcategory)
     elif selected_category:
         if selected_category == 'color':  
             subcategories = SubCategory.objects.filter(category__name='Color')
@@ -178,7 +179,6 @@ def all_categories(request):
 
 
 
-
 def sub_categories(request, category_id):
     """ A view to show subcategories of a specific category """
     category = get_object_or_404(Category, id=category_id)
@@ -190,6 +190,5 @@ def sub_categories(request, category_id):
         'category': category,
         'subcategories': subcategories,
         'products': products,
-        'sub_category_products': sub_category_products,
     }
     return render(request, 'sub_categories.html', context)
