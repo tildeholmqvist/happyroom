@@ -1,5 +1,5 @@
 from django import forms
-from .models import Service, ExpertAppointment
+from .models import Service, BookService
 
 
 class ServiceForm(forms.ModelForm):
@@ -8,7 +8,7 @@ class ServiceForm(forms.ModelForm):
         fields = ['name', 'description', 'price']
 
 
-class ExpertAppointmentForm(forms.ModelForm):
+class BookServiceForm(forms.ModelForm):
     class Meta:
-        model = ExpertAppointment
+        model = BookService
         fields = ['name', 'email', 'phone', 'date_time']

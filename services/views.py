@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Service, ExpertAppointment
-from .forms import ExpertAppointmentForm
+from django.contrib import messages
+from .models import Service, BookService
+from .forms import BookServiceForm
 
 # Create your views here.
 
@@ -19,23 +20,29 @@ def add_service(request):
     return render(request, 'add_service.html', {'form': form})
 
 
-def book_services(request, service_id):
+def book_service(request, service_id): 
     service = get_object_or_404(Service, pk=service_id)
 
     if request.method == 'POST':
-        form = ExpertAppointmentForm(request.POST)
+        form = BookServiceForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.service_id = service_id 
+            booking.service = service
             booking.save()
 
-            return redirect('service_confirmation')
+            return redirect('service_confirmation', booking_id=booking.id)
 
     else:
-        form = ExpertAppointmentForm()
+        form = BookServiceForm()
 
     return render(request, 'book_services.html', {'form': form, 'service': service})
 
 
-def service_confirmation(request):
-    return redirect('service_confirmation')
+def service_confirmation(request, booking_id):
+    booking = get_object_or_404(BookService, id=booking_id)
+    messages.success(request, f'Your booking of {booking.service.name} was made successfully! \
+        Your booking ID is {booking_id}.')
+
+    template = 'service_confirmation.html'
+    context = {'booking': booking}
+    return render(request, template, context)

@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
+from services.models import BookService
 
 from checkout.models import Order
 
@@ -22,11 +23,13 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all()
+    bookings = BookService.objects.filter(user=request.user)
 
     template = 'profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'bookings': bookings,
         'on_profile_page': True
     }
 
@@ -35,7 +38,6 @@ def profile(request):
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
-
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'

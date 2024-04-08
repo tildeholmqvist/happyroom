@@ -13,7 +13,7 @@ class Service(models.Model):
         return self.type
 
 
-class ExpertAppointment(models.Model):
+class BookService(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=User.objects.first)
     date_time = models.DateTimeField()
