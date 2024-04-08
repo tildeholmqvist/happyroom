@@ -1,0 +1,36 @@
+<!--services-html-->
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for service in services %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.type }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ service.type }}</h5>
+                            <p class="card-text">{{ service.description }}</p>
+                            <p class="card-text">Price: {{ service.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div id="content"></div> 
+<form id="booking-form" method="post" class="mt-4">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="datetimepicker">Select an available time:</label>
+        <input type="text" id="datetimepicker" name="datetime">
+        </div>
+        <div class="form-group">
+            <label for="contact-info">Enter your contact information:</label>
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Book Meeting</button>
+    </div>
+</form>
+{% endblock %}
+
+{% block postloadjs %}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="{% static 'js/expertise.js' %}"></script>
+<script>
+    flatpickr('#datetimepicker', {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        minDate: "today",
+    });
+</script>
+{% endblock %}
