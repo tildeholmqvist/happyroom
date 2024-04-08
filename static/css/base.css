@@ -1,5 +1,19 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Fugaz+One&display=swap');
+
 html {
     height: 100%;
+}
+
+.logo-font{
+    font-family: "Fugaz One", sans-serif;
+    font-size: 300%;
+    color: #8CBE92;
+
+}
+
+.account-links-index {
+    color: #8CBE92;
 }
 
 

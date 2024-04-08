@@ -1,10 +1,3 @@
-
-If you're seeing two date pickers in your form, it's likely because you're including both an <input> field with the ID datetimepicker and using the flatpickr JavaScript library to create another date picker for that same field.
-
-To resolve this issue, you should remove the <input> field and let flatpickr create the date picker dynamically for the date_time field. Here's how you can modify your template:
-
-html
-Copy code
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -23,19 +16,36 @@ Copy code
 {% endblock %}
 
 {% block content %}
-<div id="content"></div> 
-<form id="booking-form" method="post" class="mt-4">
-    {% csrf_token %}
-    <input type="hidden" name="service_id" value="{{ service.id }}">
-    <div class="form-group">
-        <label for="date_time">Select an available time:</label>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% if service.image %}
+            <img class="w-75" src="{{ service.image.url }}" alt="{{ service.name }}">
+
+            {% else %}
+            <img class="w-75" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h2>{{ service.type }}</h2>
+            <p>{{ service.description }}</p>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="contact-info">Enter your contact information:</label>
-        {{ form.as_p }}
+    <div class="row">
+        <div class="col-md-12">
+            <div id="content"></div> 
+            <form id="booking-form" method="post" class="mt-4">
+                {% csrf_token %}
+                <input type="hidden" name="service_id" value="{{ service.id }}">
+                <div class="form-group">
+                    <label for="contact-info">Enter your contact information:</label>
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Book Meeting</button>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Book Meeting</button>
-</form>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
