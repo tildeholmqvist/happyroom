@@ -27,10 +27,18 @@
 {% endif %}
 <div class="container-fluid">
     <div class="row">
+        {% if not selected_subcategory %}
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Products</h2>
+            <h2 class="logo-font">{{ selected_category_friendly_name }}</h2>
             <hr class="w-50 mb-1">
         </div>
+        {% endif %}
+        {% if selected_subcategory %}
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">{{ selected_subcategory_friendly_name }}</h2>
+            <hr class="w-50 mb-1">
+        </div>
+        {% endif %}
     </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
@@ -56,6 +64,13 @@
                     </p>
                 </div>
             </div>
+            {% if subcategories %}
+            <ul>
+                {% for subcategory in subcategories %}
+                <li><a href="{% url 'sub_categories_selected' subcategory.id %}">{{ subcategory.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <div class="row">
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">

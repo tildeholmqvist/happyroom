@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower 
-from .models import Product, Category, News, SubCategory
+from .models import Product, Category, SubCategory
 from django.contrib import messages
 from .forms import ProductForm
 
@@ -77,6 +77,76 @@ def product_detail(request, product_id):
     return render(request, 'product_detail.html', context)
 
 
+def bestsellers(request):
+    bestsellers = Product.objects.filter(is_bestseller=True)
+    context = {
+        'products': bestsellers,
+        'selected_category': 'bestsellers',
+    }
+    return render(request, 'all_categories.html', context)
+
+
+def new_items(request):
+    new_items = Product.objects.filter(is_new_items=True)
+    context = {
+        'products': new_items,
+        'selected_category': 'new_items',
+    }
+    return render(request, 'all_categories.html', context)
+
+
+def last_chance(request):
+    last_chance = Product.objects.filter(is_last_chance=True)
+    context = {
+        'products': last_chance,
+        'selected_category': 'last_chance',
+    }
+    return render(request, 'all_categories.html', context)
+
+
+def all_categories(request):
+    """ A view to show all categories or subcategories """
+    categories = Category.objects.all()
+    selected_category = request.GET.get('category')
+    selected_subcategory = request.GET.get('sub_category')
+    products = None
+    sub_category_products = None
+
+    if selected_subcategory:
+        products = Product.objects.filter(sub_category__name=selected_subcategory)
+    elif selected_category:
+        products = Product.objects.filter(category__name=selected_category)
+
+    selected_category_friendly_name = Category.objects.get(name=selected_category).friendly_name if selected_category else None
+    selected_subcategory_friendly_name = SubCategory.objects.get(name=selected_subcategory).friendly_name if selected_subcategory else None
+
+    context = {
+        'categories': categories,
+        'selected_category': selected_category,
+        'selected_category_friendly_name': selected_category_friendly_name, 
+        'products': products,
+        'selected_subcategory': selected_subcategory,
+        'selected_subcategory_friendly_name': selected_subcategory_friendly_name, 
+    }
+    return render(request, 'all_categories.html', context)
+
+
+
+def sub_categories(request, category_id):
+    """ A view to show subcategories of a specific category """
+    category = get_object_or_404(Category, id=category_id)
+    subcategories = category.subcategory_set.all()
+
+    products = Product.objects.filter(sub_categories__category=category)
+
+    context = {
+        'category': category,
+        'subcategories': subcategories,
+        'products': products,
+    }
+    return render(request, 'sub_categories.html', context)
+
+
 @login_required
 def add_product(request):
     """ Add a product to the store """
@@ -143,52 +213,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Successfully deleted product!')
     return redirect(reverse('products'))
-
-
-def all_categories(request):
-    """ A view to show all categories or subcategories """
-    categories = Category.objects.all()
-    selected_category = request.GET.get('category')
-    selected_subcategory = request.GET.get('sub_category')
-    products = None
-    sub_category_products = None
-
-    if selected_subcategory:
-        products = Product.objects.filter(sub_category__name=selected_subcategory)
-    elif selected_category:
-        if selected_category == 'color':  
-            subcategories = SubCategory.objects.filter(category__name='Color')
-            context = {
-                'categories': categories,
-                'selected_category': selected_category,
-                'subcategories': subcategories,
-                'selected_subcategory': selected_subcategory,
-            }
-            return render(request, 'sub_categories.html', context)
-        else:
-            products = Product.objects.filter(category__name=selected_category)
-    
-    context = {
-        'categories': categories,
-        'selected_category': selected_category,
-        'products': products,
-        'selected_subcategory': selected_subcategory,
-        'sub_category_products': sub_category_products,
-    }
-    return render(request, 'all_categories.html', context)
-
-
-
-def sub_categories(request, category_id):
-    """ A view to show subcategories of a specific category """
-    category = get_object_or_404(Category, id=category_id)
-    subcategories = category.subcategory_set.all()
-
-    products = Product.objects.filter(sub_categories__category=category)
-
-    context = {
-        'category': category,
-        'subcategories': subcategories,
-        'products': products,
-    }
-    return render(request, 'sub_categories.html', context)
