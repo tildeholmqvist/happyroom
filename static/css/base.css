@@ -6,6 +6,7 @@ html {
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: #a1c1a6;
 }
 
 /* Header & Logo */
@@ -13,12 +14,12 @@ body {
 .logo-happyroom{
     font-family: "Fugaz One", sans-serif;
     font-size: 300%;
-    color: #8CBE92;
+   
 
 }
 
-.happy {
-    color: #67A78F;
+.logo-font > .happy {
+    color: #8CBE92;
 }
 
 .account-links-index {
@@ -35,8 +36,13 @@ body {
 }
 
 .logo-font {
-    color: #67A78F;
+    color: #58885F;
 }
+
+
+/* Index */
+
+
 /* Extra navigation menu for subcategories */
 
 .extra-menu {
@@ -65,6 +71,186 @@ body {
     display: block;
     margin-top: 5px;
 }
+
+/* Product page */
+
+.product-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.btt-link {
+    padding: 10px;
+    color: #fff;
+    font-size: 150%;
+    padding-top: 40px;
+    text-decoration: none;
+}
+
+.btt-link:hover {
+    color:#58885F;
+
+}
+
+/* FAQ */
+
+.faq-page {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.company-introduction {
+    margin-bottom: 70px;
+}
+
+.company-introduction > h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #58885F;
+}
+
+.faq-heading {
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #58885F;
+}
+
+.faq-item {
+    margin-bottom: 20px;   
+}
+
+.faq-item > h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #7cab83;
+}
+
+.contact-info {
+    margin-top: 40px;
+}
+.contact-info > h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #58885F;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.social-media-links > a{
+    font-size: 250%;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.social-media-links > a:hover {
+    color:#58885F;
+}
+
+/* Services */
+
+.service-card {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    background-color: #fff;
+
+}
+
+.service-card-title > a {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #58885F;
+    text-decoration: none;
+}
+
+.service-card-title > a:hover{
+    color: #7cab83;
+}
+
+
+.book-appointment {
+    font-weight: 500;
+    font-style: italic;
+    color: #58885F;
+    text-decoration: none;
+}
+
+.book-appointment:hover {
+    color: #7cab83;
+}
+
+.service-img {
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+}
+
+.service-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.service-img-book {
+    width: 600px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Profile */
+
+.profile-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.profile-titles {
+    color: #58885F;
+    text-transform: uppercase;
+}
+
+/* Bag */
+
+.bag-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Checkout */
+
+.checkout-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
 /* ------------------------------- bootstrap toasts */ /* from walkthrough*/
 
 .message-container {

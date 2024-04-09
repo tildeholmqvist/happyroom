@@ -15,10 +15,9 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
+    <div class="profile-container">
         <div class="row">
             <div class="col">
-                <hr>
                 <h2 class="logo-font mb-4">My Profile</h2>
                 <hr>
             </div>
@@ -35,7 +34,7 @@
             <div class="col-12 col-lg-6">
                 <div class="row">
                     <div class="col">
-                        <p class="text-muted">Order History</p>
+                        <p class="profile-titles">Order History</p>
                         <div class="order-history table-responsive">
                             <table class="table table-sm table-borderless">
                                 <thead>
@@ -76,7 +75,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="text-muted">Booked Services</p>
+                        <p class="profile-titles">Booked Services</p>
                         <div class="order-history table-responsive">
                             <table class="table table-sm table-borderless">
                                 <thead>
@@ -95,7 +94,7 @@
                                                     {{ booking.id }}
                                                 </a>
                                             </td>
-                                            <td>{{ booking.appointment_date }}</td>
+                                            <td>{{ booking.date_time }}</td>
                                             <td>{{ booking.service.name }}</td>
                                             <td>${{ booking.service.price }}</td>
                                         </tr>
