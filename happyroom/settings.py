@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CSRF_TRUSTED_ORIGINS = ['https://8000-tildeholmqv-pp5happyroo-f7tyuzz2jbt.ws-eu110.gitpod.io']
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&e@5i5wkxi@-&utj&8y^3a66&)1i!9y7-yglic260j&75*f+ys'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['happy-room-e68715746875.herokuapp.com', 'localhost']
 
