@@ -11,9 +11,9 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">View All</a>
-                <a class="dropdown-item" href="{% url 'new_items' %}">New in</a>
-                <a class="dropdown-item" href="{% url 'bestsellers' %}">Bestsellers</a>
-                <a class="dropdown-item" href="{% url 'last_chance' %}">Last Chance</a>
+                <a class="dropdown-item" href="{% url 'filter_categories' 'new_items' %}">New in</a>
+                <a class="dropdown-item" href="{% url 'filter_categories' 'bestsellers' %}">Bestsellers</a>
+                <a class="dropdown-item" href="{% url 'filter_categories' 'last_chance' %}">Last Chance</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

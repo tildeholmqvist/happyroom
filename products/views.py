@@ -85,31 +85,47 @@ def product_detail(request, product_id):
     return render(request, 'product_detail.html', context)
 
 
-def bestsellers(request):
-    bestsellers = Product.objects.filter(is_bestseller=True)
+# def bestsellers(request):
+#     bestsellers = Product.objects.filter(is_bestseller=True)
+#     context = {
+#         'products': bestsellers,
+#         'selected_category': 'bestsellers',
+#     }
+#     return render(request, 'all_categories.html', context)
+
+
+# def new_items(request):
+#     new_items = Product.objects.filter(is_new_items=True)
+#     context = {
+#         'products': new_items,
+#         'selected_category': 'new_items',
+#     }
+#     return render(request, 'all_categories.html', context)
+
+
+# def last_chance(request):
+#     last_chance = Product.objects.filter(is_last_chance=True)
+#     context = {
+#         'products': last_chance,
+#         'selected_category': 'last_chance',
+#     }
+#     return render(request, 'all_categories.html', context)
+
+def filtered_products(request, category):
+    product_list = Product.objects.all()
+    print(f'Filtering by {category}')
+    if category == 'last_chance':
+        product_list = product_list.filter(is_last_chance=True)
+    if category == 'new_items':
+        product_list = product_list.filter(is_new_items=True)
+    if category == 'bestsellers':
+        product_list = product_list.filter(is_bestseller=True)
     context = {
-        'products': bestsellers,
-        'selected_category': 'bestsellers',
+        'products': product_list,
+        'selected_category': category,
     }
     return render(request, 'all_categories.html', context)
 
-
-def new_items(request):
-    new_items = Product.objects.filter(is_new_items=True)
-    context = {
-        'products': new_items,
-        'selected_category': 'new_items',
-    }
-    return render(request, 'all_categories.html', context)
-
-
-def last_chance(request):
-    last_chance = Product.objects.filter(is_last_chance=True)
-    context = {
-        'products': last_chance,
-        'selected_category': 'last_chance',
-    }
-    return render(request, 'all_categories.html', context)
 
 
 def all_categories(request):
