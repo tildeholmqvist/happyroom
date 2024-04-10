@@ -6,8 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
             let productId = e.target.getAttribute("data-product_id");
-            deleteConfirm.href = `/products/delete/${productId}`;
-            deleteModal.show();
+            let serviceId = e.target.getAttribute("data-service_id");
+            if (productId) {
+              deleteConfirm.href = `/products/delete/${productId}`;
+          } else if (serviceId) {
+              deleteConfirm.href = `/services/delete/${serviceId}`;
+          }
+
+          deleteModal.show();
         });
       }
-    });
+  });

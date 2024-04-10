@@ -46,7 +46,8 @@
                             {% if request.user.is_superuser %}
                                 <small class="ml-3">
                                     <a href="{% url 'edit_service' service.id %}">Edit</a> | 
-                                    <a class="text-danger delete-btn" data-service-id="{{ service.id }}" href="{% url 'delete_service' service.id %}">Delete</a>
+                                    <a class="text-danger btn btn-delete" data-service_id=
+                            "{{service.id }}" href="#">Delete</a>
                                 </small>
                             {% endif %}
                         </div>
