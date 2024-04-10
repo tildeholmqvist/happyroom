@@ -16,18 +16,9 @@
     <div class="product-container">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
-                {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %}
-                {% if selected_category == 'bestsellers' %}
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">Bestsellers</span>
-                {% elif selected_category == 'new_items' %}
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">New Items</span>
-                {% elif selected_category == 'last_chance' %}
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">Last Chance</span>
+                <h2 class="logo-font"> All Products</h2>
+                {% if selected_category_friendly_name %}
+                    <h1>{{ selected_category_friendly_name }}</h1>
                 {% endif %}
             </div>
         </div>
