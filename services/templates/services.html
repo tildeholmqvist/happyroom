@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="service-container">
         <div class="row">
             <div class="col-12 pl-md-4">
             {% for service in services %}
@@ -41,6 +41,8 @@
                                     <p>
                                         {{ service.description }}
                                     </p>
+
+                                    <p> ${{ service.price }} </p>
                                     <a class ="book-appointment" href="{% url 'book_service' service.id %}">Book Appointment</a>
                                 </div>
                             {% if request.user.is_superuser %}
@@ -57,6 +59,7 @@
         </div>
     </div>
 </div>
+
             {% endfor %}
         </div>
     </div>
@@ -65,6 +68,8 @@
             <i class="fas fa-arrow-up mx-auto my-auto"></i>
         </a>	
     </div>
+ </div>
+
 {% endblock %}
 
 {% block postloadjs %}

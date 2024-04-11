@@ -10,8 +10,9 @@ body {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: #ffffff;
+
 }
 
 
@@ -177,13 +178,38 @@ footer {
     color: #7cab83;
 }
 
+.privacy-policy {
+    text-decoration: none;
+    color:#000;
+}
+
+.privacy-policy:hover {
+    color: #58885F;
+}
+
 .contact-info {
     margin-top: 40px;
+    justify-content: center;
+    display:flex;
+    gap: 50px;
+    color: #58885F;
 }
-.contact-info > h2 {
+
+.contact-info a {
+    text-decoration: none;
+    color: #58885F;
+}
+
+.contact-info a:hover {
+    color: #80b989;
+}
+
+.contact-info-container > h3 {
     font-weight: 500;
     text-transform: uppercase;
     color: #58885F;
+    margin-top: 70px;
+    text-align: center;
 }
 
 

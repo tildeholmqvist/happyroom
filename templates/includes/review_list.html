@@ -1,0 +1,7 @@
+<!-- review_list.html -->
+{% load static %}
+<h4 class="logo-font">CUSTOMER REVIEWS</h4>
+{% for review in reviews %}
+    <p>{{ review.name }}</p>
+    <p>{{ review.comment }}</p>
+{% endfor %}
