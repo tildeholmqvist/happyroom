@@ -9,6 +9,23 @@ body {
     background-color: #e2f0e4;
 }
 
+footer {
+    margin-top: 50px;
+    background-color: #ffffff;
+}
+
+
+
+.social-media-links > a{
+    font-size: 100%;
+    color:#58885F;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.social-media-links > a:hover {
+    color:#8cb693;
+}
 /* Header & Logo */
 
 .logo-happyroom{
@@ -39,10 +56,34 @@ body {
     color: #58885F;
 }
 
+.logo-font:hover {
+    color: #8cbb93;
+}
+
 
 /* Index */
 
+.about-index-page {
+    padding: 60px;
+    background-color: #e2f0e4;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
 
+.about-photo {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.index-about-card {
+    background-color: rgb(255, 255, 255);
+}
+.index-page-btn {
+    font-style: italic;
+
+}
 /* Extra navigation menu for subcategories */
 
 .extra-menu {
@@ -145,22 +186,6 @@ body {
     color: #58885F;
 }
 
-.social-media-links {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.social-media-links > a{
-    font-size: 250%;
-    color: #fff;
-    text-decoration: none;
-    margin: 10px;
-}
-
-.social-media-links > a:hover {
-    color:#58885F;
-}
 
 /* Services */
 

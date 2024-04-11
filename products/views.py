@@ -86,7 +86,6 @@ def product_detail(request, product_id):
 
 
 def filtered_products(request, category):
-    print("Selected category:", category)
     product_list = Product.objects.all()
     if category == 'last_chance':
         product_list = product_list.filter(is_last_chance=True)

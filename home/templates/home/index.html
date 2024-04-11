@@ -42,28 +42,41 @@
             </div>
         </div>
 </div>
-        <div class="product-container">
+<div class="container">
+    <div class="row about-index-page">
+        <div class="col-md-4 col-sm-12 order-md-1 d-flex justify-content-center align-items-center">
+            <img src="{{ MEDIA_URL }}bedroom.png" class="img-fluid about-photo" alt="...">
+        </div>
+        <div class="col-md-8 col-sm-12 order-md-2 d-flex">
+            <div class="card"> 
+                <div class="card-body index-about-card">
+                    <h5>About Our Wallpapers</h5>
+                    <p>At HappyRoom, we believe in the transformative power of wallpapers.
+                        Our curated collection is designed to elevate any space with style, personality, and inspiration. 
+                        From timeless classics to contemporary favorites, find the perfect wallpaper to express your individuality and
+                        enhance your environment with us.</p>
+                    <a href="{% url 'faq' %}" class="btn index-page-btn">Find out more.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="text-center mt-5">
-        <h2>About Our Wallpaper Collection</h2>
-        <p>Introducing our latest Wallpaper Collection.</p>
+        <h2>Transform Your Space, Infuse Life with Patterns & Colors!</h2>
     </div>
     <div class="row mt-5">
         <div class="col-md-6">
             <img src="{{ MEDIA_URL }}geometric.png" class="img-fluid" alt="Image 1">
+            <div class="carousel-caption d-none d-md-block">
+                    <a href="{% url 'all_categories' %}?category=pattern" class="shop-now-button display-4 text-white">Shop Pattern</a>
+            </div>
         </div>
         <div class="col-md-6">
-            <img src="{{ MEDIA_URL }}green.png" class="img-fluid" alt="Image 2">
+            <img src="{{ MEDIA_URL }}abstract.png" class="img-fluid" alt="Image 2">
+            <div class="carousel-caption d-none d-md-block">
+                <a href="{% url 'all_categories' %}?category=colors" class="shop-now-button display-4 text-white">Shop Color</a>
         </div>
-    </div>
-
-    <div id="bestseller-heading" class="text-center mt-5">
-        <h2>Bestseller Products</h2>
-    </div>
-    <div class="row">
-    </div>
-
-    <div id="reviews-section" class="text-center mt-5">
-        <h2>Customer Reviews</h2>
+        </div>
     </div>
 </div>
 </div>
