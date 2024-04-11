@@ -20,12 +20,13 @@
             </ul>
         </div>
         <div class="col-12 col-md-4 p-4 text-center">
-            <h4 class="logo-font">CUSTOMER REVIEWS</h4>
             {% for review in reviews %}
-                <p>{{ review.name }}</p>
-                <p>{{ review.comment }}</p>
-            {% endfor %}
-            <a href="{% url 'review' %}" class="nav-link logo-font text-lg-right ">Leave a review</a>
+                <h4 class="logo-font-reviews">CUSTOMER REVIEWS</h4>
+                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
+                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
+                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
+          {% endfor %}
+            <a href="{% url 'review' %}" class="nav-link logo-font">Leave a review</a>
         </div>
         <div class="col-12 col-md-4 p-4 order-first">
             <div>
