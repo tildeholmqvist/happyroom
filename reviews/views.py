@@ -11,3 +11,8 @@ def customer_review(request):
     else:
         form = ReviewForm()
     return render(request, 'review.html', {'form': form})
+
+
+def review_list(request):
+    reviews = Review.objects.all()
+    return render(request, 'footer.html', {'reviews': reviews})

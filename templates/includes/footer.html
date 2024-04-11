@@ -1,3 +1,4 @@
+<!--footer.html-->
 {% load static %}
 <footer class="container-fluid">
     <div class="row py-lg-3 px-lg-3">
@@ -20,7 +21,7 @@
         </div>
         <div class="col-12 col-md-4 p-4 text-center">
            <h4 class="logo-font">CUSTOMER REVIEWS</h4>
-           {% for review in reviews %}
+           {% for review in review_list %}
            <div>
             <p>{{ review.comment }}</p>
             <p>{{ review.name }}</p>
