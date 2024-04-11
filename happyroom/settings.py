@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'storages',
     'crispy_forms',
     'crispy_bootstrap4',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
