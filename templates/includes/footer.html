@@ -20,6 +20,13 @@
         </div>
         <div class="col-12 col-md-4 p-4 text-center">
            <h4 class="logo-font">CUSTOMER REVIEWS</h4>
+           {% for review in reviews %}
+           <div>
+            <p>{{ review.comment }}</p>
+            <p>{{ review.name }}</p>
+        </div>
+           {% endfor %}
+           <a href="{% url 'review' %}" class="nav-link logo-font text-lg-right ">Leave a review</a>
         </div>
         <div class="col-12 col-md-4 p-4 order-first">
             <div>
