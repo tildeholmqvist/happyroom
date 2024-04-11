@@ -20,9 +20,11 @@
             </ul>
         </div>
         <div class="col-12 col-md-4 p-4 text-center">
-            <!-- Include the review list template -->
-            <a href="{% url 'review_list' %}" class="nav-link logo-font text-lg-right ">Leave arvrr</a>
-            {% include 'includes/review_list.html' %}
+            <h4 class="logo-font">CUSTOMER REVIEWS</h4>
+            {% for review in reviews %}
+                <p>{{ review.name }}</p>
+                <p>{{ review.comment }}</p>
+            {% endfor %}
             <a href="{% url 'review' %}" class="nav-link logo-font text-lg-right ">Leave a review</a>
         </div>
         <div class="col-12 col-md-4 p-4 order-first">

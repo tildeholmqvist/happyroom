@@ -30,6 +30,4 @@ def customer_review(request):
 
 def review_list(request):
     reviews = Review.objects.all()
-    for review in reviews:
-        print(review.name, review.comment)
-    return render(request, 'review_list.html', {'reviews': reviews})
+    return {'reviews': reviews}
