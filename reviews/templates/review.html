@@ -18,9 +18,9 @@
             <form method="post" class="mb-4">
                 {% csrf_token %}
                 <div>
-                <p>Name:</p>
+                
                 <p>{{ form.name }}</p>
-                <p>Review:</p>
+
                 <p>{{ form.comment }}</p>
             </div>
                 <button type="submit" class="btn btn-black">Submit</button>

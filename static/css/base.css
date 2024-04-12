@@ -21,14 +21,14 @@ footer {
 }
 
 .logo-font-reviews {
-    color: #e88771;
+    color: #B08E7F;
+    font-family: "Playfair Display", serif;
     margin-bottom: 20px;
 }
 .review-comment {
     font-size: 80%;
     font-style: italic;
 }
-
 
 .social-media-links > a{
     font-size: 300%;
@@ -63,6 +63,11 @@ footer {
 }
 
 .btn-black {
+    color: rgb(255, 255, 255);
+    background-color:   #E7B2A3;
+}
+
+.btn-black:hover {
     color: rgb(255, 255, 255);
     background-color: #B08E7F;
 }
@@ -153,6 +158,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .btt-link {
@@ -342,6 +348,17 @@ footer {
     margin-top: 30px;
 }
 
+/* account pages */
+
+.account-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 30px;
+
+}
+
 /* ------------------------------- bootstrap toasts */ /* from walkthrough*/
 
 .message-container {
@@ -471,7 +488,7 @@ footer {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #000; /* text-info */
 }
 
 /* Product Form */
