@@ -1,12 +1,12 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 html {
     height: 100%;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: #dbaea4;
+    background-color: #BCA89F;
 }
 
 footer {
@@ -32,56 +32,60 @@ footer {
 
 .social-media-links > a{
     font-size: 300%;
-    color: #e88771;
+    color:  #E7B2A3;
     text-decoration: none;
     margin: 10px;
 }
 
 .social-media-links > a:hover {
-    color: #E76B4F;
+    color: #B08E7F;
 }
 
 /* Header & Logo */
 
-
-
 .logo-happyroom{
-    font-family: "Fugaz One", sans-serif;
+    font-family: "Playfair Display", serif;
     font-size: 300%;
-   
 
 }
 
 .logo-font > .happy {
-    color: #E76B4F;
+    color:  #E7B2A3;
+    
 }
 
 .account-links-index {
-    color: #e88771;
+    color: #B08E7F;
 }
 
 .account-links-index:hover {
-    color: #E76B4F;
+    color:  #E7B2A3;
 }
 
 .btn-black {
     color: rgb(255, 255, 255);
-    background-color: #e88771;;
+    background-color: #B08E7F;
 }
 
 .logo-font {
-    color: #e88771;
+    color: #B08E7F;
+    font-family: "Playfair Display", serif;
 }
 
 .logo-font:hover {
-    color: #E76B4F;
+    color:  #E7B2A3;
 }
 
+#main-nav {
+    font-family: "Playfair Display", serif;
+}
 
 /* Index */
 
 .index-container {
     background-color: #fff;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .shop-now-button {
@@ -101,18 +105,15 @@ footer {
     background-color: rgb(255, 255, 255);
 }
 
-.index-page-btn {
-    font-style: italic;
-    text-align: right;
-    color: #e88771;
 
-}
 .logo-font-index {
     color: #fff;
-    font-family: "Fugaz One", sans-serif;
+    font-family: "Playfair Display", serif;
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
+
 /* Extra navigation menu for subcategories */
 
 .extra-menu {
@@ -163,7 +164,7 @@ footer {
 }
 
 .btt-link:hover {
-    color: #E76B4F;
+    color:  #ffffff;
 
 }
 
@@ -188,14 +189,16 @@ footer {
 .company-introduction > h2 {
     font-weight: 500;
     text-transform: uppercase;
-    color: #e88771;
+    color: #B08E7F;
+    font-family: "Playfair Display", serif;
 }
 
 .faq-heading {
     margin-bottom: 20px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #e88771;
+    color: #B08E7F;
+    font-family: "Playfair Display", serif;
 }
 
 .faq-item {
@@ -205,7 +208,8 @@ footer {
 .faq-item > h4 {
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #e88771;
+    color:  #E7B2A3;
+    font-family: "Playfair Display", serif;
 }
 
 .privacy-policy {
@@ -214,7 +218,7 @@ footer {
 }
 
 .privacy-policy:hover {
-    color: #E76B4F;
+    color:  #E7B2A3;
 }
 
 .contact-info {
@@ -222,26 +226,30 @@ footer {
     justify-content: center;
     display:flex;
     gap: 50px;
-    color: #e88771;
 }
 
 .contact-info a {
     text-decoration: none;
-    color: #e88771;
+    color: #000;
 }
 
 .contact-info a:hover {
-    color: #E76B4F;
+    text-decoration: none;
+    color: #000;
 }
 
 .contact-info-container > h3 {
     font-weight: 500;
     text-transform: uppercase;
-    color: #e88771;
+    color: #B08E7F;
     margin-top: 70px;
     text-align: center;
+    font-family: "Playfair Display", serif;
 }
 
+.contact-info i {
+    color:  #E7B2A3;
+}
 
 /* Services */
 
@@ -256,24 +264,26 @@ footer {
 .service-card-title > a {
     font-weight: 500;
     text-transform: uppercase;
-    color: #e88771;
+    color: #B08E7F;
     text-decoration: none;
+    font-family: "Playfair Display", serif;
 }
 
 .service-card-title > a:hover{
-    color: #E76B4F;
+    color:  #E7B2A3;
 }
 
 
 .book-appointment {
     font-weight: 500;
     font-style: italic;
-    color: #e88771;
+    color:  #E7B2A3;
     text-decoration: none;
+    font-family: "Playfair Display", serif;
 }
 
 .book-appointment:hover {
-    color: #E76B4F;
+    color: #B08E7F;
 }
 
 .service-img {
@@ -465,6 +475,10 @@ footer {
 }
 
 /* Product Form */
+
+#sort-selector {
+    border-color: #000 !important;
+}
 
 .btn-file {
     position: relative;

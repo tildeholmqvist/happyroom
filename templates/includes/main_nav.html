@@ -6,20 +6,20 @@
                 Home
             </a>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="latest-deals" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Latest Deals
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu border-0" aria-labelledby="latest-deals">
                 <a class="dropdown-item" href="{% url 'products' %}">View All</a>
                 <a class="dropdown-item" href="{% url 'filter_categories' 'new_items' %}">New in</a>
                 <a class="dropdown-item" href="{% url 'filter_categories' 'bestsellers' %}">Bestsellers</a>
                 <a class="dropdown-item" href="{% url 'filter_categories' 'last_chance' %}">Last Chance</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="shop-by-room" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Shop by Room
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu border-0" aria-labelledby="shop-by-room">
                     <a class="dropdown-item" href="{% url 'all_categories' %}?category=room">All Rooms</a>
                     <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=bedroom">Bedroom</a>
                     <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=kidsroom">Kidsroom</a>
@@ -28,10 +28,10 @@
                     <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=office">Office & Study</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="shop-by-colors" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shop by Color
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu border-0" aria-labelledby="shop-by-colors">
                         <a class="dropdown-item" href="{% url 'all_categories' %}?category=colors">All Colors</a>
                         <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=blue">Blue</a>
                         <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=green">Green</a>
@@ -43,10 +43,10 @@
                         <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=multicolored">Multicolored</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="shop-by-pattern" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Shop by Pattern
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu border-0" aria-labelledby="shop-by-pattern">
                             <a class="dropdown-item" href="{% url 'all_categories' %}?category=pattern">All Patterns</a>
                             <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=abstract">Abstract</a>
                             <a class="dropdown-item" href="{% url 'all_categories' %}?sub_category=geometric">Geometric</a>

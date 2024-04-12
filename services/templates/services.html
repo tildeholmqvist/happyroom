@@ -35,7 +35,7 @@
                         <div class="col-12 col-md-7 col-lg-8">
                             <div class="card-body px-0 px-md-4 py-2">
                                 <div>
-                                    <h2 class="pt-2 pt-md-0 card-title text-left service-card-title"><a href="{% url 'book_service' service.id %}">{{ service.name }}</a></h2>
+                                    <h2 class="pt-2 pt-md-0 card-title text-left service-card-title"><a class="logo-font" href="{% url 'book_service' service.id %}">{{ service.name }}</a></h2>
                                 </div>
                                 <div class="mb-5">
                                     <p>
@@ -59,7 +59,7 @@
         </div>
     </div>
 </div>
-
+            </div>
             {% endfor %}
         </div>
     </div>
