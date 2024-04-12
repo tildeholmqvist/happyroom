@@ -260,7 +260,7 @@ footer {
 /* Services */
 
 .service-card {
-    width: 100%;
+    max-width: 800px;
     margin-bottom: 30px;
     display: flex;
     background-color: #fff;
