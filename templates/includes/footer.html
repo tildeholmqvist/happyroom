@@ -17,26 +17,22 @@
                     <a href="#"
                         target="_blank" class="nav-link logo-font">PRIVACY POLICY</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{% url 'review' %}"  class="nav-link logo-font">CUSTOMER REVIEWS</a>
+                </li>
             </ul>
         </div>
         <div class="col-12 col-md-4 p-4 text-center">
-            {% for review in reviews %}
-                <h4 class="logo-font-reviews">CUSTOMER REVIEWS</h4>
-                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
-                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
-                <p class="review-comment">{{ review.comment }} <br>-{{ review.name }}</p> 
-          {% endfor %}
-            <a href="{% url 'review' %}" class="nav-link logo-font">Leave a review</a>
+            <div class="social-media-links">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://pinterest.com/" target="_blank"><i class="fa-brands fa-square-pinterest"></i></a>
+            </div>
         </div>
         <div class="col-12 col-md-4 p-4 order-first">
+            <h2 class="mb-4 text-uppercase logo-font">Stay in touch!</h2>
             <div>
-                <h2 class="mb-4 text-uppercase logo-font">Stay in touch!</h2>
-                <div class="social-media-links">
-                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://pinterest.com/" target="_blank"><i class="fa-brands fa-square-pinterest"></i></a>
-                </div>
             </div>
             <!--  Mailchimp Signup Form -->
             <div id="mc_embed_signup" class="bg-transparent">
