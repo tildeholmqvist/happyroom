@@ -161,6 +161,11 @@ footer {
     margin-bottom: 40px;
 }
 
+.product-name {
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+}
+
 .btt-link {
     padding: 10px;
     color: #fff;
