@@ -15,7 +15,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ MEDIA_URL }}abstract.png" class="d-block mx-auto" alt="...">
+                <img src="{{ MEDIA_URL }}image1.jpg" width="80%"class="d-block mx-auto" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4 text-black">
                         The new collections are here
@@ -28,57 +28,69 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ MEDIA_URL }}bedroom.png" class="d-block mx-auto" alt="...">
+                <img src="{{ MEDIA_URL }}image2.jpg" class="d-block mx-auto" width="80%" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4 text-black">
                         The new collections are here
                     </h1>
                     <div class="my-5">
                         <h4>
-                            <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                            <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase">Shop Now</a>
                         </h4>
                     </div>
                 </div>
             </div>
-        </div>
-</div>
-<div class="container">
-    <div class="row about-index-page">
-        <div class="col-md-4 col-sm-12 order-md-1 d-flex justify-content-center align-items-center">
-            <img src="{{ MEDIA_URL }}bedroom.png" class="img-fluid about-photo" alt="...">
-        </div>
-        <div class="col-md-8 col-sm-12 order-md-2 d-flex">
-            <div class="card"> 
-                <div class="card-body index-about-card">
-                    <h5>About Our Wallpapers</h5>
-                    <p>At HappyRoom, we believe in the transformative power of wallpapers.
-                        Our curated collection is designed to elevate any space with style, personality, and inspiration. 
-                        From timeless classics to contemporary favorites, find the perfect wallpaper to express your individuality and
-                        enhance your environment with us.</p>
-                    <a href="{% url 'faq' %}" class="btn index-page-btn">Find out more.</a>
+        <div class="carousel-item">
+            <img src="{{ MEDIA_URL }}image3.jpg" class="d-block mx-auto" width="80%" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 class="display-4 text-black">
+                    The new collections are here
+                </h1>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                    </h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <div class="text-center mt-5">
-        <h2>Transform Your Space, Infuse Life with Patterns & Colors!</h2>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <img src="{{ MEDIA_URL }}geometric.png" class="img-fluid" alt="Image 1">
-            <div class="carousel-caption d-none d-md-block">
-                    <a href="{% url 'all_categories' %}?category=pattern" class="shop-now-button display-4 text-white">Shop Pattern</a>
+</div>
+<div class="index-container">
+    <div class="row about-index-page ">
+        <div class="col-md-4 col-sm-12 order-md-1 d-flex justify-content-center align-items-center index-about-card">
+            <h5 class="logo-font text-uppercase">About Our Wallpapers</h5>
+        </div>
+        <div class="col-md-8 col-sm-12 order-md-2 d-flex">
+            <div class="card" style="border:none;"> 
+                <div class="card-body index-about-card">
+                    <p>At HappyRoom, we believe in the transformative power of wallpapers.
+                        Our curated collection is designed to elevate any space with style, personality, and inspiration. 
+                        From timeless classics to contemporary favorites, find the perfect wallpaper to express your individuality and
+                        enhance your environment with us.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <img src="{{ MEDIA_URL }}abstract.png" class="img-fluid" alt="Image 2">
-            <div class="carousel-caption d-none d-md-block">
-                <a href="{% url 'all_categories' %}?category=colors" class="shop-now-button display-4 text-white">Shop Color</a>
-        </div>
         </div>
     </div>
 </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <img src="{{ MEDIA_URL }}pattern1.jpeg" class="img-fluid" alt="Image 1" style="width: 100%; height: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+                <a href="{% url 'all_categories' %}?category=pattern" class="shop-now-button display-4 text-white">Shop By Pattern</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ MEDIA_URL }}color1.jpeg" class="img-fluid" alt="Image 2" style="width: 100%; height: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+                <a href="{% url 'all_categories' %}?category=colors" class="shop-now-button display-4 text-white">Shop By Color</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center mt-15">
+    <h2 class="logo-font-index">Transform Your Space, Infuse Life with Patterns & Colors!</h2>
 </div>
 {% endblock %}
  
