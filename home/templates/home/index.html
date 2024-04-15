@@ -76,13 +76,17 @@
 
     <div class="row mt-5">
         <div class="col-md-6">
+            <a href="{% url 'all_categories' %}?category=pattern">
             <img src="{{ MEDIA_URL }}pattern1.jpeg" class="img-fluid" alt="Image 1" style="width: 100%; height: 100%;">
+            </a>
             <div class="carousel-caption d-none d-md-block">
                 <a href="{% url 'all_categories' %}?category=pattern" class="shop-now-button display-4 text-white">Shop By Pattern</a>
             </div>
         </div>
         <div class="col-md-6">
+            <a href="{% url 'all_categories' %}?category=colors">
             <img src="{{ MEDIA_URL }}color1.jpeg" class="img-fluid" alt="Image 2" style="width: 100%; height: 100%;">
+            </a>
             <div class="carousel-caption d-none d-md-block">
                 <a href="{% url 'all_categories' %}?category=colors" class="shop-now-button display-4 text-white">Shop By Color</a>
             </div>
