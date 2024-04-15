@@ -649,11 +649,15 @@ footer {
 
     .product-container, .bag-container,
     .profile-container, .review-container,
-    .checkout-container {
+    .checkout-container{
         margin-left: 15px;
         margin-right: 15px;
         padding: 10px;
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+
+    .index-about-card {
+        padding:5px;
     }
 }

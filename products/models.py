@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from profiles.models import UserProfile
 
 class Category(models.Model):
 
@@ -45,3 +47,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Wishlist(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    wished_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    added_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.wished_product.name
