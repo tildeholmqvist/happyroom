@@ -11,18 +11,18 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="product-container">
+<div class="review-container">
     <div class="row">
         <div class="col-md-6">
             <h1 class="logo-font-reviews">Submit Your Review</h1>
             <form method="post" class="mb-4">
                 {% csrf_token %}
-                <div>
-                
-                <p>{{ form.name }}</p>
-
-                <p>{{ form.comment }}</p>
-            </div>
+                <div class="form-group">
+                    {{ form.name }}
+                </div>
+                <div class="form-group cols:10;">
+                    {{ form.comment }} 
+                </div>
                 <button type="submit" class="btn btn-black">Submit</button>
             </form>
         </div>
