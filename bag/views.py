@@ -53,27 +53,26 @@ def adjust_bag(request, item_id):
 
     if size:
         if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
+            bag[item_id]['items_by_size'][size]['quantity'] = quantity
             bag[item_id]['items_by_size'][size]['price'] = product.get_price(size)
-            messages.success(request, f'Updated {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}!')
-
+            messages.success(request, f'Updated {size.upper()} {product.name} quantity to {quantity}!')
         else:
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
-                messages.success(request, f'Removed {size.upper()} {product.name} to your bag!')
+                messages.success(request, f'Removed {size.upper()} {product.name} from your bag!')
     else:
         if quantity > 0:
-            bag[item_id] = quantity
+            bag[item_id]['quantity'] = quantity
             bag[item_id]['price'] = product.price
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}!')
+            messages.success(request, f'Updated {product.name} quantity to {quantity}!')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {product.name} from your bag!')
 
-
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
+
 
 
 def remove_from_bag(request, item_id):
@@ -90,7 +89,7 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
-                messages.success(request, f'Removed {size.upper()} {product.name} to your bag!')
+                messages.success(request, f'Removed {size.upper()} {product.name} from your bag!')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {product.name} from your bag!')
