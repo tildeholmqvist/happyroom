@@ -68,12 +68,11 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for quantity in item_data['items'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                product_size=size,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
@@ -96,12 +95,10 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
-        current_bag = bag_contents(request)
-        total = 0  
-        for item_id, item_data in current_bag['items'].items():
+        total = current_bag['grand_total']
+        for item_id, item_data in current_bag.get('items', {}).items():
             product = item_data['product']
-            selected_size = item_data.get('selected_size')
-            item_price = product.get_price(selected_size) * item_data['quantity']
+            item_price = product.price * item_data['quantity']
             total += item_price  
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -143,6 +140,7 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
 
 
 def checkout_success(request, order_number):

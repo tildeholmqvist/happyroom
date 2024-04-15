@@ -32,14 +32,10 @@ class SubCategory(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=100) 
     description = models.TextField()
-    small_price = models.DecimalField(max_digits=10, decimal_places=2)
-    medium_price = models.DecimalField(max_digits=10, decimal_places=2)
-    large_price = models.DecimalField(max_digits=10, decimal_places=2)
-    xlarge_price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ManyToManyField(Category, related_name='products', blank=True)
     sub_category = models.ManyToManyField(SubCategory, related_name='products', blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -49,13 +45,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
-    def get_price(self, size):
-        if size == 'small':
-            return self.small_price
-        elif size == 'medium':
-            return self.medium_price
-        elif size == 'large':
-            return self.large_price
-        else:
-            return None

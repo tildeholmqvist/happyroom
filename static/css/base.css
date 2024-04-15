@@ -179,6 +179,14 @@ footer {
 
 }
 
+.booking-link{
+    color: #000;
+    text-decoration: none !important;
+}
+
+.booking-link:hover {
+    color: #B08E7F;
+}
 /* FAQ */
 
 .faq-page {

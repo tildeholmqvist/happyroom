@@ -34,6 +34,7 @@
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                             <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                         </a>
+                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     </p>
                     {% endif %}
                     {% if product.rating %}
@@ -49,22 +50,16 @@
                         </small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
+                    <p class="small font-italic" >Our wallpaper rolls are typically 20.5 inches (52 centimeters) wide and 33 feet (10 meters) long, 
+                        providing approximately 17 square meters of coverage per roll.<br>
+                        The pattern repeats every 27 inches (68.5 centimeters), allowing for seamless installation.<br> 
+                        Made from high-quality vinyl material, our wallpaper is durable, washable, and easy to install.<p></p>
+                        <p class="small font-italic">If you need further assistance feel free to book an appointment with one of our expert designers.</p>
+                       <a class="booking-link" href="{% url 'services' %}">Book Appointment</a>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            {% with product.has_sizes as s %}
-                                {% if s %}
-                                    <div class="col-12">
-                                        <p><strong>Size:</strong></p>
-                                        <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                            <option value="8x6">Small - 8 ft x 6 ft</option>
-                                            <option value="10x8">Medium - 10 ft x 8 ft</option>
-                                            <option value="12x10" selected>Large - 12 ft x 10 ft</option>
-                                            <option value="14x12">Extra-Large - 14 ft x 12 ft</option>
-                                        </select>
-                                    </div>
-                                {% endif %}
-
+                        
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
@@ -103,7 +98,6 @@
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
                         </div>
                     </form>
                 </div>
