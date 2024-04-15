@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower 
-from .models import Product, Category, SubCategory
+from .models import Product, Category, SubCategory, Wishlist
 from django.contrib import messages
 from .forms import ProductForm
 from services.forms import ServiceForm
@@ -108,13 +108,13 @@ def filtered_products(request, category):
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
-    wished_product, created = Wishlist.objects.get_or_create(
-        wished_product=product,
-        user=request.user,
-    )
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.product.add(product)
+    print(wishlist)
 
     messages.info(request, 'The item was added to your wishlist')
-    return redirect('product_detail', product_id=product_id)
+    return redirect('profile')
+
 
 def all_categories(request):
     """ A view to show all categories or subcategories """

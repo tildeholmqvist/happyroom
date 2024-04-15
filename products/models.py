@@ -50,9 +50,10 @@ class Product(models.Model):
 
 
 class Wishlist(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    wished_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    product = models.ManyToManyField(Product, related_name='wishlist_products', null=False)
     added_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.wished_product.name
+        return f'Wishlist for {self.user.username}'
+

@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 from services.models import BookService
+from products.models import Wishlist
 
 from checkout.models import Order
 
@@ -24,12 +25,14 @@ def profile(request):
 
     orders = profile.orders.all()
     bookings = BookService.objects.filter(user=request.user)
+    wishlist = Wishlist.objects.filter(user=request.user)
 
     template = 'profile.html'
     context = {
         'form': form,
         'orders': orders,
         'bookings': bookings,
+        'wishlist': wishlist,
         'on_profile_page': True
     }
 

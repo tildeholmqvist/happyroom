@@ -86,7 +86,7 @@
                                         <th>Price</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <body>
                                     {% for booking in bookings %}
                                         <tr>
                                             <td>
@@ -99,7 +99,27 @@
                                             <td>${{ booking.service.price }}</td>
                                         </tr>
                                     {% endfor %}
-                                </tbody>
+                                </body>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="profile-titles">Wishlist</p>
+                        <div class="order-history table-responsive">
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Date Added</th>
+                                    </tr>
+                                </thead>
+                                <body>
+                                    {% for item in wishlist %}
+                                    <li>{{ item.product.name }}</li>
+                                    {% endfor %}
+                                </body>
                             </table>
                         </div>
                     </div>
@@ -107,9 +127,9 @@
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block postloadjs %}
+    {% endblock %}
+    
+    {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'js/countryfield.js' %}"></script>
-{% endblock %}
+    {% endblock %}
