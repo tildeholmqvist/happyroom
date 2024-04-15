@@ -96,13 +96,21 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
-        total = current_bag['grand_total']
+        current_bag = bag_contents(request)
+        total = 0  
+        for item_id, item_data in current_bag['items'].items():
+            product = item_data['product']
+            selected_size = item_data.get('selected_size')
+            item_price = product.get_price(selected_size) * item_data['quantity']
+            total += item_price  
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+
+        grand_total = total
 
         if request.user.is_authenticated:
             try:

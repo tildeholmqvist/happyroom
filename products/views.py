@@ -58,6 +58,10 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    selected_size = request.GET.get('selected_size')
+    for product in products:
+        product.price = product.get_price(selected_size)
+
     context = {
         'products': products,
         'search_term': query,

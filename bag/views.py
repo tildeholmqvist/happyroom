@@ -22,22 +22,19 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if size:
-        if item_id in list(bag.keys()):
-            if size in bag[item_id]['items_by_size'].keys():
-                bag[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f'Updated {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}!')
-            else:
-                bag[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added {size.upper()} {product.name} to your bag!')
+        if item_id in bag.keys() and size in bag[item_id]['items_by_size'].keys():
+            bag[item_id]['items_by_size'][size]['quantity'] += quantity
+            bag[item_id]['items_by_size'][size]['price'] = product.get_price(size)
+            messages.success(request, f'Updated {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]["quantity"]}!')
         else:
-            bag[item_id] = {'items_by_size': {size: quantity}}
+            bag[item_id] = {'items_by_size': {size: {'quantity': quantity, 'price': product.get_price(size)}}}
             messages.success(request, f'Added {size.upper()} {product.name} to your bag!')
     else:
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}!')
+        if item_id in bag.keys():
+            bag[item_id]['quantity'] += quantity
+            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]["quantity"]}!')
         else:
-            bag[item_id] = quantity
+            bag[item_id] = {'quantity': quantity, 'price': product.price}
             messages.success(request, f'Added {product.name} to your bag!')
 
     request.session['bag'] = bag
@@ -57,6 +54,7 @@ def adjust_bag(request, item_id):
     if size:
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
+            bag[item_id]['items_by_size'][size]['price'] = product.get_price(size)
             messages.success(request, f'Updated {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}!')
 
         else:
@@ -67,6 +65,7 @@ def adjust_bag(request, item_id):
     else:
         if quantity > 0:
             bag[item_id] = quantity
+            bag[item_id]['price'] = product.price
             messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}!')
         else:
             bag.pop(item_id)

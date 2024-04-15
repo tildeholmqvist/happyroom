@@ -13,3 +13,6 @@ class BookServiceForm(forms.ModelForm):
     class Meta:
         model = BookService
         fields = ['name', 'email', 'phone', 'date_time']
+        labels = {
+            'date_time': 'Date & Time'
+        }
