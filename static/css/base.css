@@ -418,6 +418,21 @@ footer {
 
 }
 
+/* 404 */
+
+.home-button {
+    background-color: #fff;
+    color:  #E7B2A3;
+    border-color:#E7B2A3;
+    font-size: large;
+}
+
+.home-button:hover{
+    background-color: #E7B2A3;
+    color:  #fff;
+    border-color:#fff;
+}
+
 /* ------------------------------- bootstrap toasts */ /* from walkthrough*/
 
 .message-container {

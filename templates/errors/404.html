@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="profile-container h-100">
+        <div class="row">
+            <div class="col-12 col-md-12 my-auto company-introduction">
+                <h2 class="text-center">
+                    The page you are looking for isn't available.
+                </h2>
+                <hr>
+                <div class="my-5 faq-item">
+                    <h4 class="text-center">
+                        Return to the home page</a>.
+                    </h4>
+                    <div class="text-center">
+                        <a href="{% url 'home' %}" class="btn btn-black rounded-0 text-uppercase mt-5 home-button">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
