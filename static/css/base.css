@@ -178,6 +178,10 @@ footer {
     color: black;
 }
 
+.extra-menu:active {
+    color: #E7B2A3;
+}
+
 .subcategory-image {
     width: 100px; 
     height: 100px; 
