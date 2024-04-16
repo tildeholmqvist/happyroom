@@ -56,11 +56,13 @@
                        <form class="form" action="{% url 'add_to_wishlist' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
+                            {% if user.is_authenticated %}
                             <div class="col-12 add-to-wishlist">
                                 <button type="submit" class="btn btn-outline-secondary rounded-0 mt-3">
                                     <i class="fas fa-heart"></i> Add to Wishlist
                                 </button>
                             </div>
+                            {% endif %}
                         </div>
                         </form>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
