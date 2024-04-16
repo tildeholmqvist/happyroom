@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
+from .views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,3 +33,4 @@ urlpatterns = [
     path('faq/', TemplateView.as_view(template_name='faq.html'), name='faq'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+handler404 = 'happyroom.views.handler404'
