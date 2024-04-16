@@ -55,7 +55,7 @@ footer {
 #mc_embed_signup{
     background:#fff; 
     clear:left; 
-    font:14px Helvetica,Arial,sans-serif; 
+    font:14px "Montserrat", sans-serif;
     width: 400px;
     margin-left: 0;
 }
@@ -614,6 +614,12 @@ footer {
     border-radius: 0;
 }
 
+/* newsletter sign up on screens smaller then desktop/computers */
+@media (max-width: 1200px) {
+    #mc_embed_signup{
+        width: 250px;
+    }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

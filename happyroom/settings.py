@@ -31,8 +31,8 @@ CSRF_TRUSTED_ORIGINS = ['https://happy-room-e68715746875.herokuapp.com/', 'https
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+#DEBUG = False
 
 ALLOWED_HOSTS = ['happy-room-e68715746875.herokuapp.com', '8000-tildeholmqv-pp5happyroo-f7tyuzz2jbt.ws-eu110.gitpod.io']
 
