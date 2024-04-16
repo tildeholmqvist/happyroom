@@ -424,7 +424,7 @@ footer {
     background-color: #fff;
     color:  #E7B2A3;
     border-color:#E7B2A3;
-    font-size: large;
+    padding: 20px;
 }
 
 .home-button:hover{
