@@ -37,6 +37,7 @@ footer {
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
+    justify-content: center;
 }
 
 
@@ -208,6 +209,11 @@ footer {
 .booking-link:hover {
     color: #B08E7F;
 }
+
+.rating-style {
+    color:  #E7B2A3;
+}
+
 /* FAQ */
 
 .faq-page {
@@ -362,6 +368,19 @@ footer {
 .profile-titles {
     color: #e88771;
     text-transform: uppercase;
+}
+
+
+.add-to-wishlist > button{
+    background-color: #fff;
+    color:  #E7B2A3;
+    border-color:#E7B2A3;
+}
+
+.add-to-wishlist > button:hover{
+    background-color: #E7B2A3;
+    color:  #fff;
+    border-color:#fff;
 }
 
 /* Bag */
