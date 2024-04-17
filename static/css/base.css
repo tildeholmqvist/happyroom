@@ -7,6 +7,9 @@ html {
 body {
     font-family: "Montserrat", sans-serif;
     background-color: #BCA89F;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 footer {
@@ -178,8 +181,8 @@ footer {
     color: black;
 }
 
-.extra-menu:active {
-    color: #E7B2A3;
+.dropdown-item:active {
+    background-color: #E7B2A3;
 }
 
 .subcategory-image {
@@ -205,8 +208,6 @@ footer {
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
-    align-items: center !important;
-    justify-content: center !important;
 }
 
 .product-name {
@@ -539,6 +540,23 @@ footer {
 
 /* Allauth form formatting */
 
+.account-container {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+   
+   
+}
+
+.account-container > .row {
+    width: 100%; 
+    max-width: 800px; 
+    text-align: left;
+}
+
 #login-form, #signup-form {
     background-color: #fff; 
     padding: 20px; 
@@ -733,4 +751,6 @@ footer {
     .index-about-card {
         padding:5px;
     }
+
+  
 }
