@@ -128,12 +128,21 @@ footer {
 }
 
 /* Index */
+.index-container-slide {
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
 
 .index-container {
     background-color: #fff;
     margin-left: 60px;
     margin-right: 60px;
 }
+
 
 .shop-now-button {
     color: #fff;
