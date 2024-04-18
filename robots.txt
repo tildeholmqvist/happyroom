@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /profile/
+Disallow: /checkout/
+Disallow: /bag/
+Sitemap: https://happy-room-e68715746875.herokuapp.com/sitemap.xml
