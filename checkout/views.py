@@ -57,6 +57,9 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+            print(f'This is the bag {json.dumps(bag)}')
+            print(f'This is the order {order} and total {order.grand_total}')
+            order_total = 0
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -67,6 +70,7 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
+                        order_total = order_total + (product.price * item_data)
                     else:
                         for quantity in item_data['items'].items():
                             order_line_item = OrderLineItem(
@@ -75,6 +79,7 @@ def checkout(request):
                                 quantity=quantity,
                             )
                             order_line_item.save()
+                            order_total = order_total + (product.price * quantity)
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -82,7 +87,8 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
-
+            order.order_total = order_total
+            order.update_total()
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
