@@ -30,7 +30,7 @@
                 <div class="card-body px-0 px-md-4 py-2">
                     <h2 class="pt-2 pt-md-0 card-title text-left service-card-title logo-font">{{ service.name }}</h2>
                     <p>{{ service.description }}</p>
-                    <form id="booking-form" method="post" class="mt-4">
+                    <form id="booking-form" method="post" class="mt-4" autocomplete="on">
                         {% csrf_token %}
                         <input type="hidden" name="service_id" value="{{ service.id }}">
                         <div class="form-group">

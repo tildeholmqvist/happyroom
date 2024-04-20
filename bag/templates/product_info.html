@@ -1,3 +1,8 @@
 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-<p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+<p class="my-0">{{ item.product.description }}</p>
+<hr>
+<p class="small font-italic" >Our wallpaper rolls are typically 20.5 inches (52 centimeters) wide and 33 feet (10 meters) long, 
+    providing approximately 17 square meters of coverage per roll.<br>
+    The pattern repeats every 27 inches (68.5 centimeters), allowing for seamless installation.<br> 
+    Made from high-quality vinyl material, our wallpaper is durable, washable, and easy to install.<p></p>
 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
