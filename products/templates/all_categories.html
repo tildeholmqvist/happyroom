@@ -101,13 +101,6 @@
                                 <div class="row">
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                        {% if product.category.exists %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.first.name }}">
-                                                   {{ product.category.first.friendly_name }}
-                                                </a>
-                                            </p>
-                                        {% endif %}
                                         {% if product.rating %}
                                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                         {% else %}
