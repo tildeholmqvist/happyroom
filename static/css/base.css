@@ -150,7 +150,7 @@ footer {
 
 .about-index-page {
     padding: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 40px;
     padding-top: 40px;
 }
@@ -753,7 +753,11 @@ footer {
 
     .index-about-card {
         padding:5px;
+        text-align: center;
     }
 
+    .index-about-card > .logo-font {
+        margin-top: -10px;
 
+    }
 }
