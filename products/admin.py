@@ -16,11 +16,17 @@ class ProductAdmin(admin.ModelAdmin):
     def display_categories(self, obj):
         return ', '.join(category.name for category in obj.category.all())
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
+        'is_filterable',
     )
+
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+        return queryset.exclude(name__in=['bestsellers', 'new_items', 'last_chance'])
 
 
 class SubCategoryAdmin(admin.ModelAdmin):

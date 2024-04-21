@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.db.models import Q
@@ -118,7 +119,7 @@ def add_to_wishlist(request, product_id):
 
 def all_categories(request):
     """ A view to show all categories or subcategories """
-    categories = Category.objects.all()
+    categories = Category.objects.exclude(name__in=['bestsellers', 'new_items', 'last_chance'])
     selected_category = request.GET.get('category')
     selected_subcategory = request.GET.get('sub_category')
     products = None
