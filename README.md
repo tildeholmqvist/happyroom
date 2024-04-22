@@ -324,4 +324,4 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - After the order is processed, the user is directed to the checkout success page.
 - On the checkout success page, the completed order is summarized.
 - Additionally, an email containing the order confirmation will be sent to the user.
-- Finally, at the end of the summary, a 'Keep Shopping' button allows the user to return to the product page."
+- Finally, at the end of the summary, a "Keep Shopping" button allows the user to return to the product page.
