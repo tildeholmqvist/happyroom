@@ -1,110 +1,222 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# HappyRoom 
 
-Welcome Tilde Holmqvist,
+#### _Please note that this website is for educational purposes and should not be treated like a real website._
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+HappyRoom is a B2C e-commerce store targeting individuals looking to enhance their living or working spaces with unique wallpapers and interior design services.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+At HappyRoom, the users can explore a variety of carefully selected wallpapers, each with its own distinct design to suit different tastes.
+The user are also offered personalized assistance through consultations with our team of experts.
+Additionally, the user can stay informed about new arrivals and special offers by subscribing to our newsletter, and also share their thoughts with us through our customer reviews.
 
-## Gitpod Reminders
+HappyRoom aims to provide users with the tools and resources needed to transform their spaces into personalized expressions of style and creativity. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+HappyRoom uses Stripe as a payment method.
+Please note:
+_You should not enter any personal credit or debit card information, since this store is only for educational purposes._
 
-`python3 -m http.server`
+For a live demonstration, visit [HappyRoom](https://happy-room-e68715746875.herokuapp.com/)
 
-A blue button should appear to click: _Make Public_,
+![HappyRoom, screenshot from Am I responsive?](/docs/readme_images/)
 
-Another blue button should appear to click: _Open Browser_.
+## Table of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
 
-A blue button should appear to click: _Make Public_,
+### User Stories
+##### Profile
+- As a site user I can sign up to the site so that my own personal account is created.
+- As a site user I can log in and log out of the page.
+- As a logged i user I can choose if I want to save my information so that it will speed up the checkout process next time.
+- As a site user I can buy products of the store while im logged in so that it's an easier process for me viewing my prefilled personal details.
+- As a site user I can view my previously made orders so that I can easily find what I bought last time
+- As a logged in user I can easily see that I am activily logged in so that if I am not, I can log in
 
-Another blue button should appear to click: _Open Browser_.
+##### Products
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- As a site user I can easily navigate through the website so that I can find what I am looking for
+- As a site user I can easily brows through the different products so that I can find what I am looking for.
+- As a site user I can sort and filter the products so that I only view the product I am interested in.
+- As a site user I can save or like products so that I can easily find them again.
+- As a site user I can find inspirational images of the products so that i can imagine what the room will look like
+- As a site user I can view my shopping bag and the total price so that I know how much money I shop for.
+- As a site user I can be assured that the payment is secure.
 
-To log into the Heroku toolbelt CLI:
+##### Other requirements
+- As a site user I can sign up for newsletter
+- As a site user I can book a meeting with an expert so that I can get help with advising and design.
+- As a site user I am informed about how my personal information is going to be handled, and what the stores privacy policy is.
+- As a site user I can fast and easily find information about the company so that I can get answers if I have any questions
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+##### Site Administration
+- As a site owner I can create, edit and delete products
+- As a site owner I can send out newsletter so that the user who signed up for it can recieve them
+- As a site owner I can inform the user about the company so that the user knows what the purpose of the company and site is
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Future User Stories to Consider
+- As a site user I can post images with my customer review
+- As a site user I can find a gallery with pictures showing how expert advice helped previous customers.
 
-------
+## Design & Layout 
+The site features a clean design with earthy elements, blending brown and pink hues with white for a serene and luxurious atmosphere.
 
-## Release History
+### Color Scheme 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The color scheme of HappyRoom is soothing, mainly in earthy tones with a hint of pink. These colors harmonize well with the website's purpose, offering users a relaxed and welcoming environment.
 
-**September 20 2023:** Update Python version to 3.9.17.
+![IMAGE OF COLORS?????]()
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Images
+All media is uploaded with Amazon Web Services and all images is borrowed from the real wallpaper site 
+[Belarte Studio.](https://belartestudio.com/)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+_Please note that this website is for educational purposes only and should not be regarded as a real e-commerce platform. For genuine products, visit [Belarte Studio.](https://belartestudio.com/)_
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Fonts
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The Montserrat font is used on the main content of the website, for example, all product description and FAQ page. 
+The Playfair Display font is used on all headings, as well as the logo name in the header.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+All fonts are from [Google Fonts](https://fonts.google.com/).
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Favicon 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The favicon was generated through [Favicon.io](https://favicon.io/) and depicts the logo for HappyRoom.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Icons
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+All icons and symbols are from [Font Awesome.](https://fontawesome.com/)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Wireframes
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Wireframes were produced using Balsamiq.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Agile Methodology
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+For project management, I used GitHub Projects for an agile approach. You can access the project board [here.](https://github.com/users/tildeholmqvist/projects/10)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+During the planning phase, I created twenty GitHub Issues, with two additional as future improvement.
+Each issue is followed by a set of acceptance criteria, making the execution of the task clear, and easier to navigate to completion.
 
-------
+## Data Model
 
-## FAQ about the uptime script
+When building this B2C e-commerce site, the principles of object-oriented programming (OOP) was used, which organize data into easily manageable chunks. This makes it simpler to handle different aspects of our platform, like categories, products, and user profiles.
 
-**Why have you added this script?**
+![Database Schema](docs/readme_images/database-schema.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Security Features
+#### User Authentication
+To ensure safe and easy user access, Django Allauth is implemented for user authentication, allowing users to securely log in and manage their accounts.
 
-**How will this affect me?**
+#### Form Validation
+If the submitted form is not valid, an error will accour telling the user what field is missing or is incorrect.
+If any submitted form is not valid or contains errors, users will receive a clear error message, showing which fields is causing the error.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Custom 404 error page
+If a user come across a wrong URL, they will be directed to a custom 404 error page, allowing the user to easily go back to the homepage.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### Database Security
+Sensitive information, such as database URLs, secret keys, stripe keys, webhook secrets, AWS credentials, and email access, are stored securely in the env.py file to prevent unauthorized access.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Features
 
-**So….?**
+### Header
+![Header](/docs/readme_images/header.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### Logo
+- A logo was created using the Playfair Display font.
+- The logo is positioned in the top left of the site, and is linked to the home page for an easier navigation for the site user.
 
-**Can I opt out?**
+#### Navigation Bar
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- The header and navigation bar are present on every page and include every link to the other pages.
+- The navigation menu includes three different dropdown menus allowing the user to browse products sorted by '"Room, "Color", "Pattern" and "Latest Deals".
+- The navigation menu also includes a link to the Services page, where the user can book an appointment with one of our experts, and a link to the FAQ page.
+- The navigation bar is fully responsive, transforming to a hamburger symbol on smaller screens and devices.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### Search Bar
 
-**Anything more?**
+- The search bar is displayed above the navigation links.
+- On smaller screens and devices, the search bar becomes a search icon. Clicking it will show the full search bar.
+- When entering a word in the search bar, all products containing that word in their title or description, will be presented in the search results.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+#### User Icon 
 
----
+- When users are not signed in, the user icon displays a dropdown menu offering the options "Register" and "Log in".
+- Once users are signed in, the user icon shows a dropdown menu with the choices "My Profile" and "Log Out".
+- Additionally, for signed-in site administrators, the user icon provides the option "Product Management", giving access to add products or services.
 
-Happy coding!
+#### Bag Icon
+
+- Positioned to the right of the user icon, users will find the bag icon.
+- The bag manages the items in the user's bag, with the total cost visible underneath.
+- Whenever users add, delete, or edit items in their bag, a toast message notifies them of the success or failure of their action.
+- Clicking on the bag icon allows users to view the contents of their bag, along with prices and the remaining amount required for free delivery.
+- When clicking the bag icon, users have the option to proceed to a page where they can view their bag and proceed to the checkout process.
+
+### Footer
+
+![Footer](/docs/readme_images/footer.png)
+
+- The footer is present at the bottom of every page across the site.
+- The footer features links to the site's social media profiles on Facebook, LinkedIn, Instagram, and Pinterest.
+- Additionally, the footer includes a signup section for the MailChimp Newsletter, enabling users to subscribe and receive updates on the latest deals and offers.
+- Other footer links include access to the products page, services page, FAQ page, Custom Reviews, and the Privacy Policy.
+- All external links automatically opens in a new tab.
+
+### Home Page
+
+![Screenshot of my webpage from Am I responsive?](/docs/readme_images/amiresponsiveconnected.png)
+
+- The homepage features a carousel showcasing three images from our latest collection.
+- A section on the homepage informs users about the website's purpose.
+- Towards the bottom of the homepage, two images provide easy access to products categorized under "By Room" and "By Pattern".
+
+### Profile Page
+##### Delivery Information
+- The delivery details section saves the user's delivery address and phone number.
+- This information is used to fill in the users delivery address automatically when they are accessing the check out.
+
+##### Order History
+
+- The order history section shows a list of all orders placed by the user.
+- Each order includes the order number, date of purchase, item details, and total cost.
+- When clicking on the order number, it redirects the user to a page summarizing the order details.
+
+##### Booked Services
+
+- Below the Order History, users can find a section listing all booked appointments.
+- Each booking displays a booking ID, appointment date, booked service, and forthcoming cost.
+- When clicking on the booking ID, it redirects the user to a page summarizing the booking details.
+
+#### Wishlist
+
+- Located below the Booked Services, users can find a section listing all products they've added to their wishlist.
+- Each wishlist item displays the product title and image.
+- When clicking on the product in the wishlist, it redirects the user to the product detail page.
+
+### User Account Pages
+
+- Django allauth was installed and used to implement the Sign up, Log in, and Log out functionality. 
+- Success messages notify users of successful login/logout actions.
+- When the user is register for an account, the user must verify their email address by clicking on the authentication link sent to the provided email address.
+- Users can reset their password by clicking on the 'Forgot Password' link on the login page if they forget it.
+
+### The Categories Pages
+
+- Under the "Latest Deal" menu, users can choose from different categories such as "New In," "Bestsellers," "Last Chance," and "View all," each redirecting them to the product page.
+- In the other dropdown menus within the navigation bar, users can select categories. If they want to see all products in a specific category, they will be lead to a page where they can further filter by subcategories.
+- The visibility of products depends on the category selected by the user.
+- Every product is displayed with an image, title, rating and price.
+
+### The Products page
+
+- When clicking on a product, the user will get transfered to a page featuring a more detailed information about the product.
+- Alongside the title, rating, and price, users will find a detailed product description.
+- Each product description provides helpful information about measurements, helping users choose the right amount.
+- If the user is unsure about sizing and quantity, a link is provided for users to schedule a meeting with an expert for personalized advice.
+- The user can adjust the quantity and add the product to their shopping bag.
+- If the user is logged in they can also add products to their wishlist, that is accessible in their profile that can be found under the user icon.
+- If the user is a site administrator an edit and delete button will also appear in the product details.
+
+### Site Administration Management
+#### Add Product
