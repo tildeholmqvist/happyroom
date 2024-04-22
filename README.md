@@ -218,5 +218,110 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - If the user is logged in they can also add products to their wishlist, that is accessible in their profile that can be found under the user icon.
 - If the user is a site administrator an edit and delete button will also appear in the product details.
 
-### Site Administration Management
+### Services Page
+
+- Every service is displayed with an image, title, description and price.
+- Clicking on a service redirects the user to a page providing detailed information about the service.
+- Below the service description, users find a booking form to schedule appointments.
+- After booking an appointment, users receive a success message confirming that the booking was successful.
+- After booking the appointment, the user are directed to a page summarizing the appointment details.
+- Payment for appointments is not required in advance, allowing users to schedule meetings without upfront payment.
+
+
+### Product and Service Management
+
 #### Add Product
+
+- Only site administrators and superusers can create and add products.
+- Access the "Product Management" option from the dropdown menu under the user icon to reach the add product page.
+- The service form must be valid to add a service, and every required field is marked with an asterisk (*).
+- Product prices must be greater than 0 and cannot exceed 6 digits in total.
+- The user have the option to upload an image for the product. If no image is provided, a default image is displayed.
+- Once the form is filled out and validated, the product can be created by clicking the add button.
+- The user will receive a success message confirming that the product has been successfully added.
+
+#### Edit Product
+
+- Only site administrators and superusers can edit products.
+- The user can access the edit page by clicking the "Edit" button located either under the product or within the product details.
+- When opening the edit form, all fields are pre-populated with their original content.
+- The image field presents a preview of the existing image, along with a checkbox option to remove it. Selecting this checkbox will replace the image with the default one.
+- The user will receive a success message confirming that the product has been successfully edited.
+
+#### Delete Product
+
+- Only site administrators and superusers can delete products.
+- The user can delete the product by clicking the "Delete" button located either under the product or within the produt details.
+- Upon clicking "Delete," a confirmation modal will appear, asking the user to confirm the deletion.
+- The user will receive a success message confirming that the product has been successfully deleted.
+
+#### Add Service
+
+- Only site administrators and superusers can create and add services.
+- Access the "Product Management" option from the dropdown menu under the user icon to reach the add service page.
+- The service form must be valid to add a service, and every required field is marked with an asterisk (*).
+- Service prices must be greater than 0 and cannot exceed 6 digits in total.
+- The user have the option to upload an image for the service. If no image is provided, a default image is displayed.
+- Once the form is filled out and validated, the service can be created by clicking the add button.
+- The user will receive a success message confirming that the service has been successfully added.
+
+#### Edit Service
+
+- Only site administrators and superusers can edit services.
+- The user can access the edit page by clicking the "Edit" button located either under the service or within the service details.
+- When opening the edit form, all fields are pre-populated with their original content.
+- The image field presents a preview of the existing image, along with a checkbox option to remove it. Selecting this checkbox will replace the image with the default one.
+- The user will receive a success message confirming that the service has been successfully edited.
+
+#### Delete Service
+
+- Only site administrators and superusers can delete services.
+- The user can delete the service by clicking the "Delete" button located either under the service or within the service details.
+- Upon clicking "Delete," a confirmation modal will appear, asking the user to confirm the deletion.
+- The user will receive a success message confirming that the service has been successfully deleted.
+
+### Bag
+
+- Clicking on the bag icon in the navigation menu redirects the user to the shopping bag page, where they can view the contents of their cart.
+- The bag displays product information including the image, description, price, and quantity.
+- The user can adjust the quantity by clicking the plus or minus buttons.
+- Products with a quantity less than 0 are automatically removed from the bag.
+- To update the quantity, users can click the "Update" button.
+- To remove a product, users can use the "Remove" button.
+- Below the product information, users can view the total cost of the bag, delivery cost, and grand total.
+- If there is any remaining spending required for free delivery, that is also provided. 
+- The user can then choose to continue shopping or proceed to secure checkout by clicking the respective buttons.
+
+### Checkout 
+
+#### Details Section
+
+- In the details section, users can input their contact information, delivery address, and card details.
+- If the user is not logged in or doesn't have an account, a link to login or create an account will be provided.
+- The user also have the option to make a purchase as a guest.
+- For signed-in users who haven't saved their information, there's a checkbox to save the delivery information.
+- Logged-in users who have opted to save their information will find their details pre-filled.
+- If any required fields are left blank, an error message will appear, asking the user to fill them in.
+- All required fields are marked with an asterisk (*).
+
+#### Order Summary 
+
+- The order summary section provides an overview of the products to be purchased, including their details.
+- It showcases the product name and image, quantity, subtotal, delivery cost, and grand total.products and the subtotal, delivery and grandtotal. 
+- Clicking on the product image within the order summary redirects the user to the respective product detail page.
+
+#### Payment 
+
+- The payment system is powered by Stripe to ensure secure transactions.
+- Invalid card numbers will trigger an error message for the user to correct the issue.
+- During payment processing, a loading screen is displayed, preventing the user from navigating away.
+- A warning message is displayed at the bottom of the page, informing the user of the expected charge amount.
+- Even if the payment form fails to submit or the user closes the browser during processing, orders are still created in the database through a webhook
+- After the payment is processed, the webhook verifies order existence in the database. If not found, it creates one using payment details.
+
+#### Confirmation
+
+- After the order is processed, the user is directed to the checkout success page.
+- On the checkout success page, the completed order is summarized.
+- Additionally, an email containing the order confirmation will be sent to the user.
+- Finally, at the end of the summary, a 'Keep Shopping' button allows the user to return to the product page."
