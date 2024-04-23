@@ -325,3 +325,62 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - On the checkout success page, the completed order is summarized.
 - Additionally, an email containing the order confirmation will be sent to the user.
 - Finally, at the end of the summary, a "Keep Shopping" button allows the user to return to the product page.
+
+### Frequently Asked Questions (FAQ)
+
+- The FAQ page provides answers to common questions that our customers frequently ask.
+- The user can easily navigate through various questions to find the information they need.
+- At the bottom of the FAQ page, the user can find contact information in case they have additional questions or inquiries.
+
+### Customer Reviews
+
+- The user can access our customer reviews page located in the footer of our website.
+- On this page the user can explore feedback and testimonials from previous customers to gain insights into their experiences.
+- The user can share their own thoughts and feedback by filling out a simple form with their name and comments.
+
+## Business Model 
+
+HappyRoom operates under a B2C (Business to Consumer) model, selling products and services directly to end-users, who are our customers.
+
+Our typical customers are homeowners, mainly adults or families seeking to redecorate their living spaces.
+
+## Marketing Strategy
+
+HappyRoom uses different marketing strategies to connect with its audience, including SEO, content marketing, social media marketing, and email marketing.
+
+### SEO
+
+We carefully choose keywords, both short and long, after studying Google search results and our competitors' strategies. These keywords are added to our website's meta keywords and descriptions to improve our search engine ranking.
+
+| Keyword | Related Keywords |
+|---------|------------------|
+| Wallpaper | Modern Wallpaper, Aesthetic Wallpaper, Cute Wallpaper, Peel & Stick Wallpaper, Luxury Wallpaper, Custom Wallpaper, Design Wallpaper |
+| Room | Kitchen, Livingroom, Bedroom, Kidsroom, Room designer, Romantic Bedroom Wallpaper, Room decor ideas |
+| Interior | Interior room, Interor design, Interior Diy, Inspiration interior, Wallpaper design 3d, Wallpaper shops, Wallpaper Store |
+
+#### Building Trust
+
+We include a customer reviews page where users can read reviews and comments from previous customers. Additionally, links to both the customer reviews and privacy policy are included in the footer to inform users about how their data is being collected and processed.
+
+#### Sitemap and robots.txt
+
+To make search engine navigation easier, a sitemap was created, listing important page URLs using xml-sitemaps.com. Additionally, a robots.txt file is created to specify areas of the website that search engines should avoid, enhancing overall site quality for SEO purposes.
+
+### Content Marketing
+
+We showcase high-quality images of our interior design projects to attract potential clients and build trust. These photos highlight our expertise and unique styled wallpapers.
+
+#### Social Media Marketing
+
+Social media marketing is used through platforms like Facebook, Instagram, and Pinterest because many people seek inspiration there. This complements  the content marketing, as we can easily share images of past projects and new products. We also run sales and offer discounts through ads on these platforms to catch our customers attention.
+
+# FACEBOOK BILD/LÄNK
+
+#### Email Marketing
+
+Additionally, our users can sign up for our newsletter to receive news, updates, and deals. We use Mailchimp to manage this service, making it easy for us to stay connected with our customers.
+
+Overall, by using a mix of these strategies, HappyRoom aims to reach more people, bring more traffic to the website, and increase both sales and brand awareness.
+
+Understanding our users' needs is our top priority. 
+They want clear information, guidance, and inspiration, so we provide useful content like inspiring pictures and helpful guides. Our business goals shape our marketing strategies, to meet these goals effectively.
