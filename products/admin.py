@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product, Category, SubCategory
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
@@ -26,7 +27,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
-        return queryset.exclude(name__in=['bestsellers', 'new_items', 'last_chance'])
+        return queryset.exclude(
+                name__in=['bestsellers', 'new_items', 'last_chance']
+            )
 
 
 class SubCategoryAdmin(admin.ModelAdmin):
@@ -34,6 +37,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

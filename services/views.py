@@ -4,11 +4,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Service, BookService
 from .forms import BookServiceForm, ServiceForm
 
-# Create your views here.
 
+# Create your views here.
 def services(request):
     services = Service.objects.all()
     return render(request, 'services.html', {'services': services})
+
 
 @login_required
 def add_service(request):
@@ -23,14 +24,15 @@ def add_service(request):
             messages.success(request, 'Successfully added service!')
             return redirect('services')
         else:
-            messages.error(request, 'Failed to add service, please ensure the form is valid.')
+            messages.error(request, 'Failed to add service,'
+                                    'please ensure the form is valid.')
     else:
         form = ServiceForm()
 
     return render(request, 'add_product.html', {'form': form})
 
 
-def book_service(request, service_id): 
+def book_service(request, service_id):
     service = get_object_or_404(Service, pk=service_id)
 
     if request.method == 'POST':
@@ -45,18 +47,18 @@ def book_service(request, service_id):
     else:
         form = BookServiceForm()
 
-    return render(request, 'book_services.html', {'form': form, 'service': service})
+    return render(request,
+                  'book_services.html', {'form': form, 'service': service})
 
 
 def service_confirmation(request, booking_id):
     booking = get_object_or_404(BookService, id=booking_id)
-    messages.success(request, f'Your booking of {booking.service.name} was made successfully! \
-        Your booking ID is {booking_id}.')
-
+    messages.success(request,
+                     f'Your booking of {booking.service.name} '
+                     f'was made successfully!Your booking ID is {booking_id}.')
     template = 'service_confirmation.html'
     context = {'booking': booking}
     return render(request, template, context)
-
 
 
 @login_required
@@ -74,7 +76,8 @@ def edit_service(request, service_id):
             messages.success(request, 'Successfully updated service!')
             return redirect(reverse('services'))
         else:
-            messages.error(request, 'Failed to update service. Please ensure that the form is valid.')
+            messages.error(request, 'Failed to update service. '
+                           'Please ensure that the form is valid.')
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')
@@ -94,7 +97,7 @@ def delete_service(request, service_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('services'))
-        
+
     service = get_object_or_404(Service, pk=service_id)
     service.delete()
     messages.success(request, 'Successfully deleted service!')

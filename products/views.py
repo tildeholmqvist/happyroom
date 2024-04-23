@@ -3,12 +3,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from django.db.models.functions import Lower 
+from django.db.models.functions import Lower
 from .models import Product, Category, SubCategory, Wishlist
 from django.contrib import messages
 from .forms import ProductForm
 from services.forms import ServiceForm
-
 
 
 def all_products(request):
@@ -37,38 +36,40 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
-            categories = request.GET.getlist('category')  
+            categories = request.GET.getlist('category')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'sub_category' in request.GET:
-            sub_categories = request.GET.getlist('sub_category')  
+            sub_categories = request.GET.getlist('sub_category')
             products = products.filter(sub_category__name__in=sub_categories)
-            sub_categories = SubCategory.objects.filter(name__in=sub_categories)
+            sub_categories = SubCategory.objects.filter(
+                name__in=sub_categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-
 
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'current_sub_categories': sub_categories, 
+        'current_sub_categories': sub_categories,
         'is_bestsellers': is_bestsellers,
         'is_new_items': is_new_items,
-        'is_last_chance': is_last_chance, 
+        'is_last_chance': is_last_chance,
     }
 
     return render(request, 'products.html', context)
@@ -96,7 +97,8 @@ def filtered_products(request, category):
     elif category == 'bestsellers':
         product_list = product_list.filter(is_bestseller=True)
 
-    selected_category_friendly_name = get_object_or_404(Category, name=category).friendly_name
+    selected_category_friendly_name = get_object_or_404(
+        Category, name=category).friendly_name
 
     context = {
         'products': product_list,
@@ -119,30 +121,35 @@ def add_to_wishlist(request, product_id):
 
 def all_categories(request):
     """ A view to show all categories or subcategories """
-    categories = Category.objects.exclude(name__in=['bestsellers', 'new_items', 'last_chance'])
+    categories = Category.objects.exclude(
+        name__in=['bestsellers', 'new_items', 'last_chance'])
     selected_category = request.GET.get('category')
     selected_subcategory = request.GET.get('sub_category')
     products = None
     sub_category_products = None
 
     if selected_subcategory:
-        products = Product.objects.filter(sub_category__name=selected_subcategory)
+        products = Product.objects.filter(
+            sub_category__name=selected_subcategory)
     elif selected_category:
         products = Product.objects.filter(category__name=selected_category)
 
-    selected_category_friendly_name = Category.objects.get(name=selected_category).friendly_name if selected_category else None
-    selected_subcategory_friendly_name = SubCategory.objects.get(name=selected_subcategory).friendly_name if selected_subcategory else None
+    selected_category_friendly_name = Category.objects.get(
+        name=selected_category).friendly_name if selected_category else None
+    selected_subcategory_friendly_name = SubCategory.objects.get(
+        name=selected_subcategory
+        ).friendly_name if selected_subcategory else None
 
     context = {
         'categories': categories,
         'selected_category': selected_category,
-        'selected_category_friendly_name': selected_category_friendly_name, 
+        'selected_category_friendly_name': selected_category_friendly_name,
         'products': products,
         'selected_subcategory': selected_subcategory,
-        'selected_subcategory_friendly_name': selected_subcategory_friendly_name, 
+        'selected_subcategory_friendly_name': (
+            selected_subcategory_friendly_name),
     }
     return render(request, 'all_categories.html', context)
-
 
 
 def sub_categories(request, category_id):
@@ -177,14 +184,16 @@ def add_product(request):
                 messages.success(request, 'Successfully added product!')
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
-                messages.error(request, 'Failed to add product, please ensure the form is valid.')
+                messages.error(request, 'Failed to add product,'
+                                        'please ensure the form is valid.')
         elif 'service_submit' in request.POST:
             if service_form.is_valid():
                 service = service_form.save()
                 messages.success(request, 'Successfully added service!')
                 return redirect(reverse('service_detail', args=[service.id]))
             else:
-                messages.error(request, 'Failed to add service, please ensure the form is valid.')
+                messages.error(request, 'Failed to add service,'
+                                        'please ensure the form is valid.')
 
     template = 'add_product.html'
     context = {
@@ -193,7 +202,6 @@ def add_product(request):
     }
 
     return render(request, template, context)
-
 
 
 @login_required
@@ -211,7 +219,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure that the form is valid.')
+            messages.error(request, 'Failed to update product.'
+                                    'Please ensure that the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -231,7 +240,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Successfully deleted product!')

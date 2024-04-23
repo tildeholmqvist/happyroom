@@ -15,6 +15,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -79,10 +80,13 @@ def checkout(request):
                                 quantity=quantity,
                             )
                             order_line_item.save()
-                            order_total = order_total + (product.price * quantity)
+                            order_total = order_total + (
+                                product.price * quantity
+                                )
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag"
+                        "wasn't found in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -90,14 +94,15 @@ def checkout(request):
             order.order_total = order_total
             order.update_total()
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in the bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -105,7 +110,7 @@ def checkout(request):
         for item_id, item_data in current_bag.get('items', {}).items():
             product = item_data['product']
             item_price = product.price * item_data['quantity']
-            total += item_price  
+            total += item_price
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -148,7 +153,6 @@ def checkout(request):
     return render(request, template, context)
 
 
-
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
@@ -172,7 +176,8 @@ def checkout_success(request, order_number):
                     'default_street_address2': order.street_address2,
                     'default_county': order.county,
                 }
-                user_profile_form = UserProfileForm(profile_data, instance=profile)
+                user_profile_form = UserProfileForm(
+                    profile_data, instance=profile)
                 if user_profile_form.is_valid():
                     user_profile_form.save()
 
@@ -194,4 +199,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
