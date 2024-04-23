@@ -24,7 +24,7 @@ footer {
 }
 
 .logo-font-reviews {
-    color: #B08E7F;
+    color: #72625c;
     font-family: "Playfair Display", serif;
     margin-bottom: 20px;
 }
@@ -52,7 +52,7 @@ footer {
 }
 
 .social-media-links > a:hover {
-    color: #B08E7F;
+    color: #72625c;
 }
 
 #mc_embed_signup{
@@ -66,12 +66,12 @@ footer {
     width: 50%;
     padding: 10px;
     margin-left: -20px;
-    background-color: #fff;
-    color: #B08E7F;
+    background-color: #B08E7F;
+    color: #fff;
 }
 
 .button-newsletter:hover {
-    background-color:#E7B2A3;
+    background-color: #72625c;
     color: #fff;
 }
 
@@ -88,19 +88,25 @@ footer {
     
 }
 
+.logo-font > .happy:hover {
+    color: #72625c;
+    
+}
+
+
 .account-links-index {
     color: #72625c;
 }
 
 .account-links-index:hover {
-    color:  #E7B2A3;
+    color: #B08E7F;
 } 
 /*navbar for mobile*/
 .account-links-mobile{
-    color: #B08E7F;
+    color: #72625c;
 }
 .account-links-mobile:hover{
-    color: #B08E7F; 
+    color: #B08E7F;
 }
 /*end of navbar for mobile*/
 
@@ -120,7 +126,7 @@ footer {
 }
 
 .logo-font:hover {
-    color:  #E7B2A3;
+    color: #B08E7F;
 }
 
 #main-nav {
@@ -153,6 +159,8 @@ footer {
     margin-top: 30px;
     margin-bottom: 40px;
     padding-top: 40px;
+    border: 2px;
+    border-color: #72625c;
 }
 
 
@@ -185,7 +193,7 @@ footer {
 }
 
 .dropdown-item:active {
-    background-color: #E7B2A3;
+    background-color: #B08E7F;
 }
 
 .subcategory-image {
@@ -238,7 +246,7 @@ footer {
 }
 
 .booking-link:hover {
-    color: #B08E7F;
+    background-color: #72625c;
 }
 
 .rating-style {
@@ -342,20 +350,20 @@ footer {
 .service-card-title > a {
     font-weight: 500;
     text-transform: uppercase;
-    color: #B08E7F;
+    color: #72625c;
     text-decoration: none;
     font-family: "Playfair Display", serif;
 }
 
 .service-card-title > a:hover{
-    color:  #E7B2A3;
+    color: #B08E7F;
 }
 
 
 .book-appointment {
     font-weight: 500;
     font-style: italic;
-    color:  #E7B2A3;
+    color: #72625c;
     text-decoration: none;
     font-family: "Playfair Display", serif;
 }
@@ -398,19 +406,20 @@ footer {
 }
 
 .profile-titles {
-    color: #e88771;
+    color: #72625c;
     text-transform: uppercase;
+    font-family: "Playfair Display", serif;
 }
 
 
 .add-to-wishlist > button{
     background-color: #fff;
-    color:  #E7B2A3;
-    border-color:#E7B2A3;
+    color: #72625c;
+    border-color: #72625c;
 }
 
 .add-to-wishlist > button:hover{
-    background-color: #E7B2A3;
+    background-color: #B08E7F;
     color:  #fff;
     border-color:#fff;
 }
@@ -456,13 +465,13 @@ footer {
 
 .home-button {
     background-color: #fff;
-    color:  #E7B2A3;
-    border-color:#E7B2A3;
+    color: #72625c;
+    border-color: #72625c;
     padding: 20px;
 }
 
 .home-button:hover{
-    background-color: #E7B2A3;
+    background-color: #B08E7F;
     color:  #fff;
     border-color:#fff;
 }
@@ -572,7 +581,7 @@ footer {
 }
 
 #login-form h2, #signup-form h2 {
-    color: #B08E7F; 
+    color: #72625c;
     font-family: "Playfair Display", serif;
     text-transform: uppercase;
     font-weight: bold;
@@ -586,31 +595,31 @@ footer {
 .allauth-form-inner-content input[type="text"],
 .allauth-form-inner-content input[type="email"],
 .allauth-form-inner-content input[type="password"] {
-    border-color: #B08E7F; 
+    color: #72625c;
     border-radius: 5px; 
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #B08E7F; 
+    color: #72625c;
 }
 
 .allauth-form-inner-content button[type="submit"] {
-    background-color: #B08E7F;
-    border-color: #B08E7F; 
+    background-color: #72625c;
+    border-color: #72625c;
     color: #ffff;
 }
 
 .allauth-form-inner-content button[type="submit"]:hover {
-    background-color: #E7B2A3; 
-    border-color: #E7B2A3; 
+    background-color: #72625c;
+    border-color: #72625c;
 }
 
 .allauth-form-inner-content a {
-    color: #B08E7F; 
+    color: #72625c;
 }
 
 .allauth-form-inner-content a:hover {
-    color: #E7B2A3; 
+    color: #B08E7F;
 }
 
 /* Product Form */
