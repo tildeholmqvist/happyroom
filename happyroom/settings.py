@@ -31,8 +31,8 @@ CSRF_TRUSTED_ORIGINS = ['https://happy-room-e68715746875.herokuapp.com/', 'https
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
-#DEBUG = True
+#DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['happy-room-e68715746875.herokuapp.com', '8000-tildeholmqv-pp5happyroo-f7tyuzz2jbt.ws-eu110.gitpod.io']
 
@@ -216,6 +216,7 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
 
 
 

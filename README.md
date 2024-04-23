@@ -384,3 +384,7 @@ Overall, by using a mix of these strategies, HappyRoom aims to reach more people
 
 Understanding our users' needs is our top priority. 
 They want clear information, guidance, and inspiration, so we provide useful content like inspiring pictures and helpful guides. Our business goals shape our marketing strategies, to meet these goals effectively.
+
+# TESTING 
+
+# DEPLOYMENT 
