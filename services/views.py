@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Service, BookService
 from .forms import BookServiceForm, ServiceForm
+from products.forms import ProductForm
 
 
 # Create your views here.
@@ -18,18 +19,18 @@ def add_service(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ServiceForm(request.POST)
-        if form.is_valid():
-            service = form.save()
+        service_form = ServiceForm(request.POST)
+        if service_form.is_valid():
+            service = service_form.save()
             messages.success(request, 'Successfully added service!')
             return redirect('services')
         else:
             messages.error(request, 'Failed to add service,'
                                     'please ensure the form is valid.')
     else:
-        form = ServiceForm()
-
-    return render(request, 'add_product.html', {'form': form})
+        service_form = ServiceForm()
+    product_form = ProductForm()
+    return render(request, 'add_product.html', {'service_form': service_form, 'product_form': product_form})
 
 
 def book_service(request, service_id):
