@@ -77,23 +77,6 @@ footer {
 
 /* Header & Logo */
 
-.logo-happyroom{
-    font-family: "Playfair Display", serif;
-    font-size: 300%;
-
-}
-
-.logo-font > .happy {
-    color: #B08E7F;
-    
-}
-
-.logo-font > .happy:hover {
-    color: #72625c;
-    
-}
-
-
 .account-links-index {
     color: #72625c;
 }
