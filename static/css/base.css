@@ -200,6 +200,7 @@ footer {
     width: 100px; 
     height: 100px; 
     border-radius: 50%; 
+    border-color: #B08E7F;
     
 }
 
@@ -250,7 +251,7 @@ footer {
 }
 
 .rating-style {
-    color:  #E7B2A3;
+    color: #B08E7F;
 }
 
 /* FAQ */
