@@ -165,10 +165,15 @@ footer {
 
 
 .logo-font-index {
-    color: #fff;
+    color: #72625c;
+    background-color: #fff;
     font-family: "Playfair Display", serif;
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 30px;
+    margin-right: 100px;
+    margin-left: 100px;
+
 }
 
 .first-page-image {
