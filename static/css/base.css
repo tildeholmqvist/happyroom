@@ -24,8 +24,8 @@ footer {
 }
 
 .logo-font-reviews {
-    color: #72625c;
-    font-family: "Playfair Display", serif;
+    color: #000000;
+    font-family: "Libre Baskerville", serif;
     margin-bottom: 20px;
 }
 .review-comment {
@@ -125,7 +125,7 @@ footer {
     margin-right: 60px;
     padding: 5px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .index-container-slide {
@@ -378,7 +378,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .service-img-book {
@@ -396,7 +396,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .profile-titles {
@@ -430,7 +430,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .logo-font-total {
     color: #000;
@@ -444,7 +444,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* account pages */
@@ -455,6 +455,7 @@ footer {
     margin-right: 50px;
     padding: 20px;
     margin-top: 30px;
+    margin-bottom: 40px;
 
 }
 
