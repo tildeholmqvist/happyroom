@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 html {
     height: 100%;
 }
@@ -112,6 +112,10 @@ footer {
     color: #B08E7F;
 }
 
+.logo-font-non-link {
+    color: #000;
+    font-family: "Libre Baskerville", serif;
+}
 
 #main-nav {
     font-family: "Playfair Display", serif;
@@ -124,7 +128,7 @@ footer {
     margin-left: 60px;
     margin-right: 60px;
     padding: 5px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -210,7 +214,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 40px;
     padding-left: 50px;
 }
@@ -253,7 +257,7 @@ footer {
     background-color: #fff;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
     padding-left: 90px;
     padding-right: 90px;
@@ -269,7 +273,7 @@ footer {
 .company-introduction > h2 {
     font-weight: 500;
     text-transform: uppercase;
-    color: #72625c;
+    color: #000;
     font-family: "Libre Baskerville", serif;
 }
 
@@ -277,7 +281,7 @@ footer {
     margin-bottom: 20px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #72625c;
+    color: #000;
     font-family: "Libre Baskerville", serif;
 }
 
@@ -321,7 +325,7 @@ footer {
 .contact-info-container > h3 {
     font-weight: 500;
     text-transform: uppercase;
-    color: #72625c;
+    color: #000;
     margin-top: 70px;
     text-align: center;
     font-family: "Libre Baskerville", serif;
@@ -338,6 +342,7 @@ footer {
     margin-bottom: 30px;
     display: flex;
     background-color: #fff;
+    margin-top: 40px;
 
 }
 
@@ -377,7 +382,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -395,7 +400,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -429,12 +434,8 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-.logo-font-total {
-    color: #000;
-    font-family: "Libre Baskerville", serif;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 /* Checkout */
 
@@ -443,7 +444,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -454,7 +455,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
 
 }
@@ -608,8 +609,8 @@ footer {
 }
 
 .allauth-form-inner-content button[type="submit"]:hover {
-    background-color: #72625c;
-    border-color: #72625c;
+    background-color: #B08E7F;
+    border-color: #B08E7F;
 }
 
 .allauth-form-inner-content a {
@@ -752,7 +753,7 @@ footer {
 
     .product-container, .bag-container,
     .profile-container, .review-container,
-    .checkout-container{
+    .checkout-container {
         margin-left: 15px;
         margin-right: 15px;
         padding-left: 40px;
@@ -769,5 +770,30 @@ footer {
     .index-about-card > .logo-font {
         margin-top: -10px;
 
+    }
+
+    .index-container-1 {
+        margin-top: -10px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .index-container-1 {
+        background-color: #fff;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: -5px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .index-container-slide {
+        background-color: transparent;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px;
+        margin-top: -5px;
+        margin-bottom: 10px;
     }
 }
