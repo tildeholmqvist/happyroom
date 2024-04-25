@@ -270,7 +270,7 @@ footer {
     font-weight: 500;
     text-transform: uppercase;
     color: #72625c;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .faq-heading {
@@ -278,7 +278,7 @@ footer {
     font-weight: 500;
     text-transform: uppercase;
     color: #72625c;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .faq-item {
@@ -324,7 +324,7 @@ footer {
     color: #72625c;
     margin-top: 70px;
     text-align: center;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .contact-info i {
@@ -359,7 +359,7 @@ footer {
     font-style: italic;
     color: #72625c;
     text-decoration: none;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .book-appointment:hover {
@@ -402,7 +402,7 @@ footer {
 .profile-titles {
     color: #72625c;
     text-transform: uppercase;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 
@@ -580,7 +580,7 @@ footer {
 
 #login-form h2, #signup-form h2 {
     color: #72625c;
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Baskerville", serif;
     text-transform: uppercase;
     font-weight: bold;
 }
