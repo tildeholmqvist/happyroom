@@ -10,13 +10,14 @@
 {% endblock %}
 
 {% block content %}
+<div class="index-container-1">
 <div class="index-container-slide">
     <!-- Carousel -->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ MEDIA_URL }}indeximage.png" width="100%" height="auto" class="d-block mx-auto" alt="Image of a wallpaper in the new luxury collection">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-lg-block">
                     <h1 class="display-4 text-black">
                         The new wallpaper collections are here
                     </h1>
@@ -27,14 +28,14 @@
                     </div>
                 </div>
             </div>
-           
     </div>
+</div>
 </div>
 </div>
 <div class="index-container">
     <div class="row about-index-page ">
         <div class="col-md-4 col-sm-12 order-md-1 d-flex justify-content-center align-items-center index-about-card">
-            <h3 class="logo-font text-uppercase">About Our Wallpapers</h3>
+            <h4 class="logo-font text-uppercase">About Our Wallpapers</h4>
         </div>
         <div class="col-md-8 col-sm-12 order-md-2 d-flex">
             <div class="card" style="border:none;"> 
@@ -49,7 +50,7 @@
     </div>
 </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 index-container">
         <div class="col-md-6">
             <a href="{% url 'all_categories' %}?category=pattern">
             <img src="{{ MEDIA_URL }}pattern1.jpeg" class="img-fluid first-page-image" alt="Image of pattern wallpaper" style="width: 100%; height: 100%;">
@@ -67,8 +68,6 @@
             </div>
         </div>
     </div>
-<div class="text-center mt-15">
-    <h2 class="logo-font-index">Transform Your Space, Infuse Life with Patterns & Colors!</h2>
 </div>
 {% endblock %}
  
