@@ -167,9 +167,10 @@ footer {
     margin-bottom: 20px;
     margin-top: 30px;
     background-color: #fff;
-    margin-left: 90px;
-    margin-right: 90px;
-    padding: 20px;
+    margin-left: 140px;
+    margin-right: 140px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .extra-menu a {
@@ -431,7 +432,10 @@ footer {
     margin-top: 30px;
     margin-bottom: 20px;
 }
-
+.logo-font-total {
+    color: #000;
+    font-family: "Libre Baskerville", serif;
+}
 /* Checkout */
 
 .checkout-container {
