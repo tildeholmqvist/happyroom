@@ -66,12 +66,12 @@ footer {
     width: 50%;
     padding: 10px;
     margin-left: -20px;
-    background-color: #B08E7F;
+    background-color: #72625c;
     color: #fff;
 }
 
 .button-newsletter:hover {
-    background-color: #72625c;
+    background-color: #B08E7F;
     color: #fff;
 }
 
@@ -104,7 +104,7 @@ footer {
 }
 
 .logo-font {
-    color: #72625c;
+    color: #000;
     font-family: "Libre Baskerville", serif;
 }
 
@@ -141,9 +141,8 @@ footer {
     background-color: #fff;
     margin-left: 60px;
     margin-right: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
-
 
 .shop-now-button {
     color: #fff;
@@ -166,7 +165,11 @@ footer {
 .extra-menu {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
+    background-color: #fff;
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 5px;
 }
 
 .extra-menu a {
@@ -185,15 +188,13 @@ footer {
 .subcategory-image {
     width: 100px; 
     height: 100px; 
-    border-radius: 50%; 
-    border-color: #B08E7F;
-    
+    border-radius: 50%;    
 }
 
 .subcategory-name {
     display: block;
     margin-top: 5px;
-    color: #fff;
+    color: #72625c;
     font-weight: 600;
 }
 
@@ -228,12 +229,13 @@ footer {
 }
 
 .booking-link{
-    color: #000;
+    color: #72625c;
     text-decoration: none !important;
+    font-family: "Libre Baskerville", serif;
 }
 
 .booking-link:hover {
-    background-color: #72625c;
+    color: #B08E7F;
 }
 
 .rating-style {
