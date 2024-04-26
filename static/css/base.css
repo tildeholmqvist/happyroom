@@ -801,4 +801,9 @@ footer {
         margin-top: 0;
         margin-bottom: 10px;
     }
+
+    .shop-now-button {
+        font-size:large;
+        
+    }
 }
