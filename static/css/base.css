@@ -803,7 +803,11 @@ footer {
     }
 
     .shop-now-button {
-        font-size:large;
-        
+        font-size:large;  
+    }
+
+    .extra-menu {
+        margin-left: 60px;
+        margin-right: 60px;
     }
 }

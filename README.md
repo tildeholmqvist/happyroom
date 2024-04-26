@@ -71,16 +71,21 @@ All media is uploaded with Amazon Web Services and all images is borrowed from t
 
 _Please note that this website is for educational purposes only and should not be regarded as a real e-commerce platform. For genuine products, visit [Belarte Studio.](https://belartestudio.com/)_
 
+### Logo
+
+The logo of HappyRoom is made in Canva, and is written in the fonts Libre Baskerville and Brittany.
+
 ### Fonts
 
 The Montserrat font is used on the main content of the website, for example, all product description and FAQ page. 
-The Playfair Display font is used on all headings, as well as the logo name in the header.
+The Playfair Display font is used on all product headings. 
+The Libre Baskerville is used on all other headings on the site.
 
 All fonts are from [Google Fonts](https://fonts.google.com/).
 
 ### Favicon 
 
-The favicon was generated through [Favicon.io](https://favicon.io/) and depicts the logo for HappyRoom.
+The favicon was generated through [Favicon.io](https://favicon.io/) and depicts a roll of wallpaper.
 
 ### Icons
 

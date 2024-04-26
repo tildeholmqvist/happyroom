@@ -30,7 +30,8 @@ def add_service(request):
     else:
         service_form = ServiceForm()
     product_form = ProductForm()
-    return render(request, 'add_product.html', {'service_form': service_form, 'product_form': product_form})
+    return render(request, 'add_product.html',
+                  {'service_form': service_form, 'product_form': product_form})
 
 
 def book_service(request, service_id):
