@@ -170,7 +170,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 
 ### Home Page
 
-![Screenshot of my webpage from Am I responsive?](/docs/readme_images/amiresponsiveconnected.png)
+![Screenshot of my webpage](/docs/readme_images/.png)
 
 - The homepage features a carousel showcasing three images from our latest collection.
 - A section on the homepage informs users about the website's purpose.
@@ -379,7 +379,7 @@ We showcase high-quality images of our interior design projects to attract poten
 
 Social media marketing is used through platforms like Facebook, Instagram, and Pinterest because many people seek inspiration there. This complements  the content marketing, as we can easily share images of past projects and new products. We also run sales and offer discounts through ads on these platforms to catch our customers attention.
 
-# FACEBOOK BILD/LÄNK
+![HappyRoom Facebook Page ](docs/readme_images/happyroom-facebook.png)
 
 #### Email Marketing
 
@@ -392,4 +392,72 @@ They want clear information, guidance, and inspiration, so we provide useful con
 
 # TESTING 
 
-# DEPLOYMENT 
+#### User Story Testing 
+
+ - All user stories have been tested out and are working correctly. 
+ - All user stories related to site owner and site administration have been tested out and are working correctly.
+
+ ## Validator Testing 
+
+### W3C Validator HTML
+All HTML pages were tested through the [W3C HTML Validator](https://validator.w3.org/). 
+
+No errors were found on these pages:
+- Index Page.
+- Product Page.
+- Category Page.
+- Subcategory Page.
+- Checkout Page.
+- Checkout Success Page.
+- Bag Page.
+- Services Page.
+- Service Details Page.
+- Order Confirmation Page.
+- Booking Confirmation Page. 
+- Profile Page.
+- Customer Reviews Page. 
+- FAQ Page. 
+- 404 Error Page. 
+
+When validating these pages a few errors occured: 
+- Register Page.
+  - An error indicating that the element ul is not allowed as a child of the element small. This error is related to the Django Allauth templates and was left unfixed.
+
+- Add Product & Service Page. 
+  - When validating this page, 28 errors and warnings were encountered, all related to the forms. These errors were left unfixed as they are not critical for the website's functionality. Screenshots of these errors and warnings are provided below.
+
+![W3C Validator HTML Errors ](docs/readme_images/w3c-error-1.png)
+![W3C Validator HTML Errors ](docs/readme_images/w3c-error-2.png)
+![W3C Validator HTML Errors ](docs/readme_images/w3c-error-3.png)
+![W3C Validator HTML Errors ](docs/readme_images/w3c-error-4.png)
+![W3C Validator HTML Errors ](docs/readme_images/w3c-error-5.png)
+
+### W3C Validator CSS
+The CSS files were tested using the [W3C Validator CSS](https://jigsaw.w3.org/css-validator/) with no errors found.
+
+### JS Hint 
+
+All JavaScript were tested using the [Jshint validator](https://jshint.com/) with no errors.
+
+
+### PEP8
+
+All Python were tested through the [CI Python Linter](https://pep8ci.herokuapp.com/) except for in the settings file where a few lines were too long. These were left as is since the importance of the settings being correct outweighed the issue of line length.
+
+![CI Python Validator - Settings](docs/readme_images/ci-python-linter.png)
+
+
+## Lighthouse 
+
+SKRIV OM LIGHTHOUSE HÄR NU 
+
+## Browser Testing
+
+The website has been tested across various browsers, including Google Chrome, Safari, and Firefox. All functionalities are working correctly across these browsers.
+
+## Device Testing
+
+The website has been tested on a range of devices, including iPhone, iPad, MacBook Pro, and iMac. The website is fully functional and displays properly across all tested devices.
+
+
+
