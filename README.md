@@ -63,7 +63,7 @@ The site features a clean design with earthy elements, blending brown with white
 
 The color scheme of HappyRoom is soothing, mainly in earthy tones. These colors harmonize well with the website's purpose, offering users a relaxed and welcoming environment.
 
-The Color Scheme is made with [My Color Space](https://mycolor.space/).
+The Color Scheme is made with [Color Space](https://mycolor.space/).
 
 ### Images
 All media is uploaded with Amazon Web Services and all images is borrowed from the real wallpaper site 
@@ -538,10 +538,139 @@ The website's responsiveness has been tested through the Google Chrom Dev Tool a
 ## Bugs and Issues
 
 ### Unfixed Bugs and Issues
+During the validation process of the Registration page and Add Product & Service page, several issues were identified:
+
+- An error was occurring, indicating that the "ul" element is not allowed as a child of the "small" element. This issue is present in the Django Allauth templates and therefore has been left unfixed.
+
+- Validation of the Add Product & Service page revealed 28 errors and warnings. 
+These errors mainly come from how the form is set up. For instance, the {% csrf_token %} tag and the way the form fields are looped through,may be the reasons behind these errors. 
+However, even with these errors, the main functions of the page, like submitting the forms, still works correctly. As a result, these errors have been left unfixed for now.
+However, I will carefully consider addressing them in future improvements.
 
 ## Deployment - Heroku
+The website was deployed through the hosting platform Heroku, from its GitHub repository.
 
-## AWS Set Up
+### Create the Heroku App
+- Create an account or log in to [Heroku](https://dashboard.heroku.com/apps).
+- On the main page click "New" at the top right corner and choose "Create New App" from the dropdown menu.
+- Give the app a unique and meaningful name.
+- Next up, select your region.
+- Click "Create App".
+
+### Connect the Postgres database
+- In the Resources tab, type "Postgres", and select "Heroku Postgres".
+- Copy the DATABASE_URL from Config Vars in the Settings Tab.
+- Install two additional requirements in your IDE:
+   - pip3 install dj_database_url
+   - pip3 install psycopg2-binary
+- Create a requirements.txt file.
+- Create an env.py file in the main directory of your GitPod workspace.
+- Add the DATABASE_URL value and your personally selected SECRET_KEY value to the env.py file.
+- Update your settings.py file to import the env.py file and add the paths for both the DATABASE_URL and SECRET_KEY.
+- Comment out the default database configuration.
+- Save your files and run the migrations. 
+- Create a superuser.
+- Create an if statement in settings.py to run the Postgres database when using the app on Heroku or SQLite.
+- Create the requirements.txt file
+- Create a file named "Procfile" in the main directory of your project.
+- In "Procfile" add "web: gunicorn project-name.wsgi".
+- Add Heroku to your ALLOWED_HOSTS.
+
+#### Update the Heroku Config Vars
+- In Heroku, add these Config Vars:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - DATABASE_URL
+  - EMAIL_HOST_PASS
+  - EMAIL_HOST_USER
+  - SECRET_KEY
+  - STRIPE_PUBLIC_KEY
+  - STRIPE_SECRET_KEY
+  - STRIPE_WH_SECRET
+  - USE_AWS
+
+### Deploy your site
+- Before deploying, make sure that your DEBUG is set to false in your settings.py file.
+- Go to the deploy tab on Heroku, navigate to connect to GitHub, and then pick the required repository.
+- Scroll to the bottom of the page where you can choose if you want to Enable Automatic Deploys for 
+
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
+- Scroll down to the bottom of the page and there you can choose if you want the deploys to be Automatic or Manually. The Manually deployed branches need redeploying each time the repository is updated.
+- Deploy your website. 
+- Click "View", or scroll up to "Open App" to visit the deployed site.
+
+The deployed website can be found here - [HappyRoom](https://happy-room-e68715746875.herokuapp.com/).
+
+## AWS
+### AWS S3 Bucket
+- Create an AWS Account:
+  - Visit the AWS Management Console and sign up for an account.
+- In the AWS Management Console, navigate to the 'S3' service.
+- Click 'Create a new bucket' and choose the region closest to you.
+- Enable 'ACLs' under 'Object Ownership' and keep the Object Ownership as 'Bucket owner preferred'
+- Uncheck 'block all public access' and acknowledge that the bucket will be public.
+- Click 'Create bucket'.
+- Navigate to the 'Properties' tab within the created bucket. Scroll down to the bottom and find the 'Static website hosting' section. Click on 'edit' and set the Static website hosting option to 'enabled'. 
+- Copy the default values for the index and error documents and click 'save changes'.
+- Move to the 'Permissions' tab. Locate the CORS configuration section and insert the following code:
+
+      [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+      ]
+- In the 'Bucket Policy' section, choose 'Policy Generator'.
+- From the dropdown select 'S3 Bucket Policy' and add the following settings:
+    - Effect: Allow
+    - Principal: *
+    - Actions: GetObject
+    - ARN: Bucket ARN (copy from S3 Bucket page)
+- Click 'Add Statement'.
+- Click 'Generate Policy'.
+- Copy the policy from the popup that appears
+- Paste the generated policy into the Permissions > Bucket Policy area.
+- Add '/*' at the end of the 'Resource' key, and save.
+- Navigate to the 'Access Control List' section, click edit, enable List for Everyone (public access), and confirm the warning.
+
+### IAM
+- From the 'Services' menu, search for the service IAM.
+- On the IAM page, on the sidebar click on 'User Groups' and then 'Create group'.
+- Go to 'Policies', click on 'Create New Policy', and go to the 'JSON' tab and click 'Import Managed Policy'. 
+- Search for 'S3' and select 'AmazonS3FullAccess'. Click 'Import'.
+- Find the bucket ARN from the 'S3 Permissions' section.
+- Remove the '*' from the 'Resource' key and replace it with your bucket ARN in two places.
+- After that, go through the steps to review and create your policy.
+- In the 'User Groups' section, open the group you created and add permissions by attaching the policies you've created.
+- Create a user for the group by selecting users from the sidebar and clicking 'Add user'.
+- Provide a username and check the box for 'Programmatic Access'.
+- Follow the prompts until you reach the 'Create user' button, then click it.
+- Finally, download the CSV file containing your AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID, which you'll need for Heroku variables and your env.py file.
+
+### Connecting S3 to Django 
+- Go back to your IDE and install two more requirements: 
+  - boto3
+  - django-storages.
+- Update the requirements.txt file with the new dependencies.
+- Then add 'storages' to your installed apps.
+- In the settings.py file, create an if statement to check if 'USE_AWS' is in the environment variables.
+- Inside the if statement, set up your AWS credentials including the bucket name, region, access key, and secret key, to let django know where to look for the static files in production.
+- Create a file named custom_storages and define two classes: 
+   - StaticStorage
+   - MediaStorage
+- In settings.py, specify the storage classes for static files and media files, and settings for AWS S3 objects.
+- Navigate to your S3 bucket, create a folder named 'media', and upload all your media files into this folder.
+- Make sure to grant public-read access to these files under the 'Permissions' section.
+- Django should now automatically link your static and media files to your S3 bucket.
+
 
 ## Languages
 
@@ -552,4 +681,42 @@ The website's responsiveness has been tested through the Google Chrom Dev Tool a
 
 
 ## Frameworks, Libraries and Programs Used
+- [Django](https://www.djangoproject.com/): The main framework used in this project, built with Python.
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): The authentication library used for creating user accounts in this project.
+- [PostgreSQL](https://www.postgresql.org/): Used as the database for this project.
+- [JQuery](https://jquery.com/)
+- [Stripe](https://stripe.com/ie): Used for the payments system.
+- [AWS](https://aws.amazon.com/?nc2=h_lg): Used for file storage.
+- [GitHub](https://github.com/): Used as agile tool.
+- [Heroku](https://dashboard.heroku.com/login): Hosting the live website.
+- [Bootstrap](https://getbootstrap.com/): Used as the main front-end framework.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/): Used to manage all Django Forms.
+- [Sitemap Generator](www.xml-sitemaps.com): Used to create sitemap.xml. 
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/): Used to create the site's privacy policy.
+- [Mailchimp](https://mailchimp.com/?currency=EUR): Used to create the newsletter signup functionality.
+- [FlatPickr](https://flatpickr.js.org/themes/): Used for the date picker in booking form.
+
+### Additional Programs Used
+
+- [Font Awesome](https://fontawesome.com/): Used for icons in the footer, and on comments.
+- [Google Fonts](https://fonts.google.com/): Used to import fonts, elevating the layout of the project.
+- [Am I Responsive?](https://ui.dev/amiresponsive)
+- [Balsamiq](https://balsamiq.com/): Used to generate the Wireframe images.
+- [W3C](https://www.w3.org/): Used for HTML & CSS Validation.
+- [Jshint](https://jshint.com/): Used to validate all javascript.
+- [Color Space](https://mycolor.space/): Used to create the color palette.
+- [Favicon](https://favicon.io/): Used to create the favicon.
+- [Grammerly](https://app.grammarly.com/): Used to proof read the README.md. 
+- [Canva](https://www.canva.com/sv_se/): Used to create the logo. 
+
 ## Credits
+ - [Stack Overflow](https://stackoverflow.com/)
+ - [W3Schools](https://www.w3schools.com/django/)
+ - [Django Project](https://docs.djangoproject.com/)
+ - [Bootstrap Documentation](https://getbootstrap.com/)
+ - [DEV](https://dev.to/)
+ - [REINTECH](https://reintech.io/)
+ - [Quora](https://djangowebdevelopers.quora.com/)
+- [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+
+
