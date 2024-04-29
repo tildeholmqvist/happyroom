@@ -4,8 +4,8 @@
 
 HappyRoom is a B2C e-commerce store targeting individuals looking to enhance their living or working spaces with unique wallpapers and interior design services.
 
-At HappyRoom, the users can explore a variety of carefully selected wallpapers, each with its own distinct design to suit different tastes.
-The user are also offered personalized assistance through consultations with our team of experts.
+At HappyRoom, users can explore a variety of carefully selected wallpapers, each with its distinct design to suit different tastes.
+The users are also offered personalized assistance through consultations with our team of experts.
 Additionally, the user can stay informed about new arrivals and special offers by subscribing to our newsletter, and also share their thoughts with us through our customer reviews.
 
 HappyRoom aims to provide users with the tools and resources needed to transform their spaces into personalized expressions of style and creativity. 
@@ -24,32 +24,32 @@ For a live demonstration, visit [HappyRoom](https://happy-room-e68715746875.hero
 
 ### User Stories
 ##### Profile
-- As a site user I can sign up to the site so that my own personal account is created.
+- As a site user I can sign up to the site so that my account is created.
 - As a site user I can log in and log out of the page.
-- As a logged i user I can choose if I want to save my information so that it will speed up the checkout process next time.
-- As a site user I can buy products of the store while im logged in so that it's an easier process for me viewing my prefilled personal details.
+- As a logged-in user I can choose if I want to save my information so that it will speed up the checkout process next time.
+- As a site user I can buy products from the store while I'm logged in so that it's an easier process for me to view my prefilled personal details.
 - As a site user I can view my previously made orders so that I can easily find what I bought last time
-- As a logged in user I can easily see that I am activily logged in so that if I am not, I can log in
+- As a logged-in user I can easily see that I am actively logged in so that if I am not, I can log in
 
 ##### Products
 
 - As a site user I can easily navigate through the website so that I can find what I am looking for
-- As a site user I can easily brows through the different products so that I can find what I am looking for.
+- As a site user I can easily browse through the different products so that I can find what I am looking for.
 - As a site user I can sort and filter the products so that I only view the product I am interested in.
 - As a site user I can save or like products so that I can easily find them again.
-- As a site user I can find inspirational images of the products so that i can imagine what the room will look like
+- As a site user I can find inspirational images of the products so that I can imagine what the room will look like
 - As a site user I can view my shopping bag and the total price so that I know how much money I shop for.
 - As a site user I can be assured that the payment is secure.
 
 ##### Other requirements
-- As a site user I can sign up for newsletter
+- As a site user I can sign up for a newsletter.
 - As a site user I can book a meeting with an expert so that I can get help with advising and design.
-- As a site user I am informed about how my personal information is going to be handled, and what the stores privacy policy is.
+- As a site user I am informed about how my personal information is going to be handled, and what the store's privacy policy is.
 - As a site user I can fast and easily find information about the company so that I can get answers if I have any questions
 
 ##### Site Administration
-- As a site owner I can create, edit and delete products
-- As a site owner I can send out newsletter so that the user who signed up for it can recieve them
+- As a site owner I can create, edit, and delete products
+- As a site owner I can send out a newsletter so that the user who signed up for it can receive them
 - As a site owner I can inform the user about the company so that the user knows what the purpose of the company and site is
 
 #### Future User Stories to Consider
@@ -66,21 +66,21 @@ The color scheme of HappyRoom is soothing, mainly in earthy tones. These colors 
 The Color Scheme is made with [Color Space](https://mycolor.space/).
 
 ### Images
-All media is uploaded with Amazon Web Services and all images is borrowed from the real wallpaper site 
+All media is uploaded with Amazon Web Services and all images are borrowed from the real wallpaper site 
 [Belarte Studio.](https://belartestudio.com/)
 
 _Please note that this website is for educational purposes only and should not be regarded as a real e-commerce platform. For genuine products, visit [Belarte Studio.](https://belartestudio.com/)_
 
 ### Logo
 
-The logo of HappyRoom is made in [Canva](https://www.canva.com/sv_se/), and is written in the fonts Libre Baskerville and Brittany.
+The logo of HappyRoom is made in [Canva](https://www.canva.com/sv_se/) and is written in the fonts Libre Baskerville and Brittany.
 
 ![Picture of the Logo](/docs/readme_images/logo-pic.png)
 
 
 ### Fonts
 
-The Montserrat font is used on the main content of the website, for example, all product description and FAQ page. 
+The Montserrat font is used on the main content of the website, for example, all product descriptions and FAQ pages. 
 The Playfair Display font is used on all product headings. 
 The Libre Baskerville is used on all other headings on the site.
 
@@ -171,12 +171,12 @@ Wireframes were produced using Balsamiq.
 
 For project management, I used GitHub Projects for an agile approach. You can access the project board [here.](https://github.com/users/tildeholmqvist/projects/10)
 
-During the planning phase, I created twenty GitHub Issues, with two additional as future improvement.
+During the planning phase, I created twenty GitHub Issues, with two additional ones as future improvements.
 Each issue is followed by a set of acceptance criteria, making the execution of the task clear, and easier to navigate to completion.
 
 ## Data Model
 
-When building this B2C e-commerce site, the principles of object-oriented programming (OOP) was used, which organize data into easily manageable chunks. This makes it simpler to handle different aspects of our platform, like categories, products, and user profiles.
+When building this B2C e-commerce site, the principles of object-oriented programming (OOP) were used, which organize data into easily manageable chunks. This makes it simpler to handle different aspects of our platform, like categories, products, and user profiles.
 
 ![Database Schema](docs/readme_images/database-schema.png)
 
@@ -185,12 +185,12 @@ When building this B2C e-commerce site, the principles of object-oriented progra
 To ensure safe and easy user access, Django Allauth is implemented for user authentication, allowing users to securely log in and manage their accounts.
 
 #### Form Validation
-If the submitted form is not valid, an error will accour telling the user what field is missing or is incorrect.
-If any submitted form is not valid or contains errors, users will receive a clear error message, showing which fields is causing the error.
+If the submitted form is not valid, an error will occur telling the user what field is missing or is incorrect.
+If any submitted form is not valid or contains errors, users will receive a clear error message, showing which fields are causing the error.
 
 #### Custom 404 error page
 ![404 Page](/docs/readme_images/404page.png)
-If a user come across a wrong URL, they will be directed to a custom 404 error page, allowing the user to easily go back to the homepage.
+If a user comes across a wrong URL, they will be directed to a custom 404 error page, allowing the user to easily go back to the homepage.
 
 #### Database Security
 Sensitive information, such as database URLs, secret keys, stripe keys, webhook secrets, AWS credentials, and email access, are stored securely in the env.py file to prevent unauthorized access.
@@ -202,7 +202,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 
 #### Logo
 - A logo was created in Canva, using the fonts Libre Baskerville and Brittany.
-- The logo is positioned in the top left of the site, and is linked to the home page for an easier navigation for the site user.
+- The logo is positioned in the top left of the site and is linked to the home page for easier navigation for the site user.
 
 
 #### Navigation Bar
@@ -240,7 +240,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - The footer features links to the site's social media profiles on Facebook, LinkedIn, Instagram, and Pinterest.
 - Additionally, the footer includes a signup section for the MailChimp Newsletter, enabling users to subscribe and receive updates on the latest deals and offers.
 - Other footer links include access to the products page, services page, FAQ page, Custom Reviews, and the Privacy Policy.
-- All external links automatically opens in a new tab.
+- All external links automatically open in a new tab.
 
 ### Home Page
 ![The Home Page](/docs/readme_images/home-page.png)
@@ -254,7 +254,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 ![Delivery Information](/docs/readme_images/delivery-information.png)
 
 - The delivery details section saves the user's delivery address and phone number.
-- This information is used to fill in the users delivery address automatically when they are accessing the check out.
+- This information is used to fill in the user's delivery address automatically when they are accessing the checkout.
 
 ##### Order History
 
@@ -278,21 +278,21 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 
 ### User Account Pages
 
-- Django allauth was installed and used to implement the Sign up, Log in, and Log out functionality. 
+- Django all auth was installed and used to implement the Signup, Login, and Log-out functionality. 
 - Success messages notify users of successful login/logout actions.
-- When the user is register for an account, the user must verify their email address by clicking on the authentication link sent to the provided email address.
+- When the user registers for an account, the user must verify their email address by clicking on the authentication link sent to the provided email address.
 - Users can reset their password by clicking on the 'Forgot Password' link on the login page if they forget it.
 
 ### The Categories Pages
 ![Categories Pages](/docs/readme_images/categories.png)
 - Under the "Latest Deal" menu, users can choose from different categories such as "New In," "Bestsellers," "Last Chance," and "View all," each redirecting them to the product page.
-- In the other dropdown menus within the navigation bar, users can select categories. If they want to see all products in a specific category, they will be lead to a page where they can further filter by subcategories.
+- In the other dropdown menus within the navigation bar, users can select categories. If they want to see all products in a specific category, they will be led to a page where they can further filter by subcategories.
 - The visibility of products depends on the category selected by the user.
-- Every product is displayed with an image, title, rating and price.
+- Every product is displayed with an image, title, rating, and price.
 
 ### The Products page
 ![Products](/docs/readme_images/products.png)
-- When clicking on a product, the user will get transfered to a page featuring a more detailed information about the product.
+- When clicking on a product, the user will get transferred to a page featuring more detailed information about the product.
 - Alongside the title, rating, and price, users will find a detailed product description.
 - Each product description provides helpful information about measurements, helping users choose the right amount.
 - If the user is unsure about sizing and quantity, a link is provided for users to schedule a meeting with an expert for personalized advice.
@@ -302,11 +302,11 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 
 ### Services Page
 ![Service](/docs/readme_images/service.png)
-- Every service is displayed with an image, title, description and price.
+- Every service is displayed with an image, title, description, and price.
 - Clicking on a service redirects the user to a page providing detailed information about the service.
 - Below the service description, users find a booking form to schedule appointments.
 - After booking an appointment, users receive a success message confirming that the booking was successful.
-- After booking the appointment, the user are directed to a page summarizing the appointment details.
+- After booking the appointment, the user is directed to a page summarizing the appointment details.
 - Payment for appointments is not required in advance, allowing users to schedule meetings without upfront payment.
 
 
@@ -318,7 +318,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - Access the "Product Management" option from the dropdown menu under the user icon to reach the add product page.
 - The service form must be valid to add a service, and every required field is marked with an asterisk (*).
 - Product prices must be greater than 0 and cannot exceed 6 digits in total.
-- The user have the option to upload an image for the product. If no image is provided, a default image is displayed.
+- The user has the option to upload an image for the product. If no image is provided, a default image is displayed.
 - Once the form is filled out and validated, the product can be created by clicking the add button.
 - The user will receive a success message confirming that the product has been successfully added.
 
@@ -333,7 +333,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 #### Delete Product
 
 - Only site administrators and superusers can delete products.
-- The user can delete the product by clicking the "Delete" button located either under the product or within the produt details.
+- The user can delete the product by clicking the "Delete" button located either under the product or within the product details.
 - Upon clicking "Delete," a confirmation modal will appear, asking the user to confirm the deletion.
 - The user will receive a success message confirming that the product has been successfully deleted.
 
@@ -343,7 +343,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - Access the "Product Management" option from the dropdown menu under the user icon to reach the add service page.
 - The service form must be valid to add a service, and every required field is marked with an asterisk (*).
 - Service prices must be greater than 0 and cannot exceed 6 digits in total.
-- The user have the option to upload an image for the service. If no image is provided, a default image is displayed.
+- The user has the option to upload an image for the service. If no image is provided, a default image is displayed.
 - Once the form is filled out and validated, the service can be created by clicking the add button.
 - The user will receive a success message confirming that the service has been successfully added.
 
@@ -370,7 +370,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - Products with a quantity less than 0 are automatically removed from the bag.
 - To update the quantity, users can click the "Update" button.
 - To remove a product, users can use the "Remove" button.
-- Below the product information, users can view the total cost of the bag, delivery cost, and grand total.
+- Below the product information, users can view the total cost of the bag, delivery cost, and total.
 - If there is any remaining spending required for free delivery, that is also provided. 
 - The user can then choose to continue shopping or proceed to secure checkout by clicking the respective buttons.
 
@@ -379,8 +379,8 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 #### Details Section
 ![The Checkout Form](/docs/readme_images/checkout-form.png)
 - In the details section, users can input their contact information, delivery address, and card details.
-- If the user is not logged in or doesn't have an account, a link to login or create an account will be provided.
-- The user also have the option to make a purchase as a guest.
+- If the user is not logged in or doesn't have an account, a link to log in or create an account will be provided.
+- The user also has the option to purchase as a guest.
 - For signed-in users who haven't saved their information, there's a checkbox to save the delivery information.
 - Logged-in users who have opted to save their information will find their details pre-filled.
 - If any required fields are left blank, an error message will appear, asking the user to fill them in.
@@ -389,7 +389,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 #### Order Summary 
 ![Order Summary](/docs/readme_images/order-summary.png)
 - The order summary section provides an overview of the products to be purchased, including their details.
-- It showcases the product name and image, quantity, subtotal, delivery cost, and grand total.products and the subtotal, delivery and grandtotal. 
+- It showcases the product name and image, quantity, subtotal, delivery cost, and total.
 - Clicking on the product image within the order summary redirects the user to the respective product detail page.
 
 #### Payment 
@@ -399,7 +399,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - During payment processing, a loading screen is displayed, preventing the user from navigating away.
 - A warning message is displayed at the bottom of the page, informing the user of the expected charge amount.
 - Even if the payment form fails to submit or the user closes the browser during processing, orders are still created in the database through a webhook
-- After the payment is processed, the webhook verifies order existence in the database. If not found, it creates one using payment details.
+- After the payment is processed, the webhook verifies the order's existence in the database. If not found, it creates one using payment details.
 
 #### Confirmation
 ![Order Confirmation](/docs/readme_images/order-confirmation.png)
@@ -417,8 +417,8 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 ### Customer Reviews
 ![Customer Reviews](/docs/readme_images/customer-reviews.png)
 - The user can access our customer reviews page located in the footer of our website.
-- On this page the user can explore feedback and testimonials from previous customers to gain insights into their experiences.
-- The user can share their own thoughts and feedback by filling out a simple form with their name and comments.
+- On this page, the user can explore feedback and testimonials from previous customers to gain insights into their experiences.
+- The user can share their thoughts and feedback by filling out a simple form with their name and comments.
 
 ## Business Model 
 
@@ -438,7 +438,7 @@ We carefully choose keywords, both short and long, after studying Google search 
 |---------|------------------|
 | Wallpaper | Modern Wallpaper, Aesthetic Wallpaper, Cute Wallpaper, Peel & Stick Wallpaper, Luxury Wallpaper, Custom Wallpaper, Design Wallpaper |
 | Room | Kitchen, Livingroom, Bedroom, Kidsroom, Room designer, Romantic Bedroom Wallpaper, Room decor ideas |
-| Interior | Interior room, Interor design, Interior Diy, Inspiration interior, Wallpaper design 3d, Wallpaper shops, Wallpaper Store |
+| Interior | Interior room, Interior design, Interior Diy, Inspiration interior, Wallpaper design 3d, Wallpaper shops, Wallpaper Store |
 
 #### Building Trust
 
@@ -450,11 +450,11 @@ To make search engine navigation easier, a sitemap was created, listing importan
 
 ### Content Marketing
 
-We showcase high-quality images of our interior design projects to attract potential clients and build trust. These photos highlight our expertise and unique styled wallpapers.
+We showcase high-quality images of our interior design projects to attract potential clients and build trust. These photos highlight our expertise and uniquely styled wallpapers.
 
 #### Social Media Marketing
 
-Social media marketing is used through platforms like Facebook, Instagram, and Pinterest because many people seek inspiration there. This complements  the content marketing, as we can easily share images of past projects and new products. We also run sales and offer discounts through ads on these platforms to catch our customers attention.
+Social media marketing is used through platforms like Facebook, Instagram, and Pinterest because many people seek inspiration there. This complements the content marketing, as we can easily share images of past projects and new products. We also run sales and offer discounts through ads on these platforms to catch our customer's attention.
 
 ![HappyRoom Facebook Page ](docs/readme_images/happyroom-facebook.png)
 
@@ -497,7 +497,7 @@ No errors were found on these pages:
 - FAQ Page. 
 - 404 Error Page. 
 
-When validating these pages a few errors occured: 
+When validating these pages a few errors occurred: 
 - Register Page.
   - An error indicating that the element ul is not allowed as a child of the element small. This error is related to the Django Allauth templates and was left unfixed.
 
@@ -515,12 +515,12 @@ The CSS files were tested using the [W3C Validator CSS](https://jigsaw.w3.org/cs
 
 ### JS Hint 
 
-All JavaScript were tested using the [Jshint validator](https://jshint.com/) with no errors.
+All JavaScript was tested using the [Jshint validator](https://jshint.com/) with no errors.
 
 
 ### PEP8
 
-All Python were tested through the [CI Python Linter](https://pep8ci.herokuapp.com/) except for in the settings file where a few lines were too long. These were left as is since the importance of the settings being correct outweighed the issue of line length.
+All Python was tested through the [CI Python Linter](https://pep8ci.herokuapp.com/) except for in the settings file where a few lines were too long. These were left as is since the importance of the settings being correct outweighed the issue of line length.
 
 ![CI Python Validator - Settings](docs/readme_images/ci-python-linter.png)
 
@@ -598,7 +598,7 @@ The website's responsiveness has been tested through the Google Chrom Dev Tool a
 
 #### Profile Page
 - The profile page has been tested and is working correctly.
-- Thhe details form has been thoroughly tested and is saving information correctly.
+- The details form has been thoroughly tested and is saving information correctly.
 - The Order History section is working correctly, with links seamlessly transferring users to the order detail page. 
 - The Booking History section is working correctly, with links seamlessly transferring the user to the booking detail page. 
 - The Wishlist section is working correctly, with images serving as links to product details.
@@ -622,22 +622,22 @@ The website's responsiveness has been tested through the Google Chrom Dev Tool a
 
 
 #### Product Detail Page
-- The product detail page have been tested and is working correctly. 
+- The product detail page has been tested and is working correctly. 
 - The Quantity button on the product has been thoroughly tested and is functioning.
 - The Add to Bag and Add to Wishlist buttons have been tested and are working correctly.
 
 #### Service Page
-- The Service page have been tested and is working correctly.
+- The Service page has been tested and is working correctly.
 - The links to services are working correctly, seamlessly redirecting users to the service detail page.
 
 #### Service Detail Page
-- The Service detail page have been tested and is working correctly. 
-- The Booking form has been tested and is working , only accepting valid inputs.
+- The Service detail page has been tested and is working correctly. 
+- The Booking form has been tested and is working, only accepting valid inputs.
 - When booking a service, users are seamlessly redirected to a booking detail page.
 
 #### Bag Page
 
-- The Bag page have been tested and is working correctly. 
+- The Bag page has been tested and is working correctly. 
 - All links and buttons on the page have been tested and are functioning correctly.
 
 #### Checkout Page
@@ -658,8 +658,8 @@ During the validation process of the Registration page and Add Product & Service
 - An error was occurring, indicating that the "ul" element is not allowed as a child of the "small" element. This issue is present in the Django Allauth templates and therefore has been left unfixed.
 
 - Validation of the Add Product & Service page revealed 28 errors and warnings. 
-These errors mainly come from how the form is set up. For instance, the {% csrf_token %} tag and the way the form fields are looped through,may be the reasons behind these errors. 
-However, even with these errors, the main functions of the page, like submitting the forms, still works correctly. As a result, these errors have been left unfixed for now.
+These errors mainly come from how the form is set up. For instance, the {% csrf_token %} tag and the way the form fields are looped through, may be the reasons behind these errors. 
+However, even with these errors, the main functions of the page, like submitting the forms, still work correctly. As a result, these errors have been left unfixed for now.
 However, I will carefully consider addressing them in future improvements.
 
 ## Deployment - Heroku
@@ -777,7 +777,7 @@ The deployed website can be found here - [HappyRoom](https://happy-room-e6871574
 - Update the requirements.txt file with the new dependencies.
 - Then add 'storages' to your installed apps.
 - In the settings.py file, create an if statement to check if 'USE_AWS' is in the environment variables.
-- Inside the if statement, set up your AWS credentials including the bucket name, region, access key, and secret key, to let django know where to look for the static files in production.
+- Inside the if statement, set up your AWS credentials including the bucket name, region, access key, and secret key, to let Django know where to look for the static files in production.
 - Create a file named custom_storages and define two classes: 
    - StaticStorage
    - MediaStorage
@@ -833,6 +833,6 @@ The deployed website can be found here - [HappyRoom](https://happy-room-e6871574
  - [REINTECH](https://reintech.io/)
  - [Quora](https://djangowebdevelopers.quora.com/)
 - [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
-- Every product detail, service detail and FAQ is created with [Open AI](https://chat.openai.com/).
+- Every product detail, service detail, and FAQ is created with [Open AI](https://chat.openai.com/).
 - Tutor Support, Code Institute, for their support and advice.
 - My mentor Antonio, for all of his knowledge, support, and advice.
