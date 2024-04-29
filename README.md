@@ -458,7 +458,53 @@ All Python were tested through the [CI Python Linter](https://pep8ci.herokuapp.c
 
 ## Lighthouse 
 
-SKRIV OM LIGHTHOUSE HÄR NU 
+## Lighthouse 
+
+When I checked my website's performance with the Lighthouse tool, I noticed it wasn't doing as well as I hoped, especially in performance and best practices.
+Despite having already optimized the images, it seems other things are slowing down how quickly the website loads.
+I suspect that elements such as Javascript and CSS may be contributing to the slowdown. 
+Addressing these issues would likely improve the website's performance and provide a better user experience.
+
+| Page           | Performance  | Accessibility | Best Practices  | SEO |
+|----------------|:------------:|:-------------:|:---------------:|:---:|
+|                |              |               |                 |     |
+| DESKTOP        |              |               |                 |     |
+| Home Page      |           94 |            90 |              86 | 100 |
+| Profile Page    |           97 |            89 |              95 | 100 |
+| Product Page   |           97 |            90 |              91 | 100 |
+| Product Detail Page     |           99 |            97 |              95 | 100 |
+| Services Page    |           94 |            86 |              86 | 100 |
+| Service Detail Page    |           98 |            94 |              95 | 100 |
+| Bag      |           97 |            89 |              95 | 100 |
+| Checkout Page      |           97 |            89 |              95 | 100 |
+| Log in Page|           99 |            88 |              95 | 100 |
+| Log out Page       |           98 |           100 |              95 | 100 |
+| Register Page   |           95 |           89 |             95 | 100 |
+| Customer Review Page   |           97 |            95 |              91 | 100 |
+| FAQ Page  |          100  |           94 |              95 |  100 |
+| Edit Product      |           97 |            89 |              95 | 100 |
+| Edit Service      |           97 |            89 |              95 | 100 |
+| Add Product/Service      |           97 |            89 |              95 | 100 |
+| 404 Error Page      |           97 |            89 |              95 | 100 |
+|                |              |               |                 |     |
+| MOBILE         |              |               |                 |     |
+ Home Page      |           94 |            90 |              86 | 100 |
+| Profile Page    |           97 |            89 |              95 | 100 |
+| Product Page   |           97 |            90 |              91 | 100 |
+| Product Detail Page     |           99 |            97 |              95 | 100 |
+| Services Page    |           94 |            86 |              86 | 100 |
+| Service Detail Page    |           98 |            94 |              95 | 100 |
+| Bag      |           97 |            89 |              95 | 100 |
+| Checkout Page      |           97 |            89 |              95 | 100 |
+| Log in Page|           99 |            88 |              95 | 100 |
+| Log out Page       |           98 |           100 |              95 | 100 |
+| Register Page   |           95 |           89 |             95 | 100 |
+| Customer Review Page   |           97 |            95 |              91 | 100 |
+| FAQ Page  |          100  |           94 |              95 |  100 |
+| Edit Product      |           97 |            89 |              95 | 100 |
+| Edit Service      |           97 |            89 |              95 | 100 |
+| Add Product/Service      |           97 |            89 |              95 | 100 |
+| 404 Error Page      |           97 |            89 |              95 | 100 |
 
 ## Browser Testing
 
@@ -718,5 +764,6 @@ The deployed website can be found here - [HappyRoom](https://happy-room-e6871574
  - [REINTECH](https://reintech.io/)
  - [Quora](https://djangowebdevelopers.quora.com/)
 - [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
-
-
+- Every product detail, service detail and FAQ is created with [Open AI](https://chat.openai.com/).
+- Tutor Support, Code Institute, for their support and advice.
+- My mentor Antonio, for all of his knowledge, support, and advice.
