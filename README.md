@@ -16,7 +16,7 @@ _You should not enter any personal credit or debit card information, since this 
 
 For a live demonstration, visit [HappyRoom](https://happy-room-e68715746875.herokuapp.com/)
 
-![HappyRoom, screenshot from Am I responsive?](/docs/readme_images/)
+![HappyRoom, screenshot from Am I responsive?](/docs/readme_images/happyroom.png)
 
 ## Table of Contents
 
@@ -57,13 +57,13 @@ For a live demonstration, visit [HappyRoom](https://happy-room-e68715746875.hero
 - As a site user I can find a gallery with pictures showing how expert advice helped previous customers.
 
 ## Design & Layout 
-The site features a clean design with earthy elements, blending brown and pink hues with white for a serene and luxurious atmosphere.
+The site features a clean design with earthy elements, blending brown with white for a calm and luxurious atmosphere.
 
 ### Color Scheme 
 
-The color scheme of HappyRoom is soothing, mainly in earthy tones with a hint of pink. These colors harmonize well with the website's purpose, offering users a relaxed and welcoming environment.
+The color scheme of HappyRoom is soothing, mainly in earthy tones. These colors harmonize well with the website's purpose, offering users a relaxed and welcoming environment.
 
-![IMAGE OF COLORS?????]()
+The Color Scheme is made with [My Color Space](https://mycolor.space/).
 
 ### Images
 All media is uploaded with Amazon Web Services and all images is borrowed from the real wallpaper site 
@@ -73,7 +73,10 @@ _Please note that this website is for educational purposes only and should not b
 
 ### Logo
 
-The logo of HappyRoom is made in Canva, and is written in the fonts Libre Baskerville and Brittany.
+The logo of HappyRoom is made in [Canva](https://www.canva.com/sv_se/), and is written in the fonts Libre Baskerville and Brittany.
+
+![Picture of the Logo](/docs/readme_images/logo-pic.png)
+
 
 ### Fonts
 
@@ -117,6 +120,7 @@ If the submitted form is not valid, an error will accour telling the user what f
 If any submitted form is not valid or contains errors, users will receive a clear error message, showing which fields is causing the error.
 
 #### Custom 404 error page
+![404 Page](/docs/readme_images/404page.png)
 If a user come across a wrong URL, they will be directed to a custom 404 error page, allowing the user to easily go back to the homepage.
 
 #### Database Security
@@ -128,8 +132,9 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 ![Header](/docs/readme_images/header.png)
 
 #### Logo
-- A logo was created using the Playfair Display font.
+- A logo was created in Canva, using the fonts Libre Baskerville and Brittany.
 - The logo is positioned in the top left of the site, and is linked to the home page for an easier navigation for the site user.
+
 
 #### Navigation Bar
 
@@ -169,32 +174,35 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - All external links automatically opens in a new tab.
 
 ### Home Page
-
-![Screenshot of my webpage](/docs/readme_images/.png)
-
-- The homepage features a carousel showcasing three images from our latest collection.
+![The Home Page](/docs/readme_images/home-page.png)
+- The homepage features a big image, showing the visitors a wallpaper from the newest collection.
 - A section on the homepage informs users about the website's purpose.
 - Towards the bottom of the homepage, two images provide easy access to products categorized under "By Room" and "By Pattern".
 
 ### Profile Page
+
 ##### Delivery Information
+![Delivery Information](/docs/readme_images/delivery-information.png)
+
 - The delivery details section saves the user's delivery address and phone number.
 - This information is used to fill in the users delivery address automatically when they are accessing the check out.
 
 ##### Order History
 
+![Order history](/docs/readme_images/order-history.png)
 - The order history section shows a list of all orders placed by the user.
 - Each order includes the order number, date of purchase, item details, and total cost.
 - When clicking on the order number, it redirects the user to a page summarizing the order details.
 
 ##### Booked Services
 
+![Booking History](/docs/readme_images/booking-history.png)
 - Below the Order History, users can find a section listing all booked appointments.
 - Each booking displays a booking ID, appointment date, booked service, and forthcoming cost.
 - When clicking on the booking ID, it redirects the user to a page summarizing the booking details.
 
 #### Wishlist
-
+![Wishlist](/docs/readme_images/wishlist.png)
 - Located below the Booked Services, users can find a section listing all products they've added to their wishlist.
 - Each wishlist item displays the product title and image.
 - When clicking on the product in the wishlist, it redirects the user to the product detail page.
@@ -207,14 +215,14 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - Users can reset their password by clicking on the 'Forgot Password' link on the login page if they forget it.
 
 ### The Categories Pages
-
+![Categories Pages](/docs/readme_images/categories.png)
 - Under the "Latest Deal" menu, users can choose from different categories such as "New In," "Bestsellers," "Last Chance," and "View all," each redirecting them to the product page.
 - In the other dropdown menus within the navigation bar, users can select categories. If they want to see all products in a specific category, they will be lead to a page where they can further filter by subcategories.
 - The visibility of products depends on the category selected by the user.
 - Every product is displayed with an image, title, rating and price.
 
 ### The Products page
-
+![Products](/docs/readme_images/products.png)
 - When clicking on a product, the user will get transfered to a page featuring a more detailed information about the product.
 - Alongside the title, rating, and price, users will find a detailed product description.
 - Each product description provides helpful information about measurements, helping users choose the right amount.
@@ -224,7 +232,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - If the user is a site administrator an edit and delete button will also appear in the product details.
 
 ### Services Page
-
+![Service](/docs/readme_images/service.png)
 - Every service is displayed with an image, title, description and price.
 - Clicking on a service redirects the user to a page providing detailed information about the service.
 - Below the service description, users find a booking form to schedule appointments.
@@ -286,7 +294,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - The user will receive a success message confirming that the service has been successfully deleted.
 
 ### Bag
-
+![Bag](/docs/readme_images/bag.png)
 - Clicking on the bag icon in the navigation menu redirects the user to the shopping bag page, where they can view the contents of their cart.
 - The bag displays product information including the image, description, price, and quantity.
 - The user can adjust the quantity by clicking the plus or minus buttons.
@@ -300,7 +308,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 ### Checkout 
 
 #### Details Section
-
+![The Checkout Form](/docs/readme_images/checkout-form.png)
 - In the details section, users can input their contact information, delivery address, and card details.
 - If the user is not logged in or doesn't have an account, a link to login or create an account will be provided.
 - The user also have the option to make a purchase as a guest.
@@ -310,7 +318,7 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - All required fields are marked with an asterisk (*).
 
 #### Order Summary 
-
+![Order Summary](/docs/readme_images/order-summary.png)
 - The order summary section provides an overview of the products to be purchased, including their details.
 - It showcases the product name and image, quantity, subtotal, delivery cost, and grand total.products and the subtotal, delivery and grandtotal. 
 - Clicking on the product image within the order summary redirects the user to the respective product detail page.
@@ -325,20 +333,20 @@ Sensitive information, such as database URLs, secret keys, stripe keys, webhook 
 - After the payment is processed, the webhook verifies order existence in the database. If not found, it creates one using payment details.
 
 #### Confirmation
-
+![Order Confirmation](/docs/readme_images/order-confirmation.png)
 - After the order is processed, the user is directed to the checkout success page.
 - On the checkout success page, the completed order is summarized.
 - Additionally, an email containing the order confirmation will be sent to the user.
 - Finally, at the end of the summary, a "Keep Shopping" button allows the user to return to the product page.
 
 ### Frequently Asked Questions (FAQ)
-
+![FAQ Page](/docs/readme_images/faq.png)
 - The FAQ page provides answers to common questions that our customers frequently ask.
 - The user can easily navigate through various questions to find the information they need.
 - At the bottom of the FAQ page, the user can find contact information in case they have additional questions or inquiries.
 
 ### Customer Reviews
-
+![Customer Reviews](/docs/readme_images/customer-reviews.png)
 - The user can access our customer reviews page located in the footer of our website.
 - On this page the user can explore feedback and testimonials from previous customers to gain insights into their experiences.
 - The user can share their own thoughts and feedback by filling out a simple form with their name and comments.
@@ -397,7 +405,8 @@ They want clear information, guidance, and inspiration, so we provide useful con
  - All user stories have been tested out and are working correctly. 
  - All user stories related to site owner and site administration have been tested out and are working correctly.
 
- ## Validator Testing 
+
+## Validator Testing 
 
 ### W3C Validator HTML
 All HTML pages were tested through the [W3C HTML Validator](https://validator.w3.org/). 
@@ -459,5 +468,88 @@ The website has been tested across various browsers, including Google Chrome, Sa
 
 The website has been tested on a range of devices, including iPhone, iPad, MacBook Pro, and iMac. The website is fully functional and displays properly across all tested devices.
 
+## Responsiveness
+
+The website's responsiveness has been tested through the Google Chrom Dev Tool and [Am I Responsive?](https://ui.dev/amiresponsive), and is working correctly.
+
+## Manually Testing 
+
+#### Home Page
+- Each link on the home page has been thoroughly tested and is working correctly.
+
+ #### Account Links
+ - All account pages have been tested and are working correctly.
+- Both the login and signup forms have been tested and are functioning without any issues.
+
+#### Profile Page
+- The profile page has been tested and is working correctly.
+- Thhe details form has been thoroughly tested and is saving information correctly.
+- The Order History section is working correctly, with links seamlessly transferring users to the order detail page. 
+- The Booking History section is working correctly, with links seamlessly transferring the user to the booking detail page. 
+- The Wishlist section is working correctly, with images serving as links to product details.
+
+#### Product Management Page
+- The add product or add service form has been tested and is operating correctly.
+- In case of invalid inputs, the system generates error messages, making sure everything works smoothly for the user.
+
+#### Customer Reviews Page
+- The Leave a Review form has been tested and is working correctly. 
+
+#### Footer 
+- All links in the footer have been tested and are working correctly.
+- The Social Media Icons are functioning correctly, redirecting users to the different pages.
+- All Social Media links will open in a new tab for a better user experience.
+- The Newsletter sign-up functionality has been tested and is working correctly. 
+
+#### Products
+- Both product pages and category pages have been tested and are operating without any issues.
+- All links on these pages have been tested and are working correctly.
 
 
+#### Product Detail Page
+- The product detail page have been tested and is working correctly. 
+- The Quantity button on the product has been thoroughly tested and is functioning.
+- The Add to Bag and Add to Wishlist buttons have been tested and are working correctly.
+
+#### Service Page
+- The Service page have been tested and is working correctly.
+- The links to services are working correctly, seamlessly redirecting users to the service detail page.
+
+#### Service Detail Page
+- The Service detail page have been tested and is working correctly. 
+- The Booking form has been tested and is working , only accepting valid inputs.
+- When booking a service, users are seamlessly redirected to a booking detail page.
+
+#### Bag Page
+
+- The Bag page have been tested and is working correctly. 
+- All links and buttons on the page have been tested and are functioning correctly.
+
+#### Checkout Page
+
+- The checkout page has been tested and is working correctly. 
+- The checkout form has been tested and is only functional with valid inputs. In case of errors, clear instructions are provided to the user.
+- The payment method functionality has been tested and is working correctly.
+
+#### Messages 
+  - Toast messages providing feedback on user actions have been tested and are working correctly.
+  - The delete confirmation modal has been tested and is functioning.
+
+## Bugs and Issues
+
+### Unfixed Bugs and Issues
+
+## Deployment - Heroku
+
+## AWS Set Up
+
+## Languages
+
+- Python
+- HTML5
+- CSS3
+- Javascript
+
+
+## Frameworks, Libraries and Programs Used
+## Credits
