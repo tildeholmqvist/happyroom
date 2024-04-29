@@ -20,7 +20,6 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -32,6 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
+
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 ALLOWED_HOSTS = ['happy-room-e68715746875.herokuapp.com', '8000-tildeholmqv-pp5happyroo-f7tyuzz2jbt.ws-eu110.gitpod.io']
 
