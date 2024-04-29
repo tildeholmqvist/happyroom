@@ -109,7 +109,7 @@ footer {
 }
 
 .logo-font:hover {
-    color: #B08E7F;
+    color: #B08E7F; 
 }
 
 .logo-font-non-link {
@@ -391,12 +391,6 @@ footer {
     margin-bottom: 40px;
 }
 
-.service-img-book {
-    width: 600px;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 /* Profile */
 
@@ -780,6 +774,13 @@ footer {
     .index-container-1 {
         margin-top: -10px;
         margin-bottom: 30px;
+    }
+
+    .service-img-book {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 
