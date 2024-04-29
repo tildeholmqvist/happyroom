@@ -98,6 +98,75 @@ All icons and symbols are from [Font Awesome.](https://fontawesome.com/)
 
 Wireframes were produced using Balsamiq.
 
+<details>
+
+ <summary>Home Page</summary>
+
+![Home Page](docs/wireframes/home-page.png)
+</details>
+
+<details>
+
+ <summary>Product Page</summary>
+
+![Product Page](docs/wireframes/product-page.png)
+</details>
+
+<details>
+
+ <summary>Product Detail Page</summary>
+
+![Product Detail Page](docs/wireframes/product-detail.png)
+</details>
+
+<details>
+
+ <summary>Service Page</summary>
+
+![Service Page](docs/wireframes/service-page.png)
+</details>
+
+<details>
+
+ <summary>Service Detail Page</summary>
+
+![Service Detail Page](docs/wireframes/book-service-page.png)
+</details>
+
+<details>
+
+ <summary>FAQ</summary>
+
+![FAQ Page](docs/wireframes/FAQ.png)
+</details>
+
+<details>
+
+ <summary>Customer Reviews</summary>
+
+![Customer Reviews](docs/wireframes/customer-reviews.png)
+</details>
+
+<details>
+
+ <summary>Product Management</summary>
+
+![Product Management](docs/wireframes/product-management.png)
+</details>
+
+<details>
+
+ <summary>Profile</summary>
+
+![Profile](docs/wireframes/profile.png)
+</details>
+
+<details>
+
+ <summary>Footer</summary>
+
+![Footer](docs/wireframes/footer.png)
+</details>
 ## Agile Methodology
 
 For project management, I used GitHub Projects for an agile approach. You can access the project board [here.](https://github.com/users/tildeholmqvist/projects/10)
