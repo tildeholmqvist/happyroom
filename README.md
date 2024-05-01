@@ -126,7 +126,6 @@ For a live demonstration, visit [HappyRoom.](https://happy-room-e68715746875.her
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
-
 ## UX
 A typical visitor to HappyRoom would be an adult or family who is seeking to redecorate their living spaces.
 They come for ideas and solutions for redecorating. HappyRoom has a wide selection of wallpapers, handpicked for every room and occasion.
@@ -230,6 +229,20 @@ Wireframes were produced using Balsamiq.
  <summary>Product Detail Page</summary>
 
 ![Product Detail Page](docs/wireframes/product-detail.png)
+</details>
+
+<details>
+
+ <summary>Bag Page</summary>
+
+![Bag Page](docs/wireframes/Bag.png)
+</details>
+
+<details>
+
+ <summary>Checkout Page</summary>
+
+![Checkout Page](docs/wireframes/checkout.png)
 </details>
 
 <details>
