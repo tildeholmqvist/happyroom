@@ -18,12 +18,122 @@ For a live demonstration, visit [HappyRoom.](https://happy-room-e68715746875.her
 
 ![HappyRoom, screenshot from Am I responsive?](/docs/readme_images/happyroom.png)
 
-## Table of Contents
+  * [UX](#ux)
+    + [User Stories](#user-stories)
+        * [EPIC |  User Account and Profile](#epic----user-account-and-profile)
+        * [EPIC | Viewing Products and Purchasing](#epic---viewing-products-and-purchasing)
+        * [EPIC | User Interaction](#epic---user-interaction)
+        * [EPIC | Other Requirements](#epic---other-requirements)
+        * [EPIC | Admin & Store Management](#epic---admin---store-management)
+      - [Future User Stories to Consider](#future-user-stories-to-consider)
+  * [Design & Layout](#design---layout)
+    + [Color Scheme](#color-scheme)
+    + [Images](#images)
+    + [Logo](#logo)
+    + [Fonts](#fonts)
+    + [Favicon](#favicon)
+    + [Icons](#icons)
+    + [Wireframes](#wireframes)
+  * [Agile Methodology](#agile-methodology)
+  * [Data Model](#data-model)
+    + [Security Features](#security-features)
+      - [User Authentication](#user-authentication)
+      - [Form Validation](#form-validation)
+      - [Custom 404 error page](#custom-404-error-page)
+      - [Database Security](#database-security)
+  * [Features](#features)
+    + [Header](#header)
+      - [Logo](#logo-1)
+      - [Navigation Bar](#navigation-bar)
+      - [Search Bar](#search-bar)
+      - [User Icon](#user-icon)
+      - [Bag Icon](#bag-icon)
+    + [Footer](#footer)
+    + [Home Page](#home-page)
+    + [Profile Page](#profile-page)
+        * [Delivery Information](#delivery-information)
+        * [Order History](#order-history)
+        * [Booked Services](#booked-services)
+      - [Wishlist](#wishlist)
+    + [User Account Pages](#user-account-pages)
+    + [The Categories Pages](#the-categories-pages)
+    + [The Products page](#the-products-page)
+    + [Services Page](#services-page)
+    + [Product and Service Management](#product-and-service-management)
+      - [Add Product](#add-product)
+      - [Edit Product](#edit-product)
+      - [Delete Product](#delete-product)
+      - [Add Service](#add-service)
+      - [Edit Service](#edit-service)
+      - [Delete Service](#delete-service)
+    + [Bag](#bag)
+    + [Checkout](#checkout)
+      - [Details Section](#details-section)
+      - [Order Summary](#order-summary)
+      - [Payment](#payment)
+      - [Confirmation](#confirmation)
+    + [Frequently Asked Questions (FAQ)](#frequently-asked-questions--faq-)
+    + [Customer Reviews](#customer-reviews)
+  * [Business Model](#business-model)
+  * [Marketing Strategy](#marketing-strategy)
+    + [SEO](#seo)
+      - [Building Trust](#building-trust)
+      - [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    + [Content Marketing](#content-marketing)
+      - [Social Media Marketing](#social-media-marketing)
+      - [Email Marketing](#email-marketing)
+- [TESTING](#testing)
+      - [User Story Testing](#user-story-testing)
+  * [Validator Testing](#validator-testing)
+    + [W3C Validator HTML](#w3c-validator-html)
+    + [W3C Validator CSS](#w3c-validator-css)
+    + [JS Hint](#js-hint)
+    + [PEP8](#pep8)
+  * [Lighthouse](#lighthouse)
+  * [Browser Testing](#browser-testing)
+  * [Device Testing](#device-testing)
+  * [Responsiveness](#responsiveness)
+  * [Manually Testing](#manually-testing)
+      - [Home Page](#home-page-1)
+      - [Account Links](#account-links)
+      - [Profile Page](#profile-page-1)
+      - [Product Management Page](#product-management-page)
+      - [Customer Reviews Page](#customer-reviews-page)
+      - [Footer](#footer-1)
+      - [Products](#products)
+      - [Product Detail Page](#product-detail-page)
+      - [Service Page](#service-page)
+      - [Service Detail Page](#service-detail-page)
+      - [Bag Page](#bag-page)
+      - [Checkout Page](#checkout-page)
+      - [Messages](#messages)
+  * [Bugs and Issues](#bugs-and-issues)
+    + [Unfixed Bugs and Issues](#unfixed-bugs-and-issues)
+  * [Deployment - Heroku](#deployment---heroku)
+    + [Create the Heroku App](#create-the-heroku-app)
+    + [Connect the Postgres database](#connect-the-postgres-database)
+      - [Update the Heroku Config Vars](#update-the-heroku-config-vars)
+    + [Deploy your site](#deploy-your-site)
+  * [AWS](#aws)
+    + [AWS S3 Bucket](#aws-s3-bucket)
+    + [IAM](#iam)
+    + [Connecting S3 to Django](#connecting-s3-to-django)
+  * [Languages](#languages)
+  * [Frameworks, Libraries and Programs Used](#frameworks--libraries-and-programs-used)
+    + [Additional Programs Used](#additional-programs-used)
+  * [Credits](#credits)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 
 ## UX
+A typical visitor to HappyRoom would be an adult or family who is seeking to redecorate their living spaces.
+They come for ideas and solutions for redecorating. HappyRoom has a wide selection of wallpapers, handpicked for every room and occasion.
 
 ### User Stories
-##### Profile
+
+##### EPIC |  User Account and Profile
 - As a site user I can sign up to the site so that my account is created.
 - As a site user I can log in and log out of the page.
 - As a logged-in user I can choose if I want to save my information so that it will speed up the checkout process next time.
@@ -31,7 +141,7 @@ For a live demonstration, visit [HappyRoom.](https://happy-room-e68715746875.her
 - As a site user I can view my previously made orders so that I can easily find what I bought last time
 - As a logged-in user I can easily see that I am actively logged in so that if I am not, I can log in
 
-##### Products
+##### EPIC | Viewing Products and Purchasing 
 
 - As a site user I can easily navigate through the website so that I can find what I am looking for
 - As a site user I can easily browse through the different products so that I can find what I am looking for.
@@ -41,13 +151,16 @@ For a live demonstration, visit [HappyRoom.](https://happy-room-e68715746875.her
 - As a site user I can view my shopping bag and the total price so that I know how much money I shop for.
 - As a site user I can be assured that the payment is secure.
 
-##### Other requirements
+##### EPIC | User Interaction
 - As a site user I can sign up for a newsletter.
 - As a site user I can book a meeting with an expert so that I can get help with advising and design.
+
+##### EPIC | Other Requirements
+
 - As a site user I am informed about how my personal information is going to be handled, and what the store's privacy policy is.
 - As a site user I can fast and easily find information about the company so that I can get answers if I have any questions
 
-##### Site Administration
+##### EPIC | Admin & Store Management
 - As a site owner I can create, edit, and delete products
 - As a site owner I can send out a newsletter so that the user who signed up for it can receive them
 - As a site owner I can inform the user about the company so that the user knows what the purpose of the company and site is
