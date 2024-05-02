@@ -647,7 +647,7 @@ All JavaScript was tested using the [Jshint validator](https://jshint.com/) with
 
 ### PEP8
 
-All Python was tested through the [CI Python Linter](https://pep8ci.herokuapp.com/) except for in the settings file where a few lines were too long. These were left as is since the importance of the settings being correct outweighed the issue of line length.
+All Python was tested through the [CI Python Linter](https://pep8ci.herokuapp.com/) except for in the settings file where a few lines were too long. These were left unfixed since the importance of the settings being correct outweighed the issue of line length.
 
 ![CI Python Validator - Settings](docs/readme_images/ci-python-linter.png)
 
