@@ -654,47 +654,51 @@ All Python was tested through the [CI Python Linter](https://pep8ci.herokuapp.co
 
 ## Lighthouse 
 
+During the Lighthouse testing of the website, I encountered disappointing results. 
+Despite efforts to trying to improve performance by resizing images and using tools like [Tiny PNG](https://tinypng.com/), the performance metrics stayed low. The main problem seemed to be the size of the images, which was dragging down the overall performance.
 
-| Page           | Performance  | Accessibility | Best Practices  | SEO |
-|----------------|:------------:|:-------------:|:---------------:|:---:|
-|                |              |               |                 |     |
-| DESKTOP        |              |               |                 |     |
-| Home Page      |              |               |                 |     |
-| Profile Page     |              |               |                 |     |
-| Product Page    |              |               |                 |     |
-| Product Detail Page     |            |             |               |  |
-| Services Page    |              |               |                 |     |
-| Service Detail Page     |              |               |                 |     |
-| Bag      |              |               |                 |     |
-| Checkout Page      |              |               |                 |     |
-| Log in Page |              |               |                 |     |
-| Log out Page  |              |               |                 |     |
-| Register Page   |              |               |                 |     |
-| Customer Review Page  |              |               |                 |     |
-| FAQ Page   |              |               |                 |     |
-| Edit Product      |              |               |                 |     |
-| Edit Service      |              |               |                 |     |
-| Add Product/Service    |              |               |                 |     |
-| 404 Error Page   |              |               |                 |     |
-|                |              |               |                 |     |
-| MOBILE         |              |               |                 |     |
- Home Page      |              |               |                 |     |
-| Profile Page    |              |               |                 |     |
-| Product Page   |              |               |                 |     |
-| Product Detail Page    |              |               |                 |     |
-| Services Page   |              |               |                 |     |
-| Service Detail Page     |              |               |                 |     |
-| Bag     |              |               |                 |     |
-| Checkout Page     |              |               |                 |     |
-| Log in Page    |              |               |                 |     |
-| Log out Page   |              |               |                 |     |
-| Register Page  |              |               |                 |     |
-| Customer Review Page  |              |               |                 |     |
-| FAQ Page   |              |               |                 |     |
-| Edit Product      |              |               |                 |     |
-| Edit Service      |              |               |                 |     |
-| Add Product/Service    |              |               |                 |     |
-| 404 Error Page   |              |               |                 |     |
+Also, the scores for best practices weren't great across all pages. When I checked, the console showed that third-party cookies from services like Stripe and Mailchimp were being used, which could raise privacy and security issues.
+
+It's important to fix these issues to make sure users have a better experience and to improve the website's overall performance.
+
+| Page                  | Performance | Accessibility | Best Practices | SEO |
+|-----------------------|-------------|---------------|----------------|-----|
+|                       |             |               |                |     |
+| **DESKTOP**           |             |               |                |     |
+| Home Page             | 70          | 100           | 74             | 100 |
+| Profile Page          | 68          | 92            | 78             | 100 |
+| Product Page          | 68          | 96            | 78             | 90  |
+| Product Detail Page   | 59          | 90            | 78             | 100 |
+| Services Page         | 80          | 96            | 74             | 90  |
+| Service Detail Page   | 80          | 100           | 70             | 90  |
+| Bag                   | 81          | 79            | 78             | 90  |
+| Checkout Page         | 69          | 89            | 78             | 100 |
+| Log in Page           | 83          | 95            | 78             | 100 |
+| Log out Page          | 81          | 100           | 78             | 100 |
+| Register Page         | 84          | 95            | 78             | 100 |
+| Customer Review Page  | 83          | 100           | 78             | 100 |
+| FAQ Page              | 84          | 89            | 78             | 100 |
+| Edit Product          | 76          | 83            | 74             | 90  |
+| Edit Service          | 80          | 83            | 74             | 90  |
+| Add Product/Service   | 80          | 89            | 78             | 100 |
+| **MOBILE**            |             |               |                |     |
+| Home Page             | 68          | 100           | 78             | 97  |
+| Profile Page          | 60          | 92            | 78             | 97  |
+| Product Page          | 62          | 92            | 78             | 89  |
+| Product Detail Page   | 67          | 85            | 78             | 96  |
+| Services Page         | 60          | 91            | 74             | 89  |
+| Service Detail Page   | 66          | 88            | 74             | 89  |
+| Bag                   | 57          | 78            | 78             | 88  |
+| Checkout Page         | 64          | 89            | 78             | 98  |
+| Log in Page           | 69          | 95            | 78             | 96  |
+| Log out Page          | 69          | 100           | 78             | 96  |
+| Register Page         | 70          | 95            | 78             | 97  |
+| Customer Review Page  | 69          | 100           | 78             | 96  |
+| FAQ Page              | 69          | 89            | 78             | 96  |
+| Edit Product          | 63          | 83            | 74             | 89  |
+| Edit Service          | 66          | 83            | 74             | 89  |
+| Add Product/Service   | 67          | 89            | 78             | 98  |
+
 
 ## Browser Testing
 
