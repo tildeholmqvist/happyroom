@@ -659,7 +659,7 @@ Despite efforts to trying to improve performance by resizing images and using to
 
 Also, the scores for best practices weren't great across all pages. When I checked, the console showed that third-party cookies from services like Stripe and Mailchimp were being used, which could raise privacy and security issues.
 
-It's important to fix these issues to make sure users have a better experience and to improve the website's overall performance.
+It's important to address these issues to make sure users have a better experience and to improve the website's overall performance.
 
 | Page                  | Performance | Accessibility | Best Practices | SEO |
 |-----------------------|-------------|---------------|----------------|-----|
