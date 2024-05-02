@@ -947,6 +947,7 @@ The deployed website can be found here - [HappyRoom](https://happy-room-e6871574
 - [Color Space](https://mycolor.space/): Used to create the color palette.
 - [Favicon](https://favicon.io/): Used to create the favicon.
 - [Grammerly](https://app.grammarly.com/): Used to proof read the README.md. 
+- [Tiny PNG](https://tinypng.com/): Used to compress images.
 - [Canva](https://www.canva.com/sv_se/): Used to create the logo. 
 
 ## Credits
