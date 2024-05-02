@@ -655,7 +655,7 @@ All Python was tested through the [CI Python Linter](https://pep8ci.herokuapp.co
 ## Lighthouse 
 
 During the Lighthouse testing of the website, I encountered disappointing results. 
-Despite efforts to trying to improve performance by resizing images and using tools like [Tiny PNG](https://tinypng.com/), the performance metrics stayed low. The main problem seemed to be the size of the images, which was dragging down the overall performance.
+Despite efforts to try to improve performance by resizing images and using tools like [Tiny PNG](https://tinypng.com/), the performance metrics stayed low. The main problem seemed to be the size of the images, which was dragging down the overall performance.
 
 Also, the scores for best practices weren't great across all pages. When I checked, the console showed that third-party cookies from services like Stripe and Mailchimp were being used, which could raise privacy and security issues.
 
